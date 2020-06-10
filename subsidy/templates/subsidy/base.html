@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+{% block head %}
+{% endblock head %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/base.css' %}">
+{% block static %}
+{% endblock static %}
+</head>
+<body>
+{% block content %}
+{% endblock content %}
+</body>
+</html>
+
+DATABASES = {
+	'default': {
+	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	'NAME': 'aid',
+	'USER': 'tomoya',
+	'PASSWORD': 'idnVhK4ne',
+	'HOST': 'localhost',
+	'PORT': '',
+	}
+}

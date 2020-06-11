@@ -9,7 +9,8 @@ admin.site.index_title = 'DATABASE_LIST'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('subsidy/', include('subsidy.urls')),
-#    path('register/', include('register.urls')),
+#   hide register app  
+#   path('register/', include('register.urls')),
 ]
 
 if settings.DEBUG:

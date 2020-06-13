@@ -3,8 +3,8 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
+    path('', include('subsidy.urls')),
     path('admin/', admin.site.urls),
-    path('subsidy/', include('subsidy.urls')),
     path('register/', include('register.urls')),
 ]
 

@@ -1,7 +1,7 @@
-{% extends 'subsidy/base.html' %}
+<!DOCTYPE html>
 {% load static %}
-
-{% block head %}
+<html lang="ja">
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>トップページ</title>
@@ -22,6 +22,8 @@
 	<link rel="icon" href="URL" sizes="16x16" type="image/png">
 <!-- icon -->
 	<link rel="apple-touch-icon-precomposed" href="画像のURL">
+<!-- static -->
+<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169304107-1"></script>
@@ -32,13 +34,9 @@
 
 	gtag('config', 'UA-169304107-1');
 	</script>
-{% endblock head %}
+</head>
 
-{% block static %}
-<!-- static -->
-	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
-{% endblock static %}
-
-{% block content %}
-<h1 id="site-name"><a href="{% url 'subsidy:tokyo23_marriage' %}">テーマ「結婚」</a></h1>
-{% endblock content %}
+<body>
+	<h1 id="site-name"><a href="{% url 'subsidy:tokyo23_marriage' %}">テーマ「結婚」</a></h1>
+</body>
+</html>

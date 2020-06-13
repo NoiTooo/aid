@@ -11,5 +11,6 @@ class Tokyo23_Top(generic.TemplateView):
 class Tokyo23_Marriage(generic.ListView):
     """テーマ「結婚」"""
     template_name = 'subsidy/tokyo23_marriage.html'
-    queryset = Subsidy.objects.filter(themes=1, prefectures=2).order_by('-end_at')
-    context_object_name = 'object_list'
+    model = Subsidy
+    def get_queryset(self):
+        return Subsidy.objects.filter(themes__theme='結婚')

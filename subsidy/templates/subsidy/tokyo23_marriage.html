@@ -1,7 +1,7 @@
-{% extends 'subsidy/base.html' %}
+<!DOCTYPE html>
 {% load static %}
-
-{% block head %}
+<html lang="ja">
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>トップページ</title>
@@ -22,14 +22,23 @@
 	<link rel="icon" href="URL" sizes="16x16" type="image/png">
 <!-- icon -->
 	<link rel="apple-touch-icon-precomposed" href="画像のURL">
-{% endblock head %}
-{% block static %}
 <!-- static -->
-	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
-{% endblock static %}
+<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
 
-{% block content %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169304107-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-169304107-1');
+	</script>
+</head>
+
+<body>
     {% for marriage in object_list %}
-        {{ marriage.name }}
-    {% endfor %}
-{% endblock content %}
+		{{ marriage.name }}
+	{% endfor %}
+</body>
+</html>

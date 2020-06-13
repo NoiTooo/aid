@@ -29,4 +29,7 @@
 {% endblock static %}
 
 {% block content %}
+    {% for marriage in object_list %}
+        {{ marriage.name }}
+    {% endfor %}
 {% endblock content %}

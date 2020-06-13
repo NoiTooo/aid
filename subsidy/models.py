@@ -1,14 +1,14 @@
 from django.db import models
 
-class Event(models.Model):
-    event = models.CharField(verbose_name='イベントタグ', max_length=30)
+class Theme(models.Model):
+    theme = models.CharField(verbose_name='テーマタグ', max_length=30)
 
     def __str__(self):
-        return self.event
+        return self.theme
 
     class Meta:
-        verbose_name = "04.イベントタグ"
-        verbose_name_plural = "04.イベントタグ"
+        verbose_name = "04.テーマタグ"
+        verbose_name_plural = "04.テーマタグ"
 
 class Prefecture(models.Model):
     prefecture = models.CharField(verbose_name='都道府県タグ', max_length=4)
@@ -45,7 +45,7 @@ class Subsidy(models.Model):
     updated_at = models.DateTimeField(verbose_name='更新日', auto_now=True)
     prefectures = models.ManyToManyField(Prefecture, verbose_name='都道府県タグ', blank=True)
     cities = models.ManyToManyField(City, verbose_name='市区町村タグ', blank=True)
-    events = models.ManyToManyField(Event, verbose_name='イベントタグ', blank=True)
+    themes = models.ManyToManyField(Theme, verbose_name='テーマタグ', blank=True)
 
     def __str__(self):
         return self.name

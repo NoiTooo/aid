@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Subsidy, City, Prefecture, Event
+from .models import Subsidy, City, Prefecture, Theme
 
 
 class SubsidyAdmin(admin.ModelAdmin):
-    filter_horizontal = ['prefectures', 'cities', 'events']
+    filter_horizontal = ['prefectures', 'cities', 'themes']
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == "prefectures":
@@ -14,4 +14,4 @@ class SubsidyAdmin(admin.ModelAdmin):
 admin.site.register(Subsidy, SubsidyAdmin)
 admin.site.register(City)
 admin.site.register(Prefecture)
-admin.site.register(Event)
+admin.site.register(Theme)

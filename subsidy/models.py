@@ -11,7 +11,7 @@ class Theme(models.Model):
         verbose_name_plural = "04.テーマタグ"
 
 class Prefecture(models.Model):
-    prefecture = models.CharField(verbose_name='都道府県タグ', max_length=4)
+    prefecture = models.CharField(verbose_name='都道府県タグ', max_length=10)
 
     def __str__(self):
         return self.prefecture

@@ -1,5 +1,22 @@
 from django.views import generic
+from django.urls import reverse_lazy
+from django.shortcuts import render, redirect
+
 from subsidy.models import Subsidy, City, Prefecture, Theme
+from . forms import InquiryCreateForm
+
+"""
+問い合わせ
+"""
+class Inquiry_create(generic.CreateView):
+    """問い合わせフォーム"""
+    template_name = 'subsidy/inquiry_create.html'
+    form_class = InquiryCreateForm
+    success_url = reverse_lazy('subsidy:inquiry_done')
+
+class Inquiry_done(generic.TemplateView):
+    """問い合わせ完了"""
+    template_name = 'subsidy/inquiry_done.html'
 
 """
 東京都23区版
@@ -21,4 +38,4 @@ class Tokyo23_marriage(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(prefectures__prefecture='東京都', themes__theme='結婚')
+        return Subsidy.objects.filter(prefectures__prefecture='東京都23区', themes__theme='結婚')

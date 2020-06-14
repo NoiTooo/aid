@@ -53,3 +53,17 @@ class Subsidy(models.Model):
     class Meta:
         verbose_name = "01.支援金"
         verbose_name_plural = "01.支援金"
+
+class Inquiry(models.Model):
+    name = models.CharField(verbose_name='お名前', max_length=50)
+    email = models.EmailField(verbose_name='メールアドレス')
+    phone = models.CharField(verbose_name='電話番号', max_length=11, blank=True, null=True)
+    title = models.CharField(verbose_name='件名', max_length=50)
+    content = models.TextField(verbose_name='お問合せ内容')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "05.お問合せ"
+        verbose_name_plural = "05.お問合せ"

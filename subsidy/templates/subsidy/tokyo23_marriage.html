@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load humanize %}
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
@@ -37,8 +38,19 @@
 </head>
 
 <body>
-    {% for marriage in object_list %}
-		{{ marriage.name }}
+	{% for object in object_list %}
+	<p>{{ object.name }}</p>
+	{% for theme in object.themes.all %}
+	<p>{{theme.theme}}</p>
 	{% endfor %}
+	{% for pref in object.prefectures.all %}
+	<p>{{pref.prefecture}}</p>
+	{% endfor %}
+	{% for city in object.cities.all %}
+	<p>{{city.city}}</p>
+	{% endfor %}
+	<li><a href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></li>
+	=================
+  	{% endfor %}
 </body>
 </html>

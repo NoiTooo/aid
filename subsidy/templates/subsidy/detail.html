@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load humanize %}
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
@@ -37,7 +38,12 @@
 </head>
 
 <body>
-	<p>テーマ</p>
-	<p><a href="{% url 'subsidy:tokyo23_marriage' %}">「結婚」</a></p>
+    <p>{{ object.name }}</p>
+    <p>{{ object.applicable_area }}</p>
+    <p>{{ object.end_at|date:"Y年m月j日" }}</p>
+    <p>{{ object.maximum_amount|intcomma }}</p>
+    <p>{{ object.condition }}</p>
+    <p>{{ object.description }}</p>
+    <p><a href="{{ object.official_page }}">{{ object.official_page }}</a></p>
 </body>
 </html>

@@ -8,9 +8,17 @@ class Tokyo23_Top(generic.TemplateView):
     """TOPページ"""
     template_name = 'subsidy/tokyo23_top.html'
 
-class Tokyo23_Marriage(generic.ListView):
+class Detail(generic.DeleteView):
+    """案件詳細ページ"""
+    template_name = 'subsidy/detail.html'
+    queryset = Subsidy.objects.all()
+    context_object_name = 'object'
+
+class Tokyo23_marriage(generic.ListView):
     """テーマ「結婚」"""
     template_name = 'subsidy/tokyo23_marriage.html'
-    model = Subsidy
+    queryset = Subsidy.objects.all()
+    context_object_name = 'object_list'
+
     def get_queryset(self):
-        return Subsidy.objects.filter(themes__theme='結婚')
+        return Subsidy.objects.filter(prefectures__prefecture='東京都', themes__theme='結婚')

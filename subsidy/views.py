@@ -6,8 +6,16 @@ from subsidy.models import Subsidy, City, Prefecture, Theme
 from . forms import InquiryCreateForm
 
 """
-問い合わせ
+共通情報
 """
+class Operator_Information(generic.TemplateView):
+    """運営者情報"""
+    template_name = 'subsidy/operator_information.html'
+
+class Terms_of_Service(generic.TemplateView):
+    """利用規約"""
+    template_name = 'subsidy/terms_of_service.html'
+
 class Inquiry_create(generic.CreateView):
     """問い合わせフォーム"""
     template_name = 'subsidy/inquiry_create.html'
@@ -30,6 +38,15 @@ class Detail(generic.DeleteView):
     template_name = 'subsidy/detail.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object'
+
+class Tokyo23_Index(generic.ListView):
+    """テーマ「結婚」"""
+    template_name = 'subsidy/tokyo23_index.html'
+    queryset = Subsidy.objects.all()
+    context_object_name = 'object_list'
+
+    def get_queryset(self):
+        return Subsidy.objects.filter(prefectures__prefecture='東京都23区')
 
 class Tokyo23_marriage(generic.ListView):
     """テーマ「結婚」"""

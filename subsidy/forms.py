@@ -1,8 +1,16 @@
 from django import forms
-from .models import Inquiry
+from .models import Inquiry, UserAlert
 
 
 class InquiryCreateForm(forms.ModelForm):
-   class Meta:
-      model = Inquiry
-      fields = ('name', 'email', 'phone', 'title', 'content')
+    """問い合わせフォーム"""
+    class Meta:
+        model = Inquiry
+        fields = ('name', 'email', 'phone', 'title', 'content')
+
+
+class UserAlertForm(forms.ModelForm):
+    """ユーザーアラート"""
+    class Meta:
+        model = UserAlert
+        fields = ('problem_found', 'applicable_url', 'other_note')

@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>トップページ</title>
+	<title>{{ object.name }} | Aid Tree</title>
 	<meta name="description" content="説明文">
 	<link rel="canonical" href="正規化URL">
 <!-- SNS -->
@@ -38,19 +38,18 @@
 </head>
 
 <body>
-	{% for object in object_list %}
-	<p>{{ object.name }}</p>
-	{% for theme in object.themes.all %}
-	<p>{{theme.theme}}</p>
-	{% endfor %}
-	{% for pref in object.prefectures.all %}
-	<p>{{pref.prefecture}}</p>
-	{% endfor %}
-	{% for city in object.cities.all %}
-	<p>{{city.city}}</p>
-	{% endfor %}
-	<li><a href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></li>
-	=================
-  	{% endfor %}
+    <p>{{ object.name }}</p>
+	<p>{{ object.applicable_area }}</p>
+	<p>{{ object.applicable_target }}</p>
+    <p>{{ object.start_at|date:"Y年m月j日" }}</p>
+	<p>{{ object.end_at|date:"Y年m月j日" }}</p>
+    <p>{{ object.maximum_amount|intcomma }}</p>
+	<p>{{ object.support_amount_note }}</p>
+    <p>{{ object.condition }}</p>
+    <p>{{ object.description }}</p>
+	<p>{{ object.referrer }}</p>
+	<p><a href="{{ object.official_page }}">{{ object.official_page }}</a></p>
+
+	<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告</a></p>
 </body>
 </html>

@@ -38,19 +38,9 @@
 </head>
 
 <body>
-	{% for object in object_list %}
-	<p>{{ object.name }}</p>
-	{% for theme in object.themes.all %}
-	<p>{{theme.theme}}</p>
-	{% endfor %}
-	{% for pref in object.prefectures.all %}
-	<p>{{pref.prefecture}}</p>
-	{% endfor %}
-	{% for city in object.cities.all %}
-	<p>{{city.city}}</p>
-	{% endfor %}
-	<li><a href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></li>
-	=================
-  	{% endfor %}
+    <form action="" method="POST">{% csrf_token %}
+        {{form.as_p}}
+    <input type="submit" value="送信">
+</form>
 </body>
 </html>

@@ -5,7 +5,7 @@ from django.conf import settings
 urlpatterns = [
     path('', include('subsidy.urls')),
     path('admin/', admin.site.urls),
-    path('register/', include('register.urls')),
+#    path('register/', include('register.urls')),
 ]
 
 if settings.DEBUG:

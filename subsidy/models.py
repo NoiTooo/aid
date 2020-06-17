@@ -1,3 +1,4 @@
+from django.contrib.sitemaps import ping_google
 from django.db import models
 
 PROBLEMATIC_POINT = (('1', 'URLのリンクが切れている'),
@@ -86,6 +87,13 @@ class Subsidy(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
 
     class Meta:
         verbose_name = "01.支援金"

@@ -54,7 +54,7 @@ class Inquiry_Done(generic.TemplateView):
 
 class Tokyo23_Top(generic.TemplateView):
     """TOPページ"""
-    template_name = 'subsidy/tokyo23_top.html'
+    template_name = 'subsidy/tokyo23/tokyo23_top.html'
 
 
 class Detail(generic.DeleteView):
@@ -66,7 +66,7 @@ class Detail(generic.DeleteView):
 
 class Tokyo23_Index(generic.ListView):
     """23区の制度一覧"""
-    template_name = 'subsidy/tokyo23_index.html'
+    template_name = 'subsidy/tokyo23/tokyo23_index.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
 
@@ -76,7 +76,7 @@ class Tokyo23_Index(generic.ListView):
 
 class Tokyo23_marriage(generic.ListView):
     """テーマ「結婚」"""
-    template_name = 'subsidy/tokyo23_marriage.html'
+    template_name = 'subsidy/tokyo23/tokyo23_marriage.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
 
@@ -85,7 +85,7 @@ class Tokyo23_marriage(generic.ListView):
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」"""
-    template_name = 'subsidy/tokyo23_housing.html'
+    template_name = 'subsidy/tokyo23/tokyo23_housing.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
 

@@ -20,29 +20,25 @@
 	<meta property="og:locale" content="ja_JP">
 	<meta property="fb:app_id" content="appIDを入力">
 <!-- favicon -->
-	<link rel="icon" href="URL" sizes="16x16" type="image/png">
 <!-- icon -->
-	<link rel="apple-touch-icon-precomposed" href="画像のURL">
+{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
 <link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169304107-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+{% include 'subsidy/base/ga_tag.html' %}
 
-	gtag('config', 'UA-169304107-1');
-	</script>
 </head>
 
 <body>
     <p>制度名：{{ object.name }}</p>
 	<p>適用地域：{{ object.applicable_area }}</p>
-	<p>適用対象：{{ object.applicable_target }}</p>
-    <p>公募期間：{{ object.start_at|date:"Y年m月j日" }}～{{ object.end_at|date:"Y年m月j日" }}</p>
-    <p>支給上限金額：{{ object.maximum_amount|intcomma }}</p>
+	<p>適用対象：{{ object.target }}</p>
+	{% if object.start_at is None and object.end_at is None %}
+	{% else %}
+	<p>公募期間：{{ object.start_at|date:"Y年m月j日" }}～{{ object.end_at|date:"Y年m月j日" }}</p>
+	{% endif %}
+    <p>支給上限金額：{{ object.maximum_support_amount|intcomma }}円</p>
 	<p>支給上限金額補足：{{ object.support_amount_note }}</p>
     <p>対象要件：{{ object.condition }}</p>
     <p>制度内容：{{ object.description }}</p>

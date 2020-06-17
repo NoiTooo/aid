@@ -38,16 +38,15 @@
 </head>
 
 <body>
-    <p>{{ object.name }}</p>
-	<p>{{ object.applicable_area }}</p>
-	<p>{{ object.applicable_target }}</p>
-    <p>{{ object.start_at|date:"Y年m月j日" }}</p>
-	<p>{{ object.end_at|date:"Y年m月j日" }}</p>
-    <p>{{ object.maximum_amount|intcomma }}</p>
-	<p>{{ object.support_amount_note }}</p>
-    <p>{{ object.condition }}</p>
-    <p>{{ object.description }}</p>
-	<p>{{ object.referrer }}</p>
+    <p>制度名：{{ object.name }}</p>
+	<p>適用地域：{{ object.applicable_area }}</p>
+	<p>適用対象：{{ object.applicable_target }}</p>
+    <p>公募期間：{{ object.start_at|date:"Y年m月j日" }}～{{ object.end_at|date:"Y年m月j日" }}</p>
+    <p>支給上限金額：{{ object.maximum_amount|intcomma }}</p>
+	<p>支給上限金額補足：{{ object.support_amount_note }}</p>
+    <p>対象要件：{{ object.condition }}</p>
+    <p>制度内容：{{ object.description }}</p>
+	<p>参照元：{{ object.referrer }}</p>
 	<p><a href="{{ object.official_page }}">{{ object.official_page }}</a></p>
 
 	<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告</a></p>

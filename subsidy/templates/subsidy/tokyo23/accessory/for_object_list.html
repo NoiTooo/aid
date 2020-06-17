@@ -1,0 +1,19 @@
+{% load humanize %}
+
+
+{% for object in object_list %}
+<p>制度名：{{ object.name }}</p>
+{% for theme in object.themes.all %}
+<p>テーマタグ：{{ theme.theme }}</p>
+{% endfor %}
+{% for pref in object.prefectures.all %}
+<p>道府県タグ：{{pref.prefecture }}</p>
+{% endfor %}
+{% for city in object.cities.all %}
+<p>市区町村タグ：{{ city.city }}</p>
+{% endfor %}
+<p>支給上限金額：{{ object.maximum_support_amount|intcomma }}円</p>
+<p>参照元：{{ object.referrer }}</p>
+<li><a href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></li>
+======================================================
+ {% endfor %}

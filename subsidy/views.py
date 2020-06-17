@@ -15,7 +15,7 @@ from .forms import InquiryCreateForm, UserAlertForm
 
 class Operator_Information(generic.TemplateView):
     """運営者情報"""
-    template_name = 'subsidy/operator_information.html'
+    template_name = 'subsidy/common_information/operator_information.html'
 
 
 class Terms_of_Service(generic.TemplateView):

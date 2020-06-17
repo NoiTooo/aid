@@ -9,7 +9,7 @@ from .sitemaps import (
 )
 
 sitemaps = {
-    'blog': SubsidySitemap,
+    'Subsidy': SubsidySitemap,
     'static': StaticViewSitemap,
 }
 

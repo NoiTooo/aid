@@ -1,5 +1,9 @@
 from datetime import datetime
+from functools import reduce
+from operator import and_
 
+from django.contrib import messages
+from django.db.models import Q
 from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
@@ -63,17 +67,38 @@ class Detail(generic.DeleteView):
     template_name = 'subsidy/common_information/detail.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object'
+    lookup_field = 'pk'
 
 
 class Tokyo23_Index(generic.ListView):
     """23区の制度一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
-    queryset = Subsidy.objects.all()
-    context_object_name = 'object_list'
+    model = Subsidy
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区').order_by('-updated_at')
-
+        queryset = Subsidy.objects.order_by('-updated_at')
+        keyword = self.request.GET.get('keyword')
+        if keyword:
+            exclusion = set([' ', '　'])
+            q_list = ''
+            for i in keyword:
+                if i in exclusion:
+                    pass
+                else:
+                    q_list += i
+            query = reduce(
+                        and_, [Q(name__icontains=q) |
+                               Q(prefecture__icontains=q)|
+                               Q(city__icontains=q)|
+                               Q(support_amount_note__icontains=q) |
+                               Q(description__icontains=q) |
+                               Q(condition__icontains=q)|
+                               Q(referrer__icontains=q) |
+                               Q(themes__theme__icontains=q)
+                               for q in q_list]
+                    )
+            queryset = queryset.filter(query)
+        return queryset
 
 class Tokyo23_marriage(generic.ListView):
     """テーマ「結婚」"""
@@ -82,7 +107,7 @@ class Tokyo23_marriage(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at')
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」"""
@@ -91,4 +116,4 @@ class Tokyo23_Housing(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at')
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()

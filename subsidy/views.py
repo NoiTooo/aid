@@ -82,7 +82,7 @@ class Tokyo23_marriage(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at')
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at')
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」"""
@@ -91,4 +91,4 @@ class Tokyo23_Housing(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at')
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at')

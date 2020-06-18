@@ -67,11 +67,9 @@ class Detail(generic.DeleteView):
     template_name = 'subsidy/common_information/detail.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object'
-    lookup_field = 'pk'
-
 
 class Tokyo23_Index(generic.ListView):
-    """23区の制度一覧"""
+    """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
 
@@ -100,8 +98,40 @@ class Tokyo23_Index(generic.ListView):
             queryset = queryset.filter(query)
         return queryset
 
+class Tokyo23_Search(generic.ListView):
+    """23区で「エリア」「テーマ」で検索する"""
+    template_name = 'subsidy/tokyo23/tokyo23_search.html'
+    model = Subsidy
+
+    def get_queryset(self):
+        queryset = Subsidy.objects.order_by('-updated_at')
+        keyword1 = self.request.GET.get('area')
+        keyword2 = self.request.GET.get('theme')
+        keyword = str(keyword1) + str(keyword2)
+        if keyword:
+            exclusion = set([' ', '　'])
+            q_list = ''
+            for i in keyword:
+                if i in exclusion:
+                    pass
+                else:
+                    q_list += i
+            query = reduce(
+                        and_, [Q(name__icontains=q) |
+                               Q(prefecture__icontains=q)|
+                               Q(city__icontains=q)|
+                               Q(support_amount_note__icontains=q) |
+                               Q(description__icontains=q) |
+                               Q(condition__icontains=q)|
+                               Q(referrer__icontains=q) |
+                               Q(themes__theme__icontains=q)
+                               for q in q_list]
+                    )
+            queryset = queryset.filter(query)
+        return queryset
+
 class Tokyo23_marriage(generic.ListView):
-    """テーマ「結婚」"""
+    """テーマ「結婚」一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_marriage.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
@@ -110,7 +140,7 @@ class Tokyo23_marriage(generic.ListView):
         return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
 
 class Tokyo23_Housing(generic.ListView):
-    """テーマ「住まい」"""
+    """テーマ「住まい」一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_housing.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'

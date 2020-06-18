@@ -29,14 +29,19 @@
 </head>
 
 <body>
-	<p>フリーワードで検索する</p>
+	<h2>●フリーワードで検索する</h2>
 	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
-		<input type="text" name="keyword">
+		<p><input type="text" name="keyword"></p>
 		<button type="submit">検索</button>
 	</form>
-
+	<h2>●エリアとテーマで検索する</h2>
+	<form method="GET" action="{% url 'subsidy:tokyo23_search' %}">
+		<p>エリア：<input type="text" name="area"></p>
+		<p>テーマ：<input type="text" name="theme"></p>
+		<button type="submit">検索</button>
+	</form>
+	<h2>●テーマから探す</h2>
 	<p><a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a></p>
-	<p><a href="{% url 'subsidy:tokyo23_index' %}">23区制度一覧</a></p>
 	---------------
 	<p><a href="{% url 'subsidy:operator_information' %}">運営者情報</a></p>
 	<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>

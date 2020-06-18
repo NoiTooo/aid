@@ -4,7 +4,8 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 
-from subsidy.models import Subsidy, City, Prefecture, Theme
+
+from subsidy.models import Subsidy,  Theme
 from .forms import InquiryCreateForm, UserAlertForm
 
 
@@ -71,7 +72,7 @@ class Tokyo23_Index(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区')
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区').order_by('-updated_at')
 
 
 class Tokyo23_marriage(generic.ListView):
@@ -81,7 +82,7 @@ class Tokyo23_marriage(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='結婚')
+        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at')
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」"""
@@ -90,4 +91,4 @@ class Tokyo23_Housing(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='住まい')
+        return Subsidy.objects.filter(is_published=True, prefectures__prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at')

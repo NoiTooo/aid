@@ -41,34 +41,13 @@ class Theme(models.Model):
         return self.theme
 
     class Meta:
-        verbose_name = "04.テーマタグ"
-        verbose_name_plural = "04.テーマタグ"
-
-class Prefecture(models.Model):
-    prefecture = models.CharField(verbose_name='都道府県タグ', max_length=10)
-
-    def __str__(self):
-        return self.prefecture
-
-    class Meta:
-        verbose_name = "02.都道府県タグ"
-        verbose_name_plural = "02.都道府県タグ"
-
-
-class City(models.Model):
-    city = models.CharField(verbose_name='市区町村タグ', max_length=30)
-
-    def __str__(self):
-        return self.city
-
-    class Meta:
-        verbose_name = "03.市区町村タグ"
-        verbose_name_plural = "03.市区町村タグ"
-
+        verbose_name = "02.テーマタグ"
+        verbose_name_plural = "02.テーマタグ"
 
 class Subsidy(models.Model):
     name = models.CharField(verbose_name='制度名', max_length=50)
-    applicable_area = models.CharField(verbose_name='適用地域', max_length=31)
+    prefecture = models.CharField(verbose_name='都道府県', max_length=31)
+    city = models.CharField(verbose_name='市区町村', max_length=31)
     target = models.CharField(verbose_name='対象', max_length=10, null=True, blank=True)
     start_at = models.DateTimeField(verbose_name='開始日', null=True, blank=True)
     end_at = models.DateTimeField(verbose_name='終了日', null=True, blank=True)
@@ -81,8 +60,6 @@ class Subsidy(models.Model):
     is_published = models.BooleanField(verbose_name='公開')
     created_at = models.DateTimeField(verbose_name='登録日', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='更新日', auto_now=True)
-    prefectures = models.ManyToManyField(Prefecture, verbose_name='都道府県タグ', blank=True)
-    cities = models.ManyToManyField(City, verbose_name='市区町村タグ', blank=True)
     themes = models.ManyToManyField(Theme, verbose_name='テーマタグ', blank=True)
 
     def __str__(self):

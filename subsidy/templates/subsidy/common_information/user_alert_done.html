@@ -21,6 +21,7 @@
 <!-- favicon -->
 <!-- icon -->
 	{% include 'subsidy/base/parts_favicon_icon.html' %}
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <!-- static -->
 	{% include 'subsidy/base/basecss.html' %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,7 +29,9 @@
 </head>
 
 <body>
-	<p>ご協力ありがとうございました。</p>
-	<p><a href="{% url 'subsidy:tokyo23_top' %}">TOPページへ戻る</a></p>
+	<div class="block-content">
+		<p>ご協力ありがとうございました。</p>
+		<p><a href="{% url 'subsidy:tokyo23_top' %}">TOPページへ戻る</a></p>
+	</div>
 </body>
 </html>

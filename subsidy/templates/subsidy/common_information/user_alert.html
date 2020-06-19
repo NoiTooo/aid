@@ -24,14 +24,17 @@
 	{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
 	{% include 'subsidy/base/basecss.html' %}
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 	{% include 'subsidy/base/ga_tag.html' %}
 </head>
 
 <body>
-    <form action="" method="POST">{% csrf_token %}
-        {{form.as_p}}
-    <input type="submit" value="送信">
-</form>
+	<div class="block-content">
+		<form action="" method="POST">{% csrf_token %}
+			{{form.as_p}}
+		<input type="submit" value="送信">
+		</form>
+	</div>
 </body>
 </html>

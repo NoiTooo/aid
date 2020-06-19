@@ -23,30 +23,58 @@
 	{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
 	{% include 'subsidy/base/basecss.html' %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/tokyo23_top.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 	{% include 'subsidy/base/ga_tag.html' %}
 </head>
 
 <body>
-	<div class="logo"><img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/></div>
-	<h2>●フリーワードで検索する</h2>
-	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
-		<p><input type="text" name="keyword"></p>
-		<button type="submit">検索</button>
-	</form>
-	<h2>●エリアとテーマで検索する</h2>
-	<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
-		<p>エリア：<input type="text" name="area"></p>
-		<p>テーマ：<input type="text" name="theme"></p>
-		<button type="submit">検索</button>
-	</form>
-	<h2>●テーマから探す</h2>
-	<p><a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a></p>
-	---------------
-	<p><a href="{% url 'subsidy:about_service' %}">AID Treeとは</a></p>
-	<p><a href="{% url 'subsidy:operator_information' %}">運営者情報</a></p>
-	<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
-	<p><a href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a></p>
-	<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
+	<div class="block-content">
+		<div class="header">
+			<div class="header-nav">
+				<a class="header-navi-link" href="{% url 'subsidy:about_service' %}">AID Treeとは</a>
+				<a class="header-navi-link" href="{% url 'subsidy:tokyo23_index' %}">支援金を探す</a>
+				<a class="header-navi-link" href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a>
+			</div>
+		</div>
+
+		<div class="logo">
+			<img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/>
+		</div>
+		<div class="header-message">
+			<h1>AID Treeはあなたが今使える支援制度を<br>見つける手助けをするサービスです</h1>
+		</div>
+
+		<div class="freeword-search">
+			<p>フリーワードで検索する</p>
+			<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
+				<p><input type="text" name="keyword" placeholder="キーワードを入力">
+				<button type="submit">検索</button></p>
+			</form>
+		</div>
+
+		<div class="combination-search">
+			<p>エリアとテーマで検索する</p>
+			<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
+				<p><input type="text" name="area" placeholder="エリアを入力">　<input type="text" name="theme" placeholder="テーマを入力">
+				<button type="submit">検索</button></p>
+			</form>
+		</div>
+
+		<div class="category-search">
+			<p>テーマから探す</p>
+				<a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a>
+				<a href="{% url 'subsidy:tokyo23_marriage' %}">「結婚」</a>
+			</div>
+
+		<div class="footer">
+			<div class="footer-nav">
+				<p><a href="{% url 'subsidy:operator_information' %}">運営者情報</a></p>
+				<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
+				<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

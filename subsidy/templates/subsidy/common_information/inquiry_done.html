@@ -23,12 +23,15 @@
 	{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
 	{% include 'subsidy/base/basecss.html' %}
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 	{% include 'subsidy/base/ga_tag.html' %}
 </head>
 
 <body>
-	<p>送信完了</p>
-	<p><a href="{% url 'subsidy:tokyo23_top' %}">戻る</a></p>
+	<div class="block-content">
+		<p>送信完了</p>
+		<p><a href="{% url 'subsidy:tokyo23_top' %}">戻る</a></p>
+	</div>
 </body>
 </html>

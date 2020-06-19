@@ -1,0 +1,54 @@
+/*tokyo23-toppage-header */
+.header{
+  margin: 0 auto 0 auto;
+  height: 60px;
+  }
+
+.header-nav{
+  text-align: center;
+	float: right;
+	margin: 40px 20px auto auto;
+	}
+
+.header-navi-link{
+	padding: 0 10px 0 15px;
+	border-left: white 1px solid;
+}
+
+.logo{
+  margin: 60px 0 0 140px;
+	}
+
+.header-message{
+	text-align: center;
+	position: relative; top:-110px; left:200px;
+	}
+
+/* center content */
+.freeword-search{
+	text-align: center;
+	font-size: 24px;
+}
+
+.combination-search{
+	text-align: center;
+	font-size: 24px;
+}
+
+.category-search{
+	text-align: center;
+	font-size: 24px;
+	height: 600px;
+}
+
+/* fotter */
+.footer{
+  margin: 0 auto 0 auto;
+  height: 150px;
+}
+
+.footer-nav{
+  text-align: right;
+	float: right;
+	margin: auto 20px auto auto;
+	}

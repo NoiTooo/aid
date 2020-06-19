@@ -1,1 +1,21 @@
-h1{    color: brown;}body {    margin: auto;    background-image: url("../img/backgroundimg.jpg");    background-repeat: no-repeat;    background-position: center center;    height: 2200px;    width: 1436px;}.logo{    margin: 100px 0 200px 100px;}
+/* common module */
+body{
+  color: white;
+  margin: 0 auto;
+}
+
+.wf-notosansjapanese{
+   font-family: "Noto Sans JP";
+  }
+
+.block-content{
+  width: 1440px;
+  margin: 0 auto;
+  background-image: url("../img/backgroundimg.jpg");
+  background-repeat: no-repeat;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}

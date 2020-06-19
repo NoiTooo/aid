@@ -20,12 +20,11 @@
 	<meta property="fb:app_id" content="appIDを入力">
 <!-- favicon -->
 <!-- icon -->
-{% include 'subsidy/base/parts_favicon_icon.html' %}
+	{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
-<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
-
+	{% include 'subsidy/base/basecss.html' %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-{% include 'subsidy/base/ga_tag.html' %}
+	{% include 'subsidy/base/ga_tag.html' %}
 </head>
 
 <body>

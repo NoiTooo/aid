@@ -16,6 +16,9 @@ from .forms import InquiryCreateForm, UserAlertForm
 """
 共通情報
 """
+class About_Service(generic.TemplateView):
+    """サービス情報"""
+    template_name = 'subsidy/common_information/about_service.html'
 
 
 class Operator_Information(generic.TemplateView):

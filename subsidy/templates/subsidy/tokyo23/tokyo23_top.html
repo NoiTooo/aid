@@ -20,15 +20,15 @@
 	<meta property="fb:app_id" content="appIDを入力">
 <!-- favicon -->
 <!-- icon -->
-{% include 'subsidy/base/parts_favicon_icon.html' %}
+	{% include 'subsidy/base/parts_favicon_icon.html' %}
 <!-- static -->
-	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/index.css' %}">
-
+	{% include 'subsidy/base/basecss.html' %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-{% include 'subsidy/base/ga_tag.html' %}
+	{% include 'subsidy/base/ga_tag.html' %}
 </head>
 
 <body>
+	<div class="logo"><img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/></div>
 	<h2>●フリーワードで検索する</h2>
 	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
 		<p><input type="text" name="keyword"></p>
@@ -43,6 +43,7 @@
 	<h2>●テーマから探す</h2>
 	<p><a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a></p>
 	---------------
+	<p><a href="{% url 'subsidy:about_service' %}">AID Treeとは</a></p>
 	<p><a href="{% url 'subsidy:operator_information' %}">運営者情報</a></p>
 	<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
 	<p><a href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a></p>

@@ -7,6 +7,7 @@ app_name = 'subsidy'
 
 urlpatterns = [
     # Common information
+    path('about-service/', views.About_Service.as_view(), name='about_service'),
     path('operator-information/', views.Operator_Information.as_view(), name='operator_information'),
     path('terms-of-service/', views.Terms_of_Service.as_view(), name='terms_of_service'),
     path('user-alert/', views.User_Alert.as_view(), name='user_alert'),

@@ -72,6 +72,7 @@ class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
+    paginate_by = 1
 
     def get_queryset(self):
         queryset = Subsidy.objects.order_by('-updated_at')
@@ -98,9 +99,9 @@ class Tokyo23_Index(generic.ListView):
             queryset = queryset.filter(query)
         return queryset
 
-class Tokyo23_Search(generic.ListView):
+class Tokyo23_Category_Select(generic.ListView):
     """23区で「エリア」「テーマ」で検索する"""
-    template_name = 'subsidy/tokyo23/tokyo23_search.html'
+    template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
 
     def get_queryset(self):

@@ -28,6 +28,13 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {% include 'subsidy/base/ga_tag.html' %}
 <body>
+	<h2>●フリーワードで検索する</h2>
+	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
+		<p><input type="text" name="keyword"></p>
+		<button type="submit">検索</button>
+	</form>
+
 	{% include 'subsidy/tokyo23/accessory/for_object_list.html' %}
+	<br>{% include 'subsidy/tokyo23/accessory/page.html' %}
 </body>
 </html>

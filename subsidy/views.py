@@ -2,14 +2,14 @@ from datetime import datetime
 from functools import reduce
 from operator import and_
 
-from django.contrib import messages
+from datetime import date
+
 from django.db.models import Q
 from django.views import generic
 from django.urls import reverse_lazy
-from django.shortcuts import render, redirect
 
 
-from subsidy.models import Subsidy,  Theme
+from subsidy.models import Subsidy
 from .forms import InquiryCreateForm, UserAlertForm
 
 
@@ -75,10 +75,11 @@ class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
-    paginate_by = 1
+    paginate_by = 5
 
     def get_queryset(self):
-        queryset = Subsidy.objects.order_by('-updated_at')
+        today = date.today()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today).distinct()
         keyword = self.request.GET.get('keyword')
         if keyword:
             exclusion = set([' ', '　'])
@@ -108,7 +109,8 @@ class Tokyo23_Category_Select(generic.ListView):
     model = Subsidy
 
     def get_queryset(self):
-        queryset = Subsidy.objects.order_by('-updated_at')
+        today = date.today()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today).distinct()
         keyword1 = self.request.GET.get('area')
         keyword2 = self.request.GET.get('theme')
         keyword = str(keyword1) + str(keyword2)
@@ -141,7 +143,8 @@ class Tokyo23_marriage(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
+        today = date.today()
+        return Subsidy.objects.filter(is_published=True, end_at__gte=today, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」一覧"""
@@ -150,4 +153,5 @@ class Tokyo23_Housing(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()
+        today = date.today()
+        return Subsidy.objects.filter(is_published=True, end_at__gte=today, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()

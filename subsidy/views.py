@@ -5,6 +5,7 @@ from operator import and_
 from datetime import date
 
 from django.db.models import Q
+from django.shortcuts import redirect
 from django.views import generic
 from django.urls import reverse_lazy
 
@@ -79,7 +80,7 @@ class Tokyo23_Index(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today).distinct()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today, prefecture="東京都23区").distinct()
         keyword = self.request.GET.get('keyword')
         if keyword:
             exclusion = set([' ', '　'])
@@ -104,36 +105,24 @@ class Tokyo23_Index(generic.ListView):
         return queryset
 
 class Tokyo23_Category_Select(generic.ListView):
-    """23区で「エリア」「テーマ」で検索する"""
+
+    """    23区で「エリア(市区町村)」と「テーマ」でAND検索する """
+
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today).distinct()
-        keyword1 = self.request.GET.get('area')
-        keyword2 = self.request.GET.get('theme')
-        keyword = str(keyword1) + str(keyword2)
-        if keyword:
-            exclusion = set([' ', '　'])
-            q_list = ''
-            for i in keyword:
-                if i in exclusion:
-                    pass
-                else:
-                    q_list += i
-            query = reduce(
-                        and_, [Q(name__icontains=q) |
-                               Q(prefecture__icontains=q)|
-                               Q(city__icontains=q)|
-                               Q(support_amount_note__icontains=q) |
-                               Q(description__icontains=q) |
-                               Q(condition__icontains=q)|
-                               Q(referrer__icontains=q) |
-                               Q(themes__theme__icontains=q)
-                               for q in q_list]
-                    )
-            queryset = queryset.filter(query)
+        city = self.request.GET.get('city')
+        theme = self.request.GET.get('theme')
+        queryset = Subsidy.objects.filter(city=city, themes__theme=theme, end_at__gte=today).order_by('-updated_at').distinct()
+        """ city か theme どちらか、あるいはどちらも空の場合の処理 """
+        if city=="" and theme=="":
+            queryset = Subsidy.objects.filter(end_at__gte=today, prefecture='東京都23区').order_by('-updated_at').distinct()
+        elif city=="":
+            queryset = Subsidy.objects.filter(themes__theme=theme, end_at__gte=today, prefecture='東京都23区').distinct()
+        elif theme=="":
+            queryset = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct()
         return queryset
 
 class Tokyo23_marriage(generic.ListView):

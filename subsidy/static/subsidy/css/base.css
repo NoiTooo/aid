@@ -15,14 +15,35 @@ a{
 	text-decoration: none;
 }
 
-
 .block-content{
     margin: auto;
     width:1400px;
     overflow:hidden;
 }
 
+/*header */
+.header{
+    margin-top:20px;
+    height: 60px;
+  }
+
+.header-nav{
+    text-align: center;
+    float: right;
+	}
+
+.header-navi-link{
+    color: white;
+    margin-right: 20px;
+    padding-left: 10px;
+    border-left: 1px solid white;
+}
+
 .copyright{
     font-size: 12px;
     text-align: center;
+}
+
+.copyright{
+    margin-top: 200px;
 }

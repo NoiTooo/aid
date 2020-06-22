@@ -9,23 +9,50 @@
 {% endblock siteInformation %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/detail.css' %}">
 {% endblock stylesheet %}
 
 {% block body %}
-	<div class="block-content">
-		<p>制度名：{{ object.name }}</p>
-		<p>適用地域：{{ object.prefecture }}／{{ object.city }}</p>
-		<p>適用対象：{{ object.target }}</p>
-		{% if object.start_at is None and object.end_at is None %}
-		{% else %}
-		<p>公募期間：{{ object.start_at|date:"Y年m月j日" }}～{{ object.end_at|date:"Y年m月j日" }}</p>
-		{% endif %}
-		<p>支給上限金額：{{ object.maximum_support_amount|intcomma }}円</p>
-		<p>支給上限金額補足：{{ object.support_amount_note }}</p>
-		<p>対象要件：{{ object.condition }}</p>
-		<p>制度内容：{{ object.description }}</p>
-		<p>参照元：{{ object.referrer }}</p>
-		<p><a href="{{ object.official_page }}">{{ object.official_page }}</a></p>
-		<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告</a></p>
-	</div>
+{% include 'subsidy/base_module/header.html' %}
+<div class="detail-content">
+	<h2>「{{ object.name }}」</h2>
+	<table>
+		<tr>
+			<th>適用地域</th>
+			<td>{{ object.prefecture }}　{{ object.city}}</td>
+		</tr>
+		<tr>
+			<th>申請期間</th>
+			<td>{{ object.start_at|date:"Y年m月j日" }}　～　{{ object.end_at|date:"Y年m月j日" }}</td>
+		</tr>
+		<tr>
+			<th>制度内容</th>
+			<td>{{ object.description| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>最大支給額</th>
+			<td>{{ object.maximum_support_amount|intcomma }}円</td>
+		</tr>
+		<tr>
+			<th>支援額補足</th>
+			<td>{{ object.support_amount_note| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>支援条件</th>
+			<td>{{ object.condition| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>引用元</th>
+			<td>{{ object.referrer }}</td>
+		</tr>
+		<tr>
+			<th>公式ページ</th>
+			<td><a href="{{object.official_page}}">{{ object.official_page }}</a></td>
+		</tr>
+		<tr>
+			<th>最終更新日</th>
+			<td>{{ object.updated_at|date:"Y年m月j日" }}</td>
+		</tr>
+	</table>
+</div>
 {% endblock body %}

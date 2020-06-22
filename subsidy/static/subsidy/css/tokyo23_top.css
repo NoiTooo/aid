@@ -1,22 +1,5 @@
-/*tokyo23-toppage-header */
-.header{
-    margin-top:20px;
-    height: 60px;
-  }
 
-.header-nav{
-    text-align: center;
-    float: right;
-	}
-
-.header-navi-link{
-    color: white;
-    margin-right: 20px;
-    padding-left: 10px;
-    border-left: 1px solid white;
-}
-
-.logo{
+.top-logo{
     position: relative; top: 30px; left: 100px;
     width: 300px;
 	}

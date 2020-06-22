@@ -219,13 +219,16 @@ option:hover{
 
 .area-box:hover{
   background-color: #00b300;
-  color:white;
   box-shadow: none;
   transition-delay:0.2s;
 }
 
 .area-link{
   color: #666666;
+}
+
+.area-link:hover{
+    color:white;
 }
 
 /* theme-search */
@@ -250,7 +253,6 @@ option:hover{
   color: #666666;
 }
 
-
 .theme-box:hover{
   color: #eaeaea;
   background-color: #00b300;
@@ -258,8 +260,9 @@ option:hover{
   transition-delay:0.2s;
 }
 
-
-
+.theme-link:hover{
+    color:white;
+}
 
 /* fotter */
 .footer{

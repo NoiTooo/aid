@@ -12,6 +12,10 @@ from .models import Subsidy
 from .forms import InquiryCreateForm, UserAlertForm
 
 
+class CountDown(generic.TemplateView):
+    template_name = 'subsidy/tokyo23/countdown.html'
+
+
 """
 共通情報
 """

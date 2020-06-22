@@ -1,37 +1,17 @@
-<!DOCTYPE html>
+{% extends 'subsidy/tokyo23/base.html' %}
 {% load static %}
 {% load humanize %}
-<html lang="ja">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>結婚|東京都23区の支援金</title>
-	<meta name="description" content="説明文">
-	<link rel="canonical" href="正規化URL">
-<!-- SNS -->
-	<meta property="og:url" content="ページのURL">
-	<meta property="og:title" content="ページのタイトル">
-	<meta property="og:type" content="ページのタイプ">
-	<meta property="og:description" content="記事の抜粋">
-	<meta property="og:image" content="画像のURL">
-	<meta name="twitter:card" content="カード種類">
-	<meta name="twitter:site" content="@Twitterユーザー名">
-	<meta property="og:site_name" content="サイト名">
-	<meta property="og:locale" content="ja_JP">
-	<meta property="fb:app_id" content="appIDを入力">
-<!-- favicon -->
-<!-- icon -->
-	{% include 'subsidy/base/parts_favicon_icon.html' %}
-<!-- static -->
-	{% include 'subsidy/base/basecss.html' %}
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-	{% include 'subsidy/base/ga_tag.html' %}
-</head>
 
-<body>
-	<div class="block-content">
-	{% include 'subsidy/tokyo23/accessory/for_object_list.html' %}
-	</div>
-</body>
-</html>
+
+{% block siteInformation %}
+	<title>テーマ「結婚」で探す | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://aid-tree.com/tokyo23-marriage">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block body %}
+	{% include 'subsidy/base_module/for_object_list.html' %}
+{% endblock body %}

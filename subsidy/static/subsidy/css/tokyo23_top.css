@@ -1,54 +1,83 @@
 /*tokyo23-toppage-header */
 .header{
-  margin: 0 auto 0 auto;
-  height: 60px;
+    margin-top:20px;
+    height: 60px;
   }
 
 .header-nav{
-  text-align: center;
-	float: right;
-	margin: 40px 20px auto auto;
+    text-align: center;
+    float: right;
 	}
 
 .header-navi-link{
-	padding: 0 10px 0 15px;
-	border-left: white 1px solid;
+    margin-right: 20px;
+    padding-left: 10px;
+    border-left: 1px solid white;
 }
 
 .logo{
-  margin: 60px 0 0 140px;
+    position: relative; top: 30px; left: 100px;
 	}
 
 .header-message{
-	text-align: center;
-	position: relative; top:-110px; left:200px;
+    font-size:16px;
+    position: relative; top: -80px; left: 520px;
 	}
 
 /* center content */
+.survey{
+
+}
+
+
 .freeword-search{
-	text-align: center;
-	font-size: 24px;
 }
 
 .combination-search{
-	text-align: center;
-	font-size: 24px;
 }
 
 .category-search{
-	text-align: center;
-	font-size: 24px;
-	height: 600px;
+
 }
 
 /* fotter */
 .footer{
-  margin: 0 auto 0 auto;
-  height: 150px;
+    text-align: right;
+    margin: 10px 0 0 0;
+    height: 120px;
+    border-top: 2px solid gray;
 }
 
 .footer-nav{
-  text-align: right;
-	float: right;
-	margin: auto 20px auto auto;
+    padding-top: 5px;
+    margin-right: 20px;
+    font-size: 12px;
 	}
+
+	.container {
+  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* button　*/
+.button {
+  display: inline-block;
+  border-radius: 5%;
+  font-size: 13pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 64px;
+  background: #00b300;
+  color: #ffffff;
+  line-height: 1em;
+  transition: .3s;
+  box-shadow: 5px 5px 4px #666666;
+  border: 2px solid #00b300;
+}
+
+.button:hover {
+  box-shadow: none;
+  color: #00b300;
+  background: #ffffff;
+}

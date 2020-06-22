@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	{% block siteInformation %}{% endblock siteInformation %}
+<!-- SNS -->
+	{% include 'subsidy/base_module/sns.html' %}
+<!-- icon -->
+	{% include 'subsidy/base_module/settings_icon.html' %}
+<!-- static -->
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/base.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+	{% block stylesheet %}{% endblock stylesheet %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	{% include 'subsidy/base_module/ga_tag.html' %}
+</head>
+
+<body>
+	<div class="block-content">
+		{% block body %} {% endblock body %}
+		<div class="copyright">Copyright 2020 aid-tree.com All Rights Reserved.</div>
+	</div>
+</body>
+</html>

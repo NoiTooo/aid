@@ -1,110 +1,100 @@
-<!DOCTYPE html>
+{% extends 'subsidy/tokyo23/base.html' %}
 {% load static %}
-<html lang="ja">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Aid Tree</title>
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>街の支援制度を探す | AID Tree</title>
 	<meta name="description" content="説明文">
-	<link rel="canonical" href="正規化URL">
-<!-- SNS -->
-	<meta property="og:url" content="ページのURL">
-	<meta property="og:title" content="ページのタイトル">
-	<meta property="og:type" content="ページのタイプ">
-	<meta property="og:description" content="記事の抜粋">
-	<meta property="og:image" content="画像のURL">
-	<meta name="twitter:card" content="カード種類">
-	<meta name="twitter:site" content="@Twitterユーザー名">
-	<meta property="og:site_name" content="サイト名">
-	<meta property="og:locale" content="ja_JP">
-	<meta property="fb:app_id" content="appIDを入力">
-<!-- favicon -->
-<!-- icon -->
-	{% include 'subsidy/base/parts_favicon_icon.html' %}
-<!-- static -->
-	{% include 'subsidy/base/basecss.html' %}
+	<link rel="canonical" href="https://aid-tree.com">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
 	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/tokyo23_top.css' %}">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-	{% include 'subsidy/base/ga_tag.html' %}
-</head>
+    <script type="text/javascript" src="{% static 'subsidy/js/tokyo23_top.js' %}"></script>
+{% endblock stylesheet %}
 
-<body>
-	<div class="block-content">
-		<div class="header">
-			<div class="header-nav">
-				<a class="header-navi-link" href="{% url 'subsidy:about_service' %}">AID Treeとは</a>
-				<a class="header-navi-link" href="{% url 'subsidy:tokyo23_index' %}">支援金を探す</a>
-				<a class="header-navi-link" href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a>
-			</div>
-		</div>
-
-		<div class="logo">
-			<img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/>
-		</div>
-		<div class="header-message">
-			<h1>AID Treeは東京都23区で今使える支援制度を<br>見つける手助けをするサービスです</h1>
-		</div>
-
-		<div class="combination-search">
-			<p>エリアとテーマで検索する</p>
-			<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
-					<select name="city">
-						<option value="">地域</option>
-						<option value="世田谷区">世田谷区</option>
-						<option value="練馬区">練馬区</option>
-						<option value="太田区">太田区</option>
-						<option value="江戸川区">江戸川区</option>
-						<option value="足立区">足立区</option>
-						<option value="千代田区">千代田区</option>
-						<option value="杉並区">杉並区</option>
-						<option value="板橋区">板橋区</option>
-						<option value="江東区">江東区</option>
-						<option value="葛飾区">葛飾区</option>
-						<option value="品川区">品川区</option>
-						<option value="北区">北区</option>
-						<option value="新宿区">新宿区</option>
-						<option value="中野区">中野区</option>
-						<option value="豊島区">豊島区</option>
-						<option value="目黒区">目黒区</option>
-						<option value="墨田区">墨田区</option>
-						<option value="港区">港区</option>
-						<option value="渋谷区">渋谷区</option>
-						<option value="文京区">文京区</option>
-						<option value="荒川区">荒川区</option>
-						<option value="台東区">台東区</option>
-						<option value="中央区">中央区</option>
-					</select>
-					<select name="theme">
-						<option value="">テーマ</option>
-						<option value="住まい">住まい</option>
-						<option value="結婚">結婚</option>
-					</select>
-					<input type="submit" value="検索">
-			</form>
-		</div>
-
-		<div class="freeword-search">
-			<p>フリーワードで検索する</p>
-			<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
-				<p><input type="text" name="keyword" placeholder="キーワードを入力">
-				<button type="submit">検索</button></p>
-			</form>
-		</div>
-
-		<div class="category-search">
-			<p>テーマから探す</p>
-				<a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a>
-				<a href="{% url 'subsidy:tokyo23_marriage' %}">「結婚」</a>
-			</div>
-
-		<div class="footer">
-			<div class="footer-nav">
-				<p><a href="{% url 'subsidy:operator_information' %}">運営者情報</a></p>
-				<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
-				<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
-			</div>
-		</div>
+{% block body %}
+<div class="header">
+	<div class="header-nav">
+		<a class="header-navi-link" href="{% url 'subsidy:about_service' %}">AID Treeとは</a>
+		<a class="header-navi-link" href="{% url 'subsidy:tokyo23_index' %}">支援金を探す</a>
+		<a class="header-navi-link" href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a>
 	</div>
-</body>
-</html>
+</div>
+
+<div class="logo">
+	<img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/>
+</div>
+
+<div class="header-message">
+	<h1>AID Treeは東京都23区で今使える支援制度を<br>　　　見つける手助けをするサービスです</h1>
+</div>
+
+<div class="survey">
+
+</div>
+
+<div class="combination-search">
+	<p>エリアとテーマで検索する</p>
+	<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
+			<select name="city">
+				<option value="">地域</option>
+				<option value="世田谷区">世田谷区</option>
+				<option value="練馬区">練馬区</option>
+				<option value="太田区">太田区</option>
+				<option value="江戸川区">江戸川区</option>
+				<option value="足立区">足立区</option>
+				<option value="千代田区">千代田区</option>
+				<option value="杉並区">杉並区</option>
+				<option value="板橋区">板橋区</option>
+				<option value="江東区">江東区</option>
+				<option value="葛飾区">葛飾区</option>
+				<option value="品川区">品川区</option>
+				<option value="北区">北区</option>
+				<option value="新宿区">新宿区</option>
+				<option value="中野区">中野区</option>
+				<option value="豊島区">豊島区</option>
+				<option value="目黒区">目黒区</option>
+				<option value="墨田区">墨田区</option>
+				<option value="港区">港区</option>
+				<option value="渋谷区">渋谷区</option>
+				<option value="文京区">文京区</option>
+				<option value="荒川区">荒川区</option>
+				<option value="台東区">台東区</option>
+				<option value="中央区">中央区</option>
+			</select>
+
+			<select name="theme">
+				<option value="">テーマ</option>
+				<option value="住まい">住まい</option>
+				<option value="結婚">結婚</option>
+			</select>
+			<div class="serch-button">
+				<input class="button" type="submit" value="検索">
+			</div>
+	</form>
+</div>
+
+<div class="freeword-search">
+	<p>フリーワードで検索する</p>
+	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
+		<p><input type="text" name="keyword" placeholder="キーワードを入力">
+		<button type="submit">検索</button></p>
+	</form>
+</div>
+
+<div class="category-search">
+	<p>テーマから探す</p>
+		<a href="{% url 'subsidy:tokyo23_housing' %}">「住まい」</a>
+		<a href="{% url 'subsidy:tokyo23_marriage' %}">「結婚」</a>
+</div>
+
+<div class="footer">
+	<div class="footer-nav">
+		<p><a href="{% url 'subsidy:webmaster' %}">運営者情報</a></p>
+		<p><a href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
+		<p><a target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
+	</div>
+</div>
+{% endblock body %}

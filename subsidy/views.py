@@ -1,30 +1,29 @@
 from datetime import datetime
+from datetime import date
 from functools import reduce
 from operator import and_
 
-from datetime import date
-
 from django.db.models import Q
 from django.shortcuts import redirect
-from django.views import generic
 from django.urls import reverse_lazy
+from django.views import generic
 
-
-from subsidy.models import Subsidy
+from .models import Subsidy
 from .forms import InquiryCreateForm, UserAlertForm
 
 
 """
 共通情報
 """
+
 class About_Service(generic.TemplateView):
     """サービス情報"""
     template_name = 'subsidy/common_information/about_service.html'
 
 
-class Operator_Information(generic.TemplateView):
+class Webmaster(generic.TemplateView):
     """運営者情報"""
-    template_name = 'subsidy/common_information/operator_information.html'
+    template_name = 'subsidy/common_information/webmaster.html'
 
 
 class Terms_of_Service(generic.TemplateView):

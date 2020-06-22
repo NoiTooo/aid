@@ -1,21 +1,29 @@
-/* common module */
-body{
-  color: white;
-  margin: 0 auto;
+/* font */
+.wf-notosansjapanese{
+     font-family: "Noto Sans JP";
 }
 
-.wf-notosansjapanese{
-   font-family: "Noto Sans JP";
-  }
-
-.block-content{
-  width: 1440px;
-  margin: 0 auto;
-  background-image: url("../img/backgroundimg.jpg");
-  background-repeat: no-repeat;
+/* base css */
+body{
+	background-image: url("../img/backgroundimg.jpg");
+	background-repeat: no-repeat;
+    background-position : center top;
+    color: white;
 }
 
 a{
-  text-decoration: none;
-  color: white;
+	text-decoration: none;
+	color: white;
+}
+
+
+.block-content{
+    margin: auto;
+    width:1400px;
+    overflow:hidden;
+}
+
+.copyright{
+    font-size: 12px;
+    text-align: center;
 }

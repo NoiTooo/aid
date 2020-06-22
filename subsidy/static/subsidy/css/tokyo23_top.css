@@ -18,12 +18,14 @@
 
 .logo{
     position: relative; top: 30px; left: 100px;
+    width: 300px;
 	}
 
 .header-message{
     font-size:16px;
     position: relative; top: -80px; left: 520px;
-	}
+    width: 675px;
+  }
 
 /* center content */
 /* survey */

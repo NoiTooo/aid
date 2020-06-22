@@ -10,6 +10,7 @@
 	}
 
 .header-navi-link{
+    color: white;
     margin-right: 20px;
     padding-left: 10px;
     border-left: 1px solid white;
@@ -25,44 +26,156 @@
 	}
 
 /* center content */
+/* survey */
 .survey{
-
+  margin: 200px 0 50px 0;
+  height: 600px;
 }
 
-
-.freeword-search{
-}
-
-.combination-search{
-}
-
-.category-search{
-
-}
-
-/* fotter */
-.footer{
-    text-align: right;
-    margin: 10px 0 0 0;
-    height: 120px;
-    border-top: 2px solid gray;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 12px;
-	}
-
-	.container {
-  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+.survey-1{
+  position: relative; top:0px; left:150px;
+  width: 35%;
   text-align: center;
-  padding-top: 40px;
+}
+
+.servey1-message{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.survey-2{
+  position: relative; top:-465px; left:750px;
+  width: 35%;
+  text-align: center;
+}
+
+.servey2-message{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.survey-result-message{
+  position: relative; top: -100px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+/* combination-search */
+.title{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.select-city{
+  position: relative; top:20px; left:200px;
+}
+
+.select-theme{
+  position: relative; top:20px; left:200px;
+}
+
+/* select box */
+label{
+  box-shadow:0 3px 5px rgba(0,0,0,.2);
+  padding:15px;
+  background:white;
+  width:260px;
+  display:inline-block;
+  position:relative;
+  margin-left:50px;
+}
+
+select{
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  cursor:pointer;
+  font-size:16px;
+  color:#909090;
+  border-radius:0;
+  width:275px;
+  z-index:2;
+  background:transparent;
+}
+
+label:after{
+  content:"\25bc";
+  font-size:16px;
+  color:white;
+  background:#00b300;
+  width:42px;
+  text-align:center;
+  line-height:3.2em;
+  top:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  pointer-events:none;
+}
+
+option{
+  border-bottom:1px solid #eaeaea;
+  border-left:3px solid white;
+  appearance:none;
+}
+
+option:hover{
+  background-color:white;
+  border-left:3px solid #f3a1a1;
+
+}
+
+/* freeword-search */
+.freeword-search{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.input-text{
+  position: relative; top:0; left:-20px;
+  margin-top: 20px;
+  height: 54px;
+  width: 600px;
+  border: none;
+}
+
+.freeword-input{
+  position: relative; top:0px; left:20px;
+  border-radius: 5%;
+  font-size: 13pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 64px;
+  background: #00b300;
+  color: #ffffff;
+  line-height: 1em;
+  transition: .3s;
+  box-shadow: 5px 5px 4px #666666;
+  border: 2px solid #00b300;
+}
+
+.freeword-input:hover {
+  box-shadow: none;
+  color: #00b300;
+  background: #ffffff;
 }
 
 /* button　*/
 .button {
-  display: inline-block;
+  position: relative; top:20px; left:250px;
   border-radius: 5%;
   font-size: 13pt;
   text-align: center;
@@ -80,4 +193,88 @@
   box-shadow: none;
   color: #00b300;
   background: #ffffff;
+}
+
+/* category-search */
+.category-search{
+  margin-top: 50px;
+}
+
+/* area-search */
+.area-search{
+  margin-top:40px;
+  text-align: center;
+  position: relative; top:0; left:150px;
+}
+
+.area-box{
+  width: 150px;
+  box-shadow: 5px 5px 4px #666666;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  background-color: white;
+  color:grey
+}
+
+.area-box:hover{
+  background-color: #00b300;
+  color:white;
+  box-shadow: none;
+  transition-delay:0.2s;
+}
+
+.area-link{
+  color: #666666;
+}
+
+/* theme-search */
+
+.theme-search{
+  margin-top:40px;
+  text-align: center;
+  position: relative; top:0; left:200px;
+}
+
+.theme-box{
+  width: 300px;
+  box-shadow: 5px 5px 4px #666666;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  background-color: white;
+  color:grey
+}
+
+.theme-link{
+  color: #666666;
+}
+
+
+.theme-box:hover{
+  color: #eaeaea;
+  background-color: #00b300;
+  box-shadow: none;
+  transition-delay:0.2s;
+}
+
+
+
+
+/* fotter */
+.footer{
+    text-align: right;
+    margin: 50px 0 0 0;
+    height: 120px;
+    border-top: 2px dotted white;
+}
+
+.footer-nav{
+    padding-top: 5px;
+    margin-right: 20px;
+    font-size: 12px;
+	}
+
+.footer-nav-link{
+  color: white;
 }

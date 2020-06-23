@@ -83,7 +83,8 @@ class Tokyo23_Index(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(end_at__gte=today, prefecture="東京都23区").distinct()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture="東京都23区").distinct()
+        #filter(end_at__gte=today)
         keyword = self.request.GET.get('keyword')
         if keyword:
             exclusion = set([' ', '　'])
@@ -118,7 +119,8 @@ class Tokyo23_Category_Select(generic.ListView):
         today = date.today()
         city = self.request.GET.get('city')
         theme = self.request.GET.get('theme')
-        queryset = Subsidy.objects.filter(city=city, themes__theme=theme, end_at__gte=today).order_by('-updated_at').distinct()
+        queryset = Subsidy.objects.filter(city=city, themes__theme=theme).order_by('-updated_at').distinct()
+        #filter(end_at__gte=today)
         """ city か theme どちらか、あるいはどちらも空の場合の処理 """
         if city=="" and theme=="":
             queryset = Subsidy.objects.filter(end_at__gte=today, prefecture='東京都23区').order_by('-updated_at').distinct()
@@ -136,7 +138,8 @@ class Tokyo23_marriage(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, end_at__gte=today, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='結婚').order_by('-updated_at').distinct()
+        #filter(end_at__gte=today)
 
 class Tokyo23_Housing(generic.ListView):
     """テーマ「住まい」一覧"""
@@ -146,4 +149,5 @@ class Tokyo23_Housing(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, end_at__gte=today, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()
+        #filter(end_at__gte=today)

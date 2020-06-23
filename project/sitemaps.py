@@ -28,7 +28,7 @@ class StaticViewSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['subsidy:operator_information',
+        return ['subsidy:webmaster',
                 'subsidy:terms_of_service',
                 'subsidy:user_alert',
                 'subsidy:user_alert_done',
@@ -36,7 +36,7 @@ class StaticViewSitemap(Sitemap):
                 'subsidy:inquiry_done',
                 'subsidy:tokyo23_top',
                 'subsidy:tokyo23_index',
-                'tokyo23_category_select',
+                'subsidy:tokyo23_category_select',
                 'subsidy:tokyo23_marriage',
                 'subsidy:tokyo23_housing',
                 ]

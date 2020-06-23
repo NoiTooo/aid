@@ -123,9 +123,9 @@ class Tokyo23_Category_Select(generic.ListView):
         #filter(end_at__gte=today)
         """ city か theme どちらか、あるいはどちらも空の場合の処理 """
         if city=="" and theme=="":
-            queryset = Subsidy.objects.filter(end_at__gte=today, prefecture='東京都23区').order_by('-updated_at').distinct()
+            queryset = Subsidy.objects.filter(prefecture='東京都23区').order_by('-updated_at').distinct()
         elif city=="":
-            queryset = Subsidy.objects.filter(themes__theme=theme, end_at__gte=today, prefecture='東京都23区').distinct()
+            queryset = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都23区').distinct()
         elif theme=="":
             queryset = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct()
         return queryset

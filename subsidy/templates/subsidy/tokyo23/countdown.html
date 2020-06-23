@@ -5,6 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% block siteInformation %}{% endblock siteInformation %}
+    <!-- SNS -->
+    {% include 'subsidy/base_module/sns.html' %}
     <!-- icon -->
     {% include 'subsidy/base_module/settings_icon.html' %}
     <!-- static -->

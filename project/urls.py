@@ -13,6 +13,10 @@ sitemaps = {
     'static': StaticViewSitemap,
 }
 
+admin.site.site_title = 'AID Tree—Management screen' 
+admin.site.site_header = '【AID Tree】Management screen' 
+admin.site.index_title = 'データ管理'
+
 urlpatterns = [
     path('', include('subsidy.urls')),
     path('admin/', admin.site.urls),

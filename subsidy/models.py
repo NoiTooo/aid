@@ -5,13 +5,16 @@ PROBLEMATIC_POINT = (('1', 'URLのリンクが切れている'),
                      ('2', '内容が誤っている'),
                      ('3', 'その他'))
 
+STATUS_CODE= (('1', '未対応'), ('2', '対応中'), ('3', '完了'))
+
 class UserAlert(models.Model):
     problem_found = models.CharField(verbose_name='問題', choices=PROBLEMATIC_POINT, max_length=100)
     applicable_url = models.CharField(verbose_name='該当URL', max_length=1000)
     other_note = models.TextField(verbose_name='その他自由記載', blank=True, null=True)
-    response_completed = models.BooleanField(verbose_name='対応完了', blank=True, null=True)
+    response_completed = models.CharField(verbose_name='対応ステータス', choices=STATUS_CODE, max_length=100, null=True, blank=True)
     response_note = models.CharField(verbose_name='対応メモ', max_length=300, blank=True, null=True)
-
+    updated_at = models.DateTimeField(verbose_name='更新日', auto_now=True)
+    
     def __str__(self):
         return self.problem_found
 
@@ -26,6 +29,8 @@ class Inquiry(models.Model):
     phone = models.CharField(verbose_name='電話番号', max_length=11, blank=True, null=True)
     title = models.CharField(verbose_name='件名', max_length=50)
     content = models.TextField(verbose_name='お問合せ内容')
+    status = models.CharField(verbose_name='対応ステータス', choices=STATUS_CODE, max_length=100, null=True, blank=True)
+    updated_at = models.DateTimeField(verbose_name='更新日', auto_now=True)
 
     def __str__(self):
         return self.title

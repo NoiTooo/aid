@@ -16,9 +16,12 @@
 {% include 'subsidy/base_module/header.html' %}
 
 <div class="container">
+	{% if query %}
 	<div class="research-result">
 		<p class="research-result-text">「{{query}}」の検索結果</p>
 	</div>
+	{% else %}
+	{% endif %}
 	<div class="object-range">
 		<div class="research-box">
 			<div class="combination-search">

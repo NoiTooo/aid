@@ -108,6 +108,12 @@ class Tokyo23_Index(generic.ListView):
             queryset = queryset.filter(query)
         return queryset
 
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx['query'] = self.request.GET.get('keyword', '')
+        return ctx
+
+
 class Tokyo23_Category_Select(generic.ListView):
 
     """    23区で「エリア(市区町村)」と「テーマ」でAND検索する """

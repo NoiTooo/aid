@@ -1,6 +1,7 @@
 /* font */
-.wf-notosansjapanese{
-     font-family: "Noto Sans JP";
+@font-face {
+  font-family: 'iroha';
+  src: url('../font/irohamaru-Medium.ttf') format('truetype');
 }
 
 /* base css */
@@ -9,6 +10,7 @@ body{
 	background-repeat: no-repeat;
     background-position : center top;
     color: white;
+    font-family: 'iroha';
 }
 
 a{

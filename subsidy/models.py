@@ -22,7 +22,6 @@ class UserAlert(models.Model):
         verbose_name = "99.ユーザーアラート"
         verbose_name_plural = "99.ユーザーアラート"
 
-
 class Inquiry(models.Model):
     name = models.CharField(verbose_name='お名前', max_length=50)
     email = models.EmailField(verbose_name='メールアドレス')

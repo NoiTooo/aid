@@ -14,7 +14,7 @@ class UserAlert(models.Model):
     response_completed = models.CharField(verbose_name='対応ステータス', choices=STATUS_CODE, max_length=100, null=True, blank=True)
     response_note = models.CharField(verbose_name='対応メモ', max_length=300, blank=True, null=True)
     updated_at = models.DateTimeField(verbose_name='更新日', auto_now=True)
-    
+
     def __str__(self):
         return self.problem_found
 

@@ -1,0 +1,58 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>{{ object.name }}／{{ object.city }} | AID Tree</title>
+	<meta name="description" content="説明文">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/detail.css' %}">
+{% endblock stylesheet %}
+
+{% block body %}
+{% include 'subsidy/base_module/header.html' %}
+<div class="detail-content">
+	<h2>「{{ object.name }}」</h2>
+	<table>
+		<tr>
+			<th>適用地域</th>
+			<td>{{ object.prefecture }}　{{ object.city}}</td>
+		</tr>
+		<tr>
+			<th>申請期間</th>
+			<td>{{ object.start_at|date:"Y年m月j日" }}　～　{{ object.end_at|date:"Y年m月j日" }}</td>
+		</tr>
+		<tr>
+			<th>制度内容</th>
+			<td>{{ object.description| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>最大支給額</th>
+			<td>{{ object.maximum_support_amount|intcomma }}円</td>
+		</tr>
+		<tr>
+			<th>支援額補足</th>
+			<td>{{ object.support_amount_note| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>支援条件</th>
+			<td>{{ object.condition| linebreaksbr }}</td>
+		</tr>
+		<tr>
+			<th>引用元</th>
+			<td>{{ object.referrer }}</td>
+		</tr>
+		<tr>
+			<th>公式ページ</th>
+			<td><a href="{{object.official_page}}">{{ object.official_page }}</a></td>
+		</tr>
+		<tr>
+			<th>最終更新日</th>
+			<td>{{ object.updated_at|date:"Y年m月j日" }}</td>
+		</tr>
+	</table>
+</div>
+{% endblock body %}

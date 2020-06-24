@@ -1,0 +1,155 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>街の支援制度を探す | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://aid-tree.com">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/tokyo23_top.css' %}">
+{% endblock stylesheet %}
+
+{% block body %}
+<div class="header">
+	<div class="header-nav">
+		<a class="header-navi-link" href="{% url 'subsidy:about_service' %}">AID Treeとは</a>
+		<a class="header-navi-link" href="{% url 'subsidy:tokyo23_index' %}">支援金を探す</a>
+		<a class="header-navi-link" href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a>
+	</div>
+</div>
+
+<div class="top-logo">
+	<img src="{% static 'subsidy/img/logo.png'%}" style="max-height:100px; width:300px;"/>
+</div>
+
+<div class="header-message">
+	<h1>AID Treeは東京都23区で今使える支援制度を<br>　　　見つける手助けをするサービスです</h1>
+</div>
+
+<div class="survey">
+	<div class="survey-1">
+		<div class="servey1-message">自分の居住区（市）の支援制度について理解し、<br>把握できていますか？</div>
+		<img src="{% static 'subsidy/img/survey_1.png' %}">
+		<div class="servey-message">「わからない」と回答した方が約8割</div>
+	</div>
+	<div class="survey-2">
+		<div class="servey2-message">自分の居住区（市）の支援制度について、<br>自身で調べたことがありますか？</div>
+		<img src="{% static 'subsidy/img/survey_2.png' %}">
+		<div class="servey-message">「ない」と回答した方が約7割</div>
+	</div>
+</div>
+	<div class="survey-result-message">
+		<p>制度についてよく知らないことは恥ずかしいことではありません</p>
+	</div>
+
+
+<div class="combination-search">
+	<p class="title">「地域」×「テーマ」で検索する</p>
+	<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
+		<label class="select-city">
+			<select name="city">
+				<option value="">地域</option>
+				<option value="世田谷区">世田谷区</option>
+				<option value="練馬区">練馬区</option>
+				<option value="太田区">太田区</option>
+				<option value="江戸川区">江戸川区</option>
+				<option value="足立区">足立区</option>
+				<option value="千代田区">千代田区</option>
+				<option value="杉並区">杉並区</option>
+				<option value="板橋区">板橋区</option>
+				<option value="江東区">江東区</option>
+				<option value="葛飾区">葛飾区</option>
+				<option value="品川区">品川区</option>
+				<option value="北区">北区</option>
+				<option value="新宿区">新宿区</option>
+				<option value="中野区">中野区</option>
+				<option value="豊島区">豊島区</option>
+				<option value="目黒区">目黒区</option>
+				<option value="墨田区">墨田区</option>
+				<option value="港区">港区</option>
+				<option value="渋谷区">渋谷区</option>
+				<option value="文京区">文京区</option>
+				<option value="荒川区">荒川区</option>
+				<option value="台東区">台東区</option>
+				<option value="中央区">中央区</option>
+			</select>
+		</label>
+		<label class="select-theme">
+			<select name="theme">
+				<option value="">テーマ</option>
+				<option value="住まい">住まい</option>
+				<option value="結婚">結婚</option>
+			</select>
+		</label>
+		<input class="button" type="submit" value="検索">
+	</form>
+</div>
+
+<div class="freeword-search">
+	<p class="title">フリーワードで検索する</p>
+	<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
+		<input class="input-text" type="text" name="keyword" placeholder="キーワードを入力">
+		<button class="freeword-input" type="submit">検索</button>
+	</form>
+</div>
+
+<div class="category-search">
+	<p class="title">地域から探す</p>
+		<table class="area-search">
+			<tr>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=世田谷区&theme=">世田谷区</a></td>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=練馬区&theme=">練馬区</a></td>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=大田区&theme=">大田区</a></td>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=江戸川区&theme=">江戸川区</a></td>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=足立区&theme=">足立区</a></td>
+				<td class="area-box"><a class="area-link" href="https://aid-tree.com/tokyo23-category/?city=千代田区&theme=">千代田区</a></td>
+			</tr>
+			<tr>
+				<td class="area-box">杉並区</td>
+				<td class="area-box">板橋区</td>
+				<td class="area-box">江東区</td>
+				<td class="area-box">葛飾区</td>
+				<td class="area-box">品川区</td>
+				<td class="area-box">北区</td>
+			</tr>
+			<tr>
+				<td class="area-box">新宿区</td>
+				<td class="area-box">中野区</td>
+				<td class="area-box">豊島区</td>
+				<td class="area-box">目黒区</td>
+				<td class="area-box">墨田区</td>
+				<td class="area-box">港区</td>
+			</tr>
+			<tr>
+				<td class="area-box">渋谷区</td>
+				<td class="area-box">文京区</td>
+				<td class="area-box">荒川区</td>
+				<td class="area-box">台東区</td>
+				<td class="area-box">中央区</td>
+			</tr>
+			</table>
+	<p class="title">テーマから探す</p>
+	<table class="theme-search">
+		<tr>
+			<td class="theme-box">
+				<a class="theme-link" href="https://aid-tree.com/tokyo23-category/?city=&theme=住まい">住まい</a></td>
+			<td class="theme-box">
+				<a class="theme-link" href="https://aid-tree.com/tokyo23-category/?city=&theme=結婚">結婚</a></td>
+			<td class="theme-box">
+				<a class="theme-link" href="https://aid-tree.com/tokyo23-category/?city=&theme=葬祭">葬祭</a></td>
+			</tr>
+	</table>
+</div>
+
+<div class="footer">
+	<div class="footer-nav">
+		<p><a class="footer-nav-link" href="{% url 'subsidy:webmaster' %}">運営者情報</a></p>
+		<p><a class="footer-nav-link" href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
+		<p><a class="footer-nav-link" target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
+	</div>
+</div>
+{% endblock body %}

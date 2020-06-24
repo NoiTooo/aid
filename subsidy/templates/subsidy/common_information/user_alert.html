@@ -1,0 +1,22 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>問題を報告する | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://aid-tree.com/user-alert/">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block body %}
+	<div class="block-content">
+		<form action="" method="POST">{% csrf_token %}
+			{{form.as_p}}
+		<input type="submit" value="送信">
+		</form>
+	</div>
+{% endblock body %}

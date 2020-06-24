@@ -1,0 +1,20 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>お問合せ完了 | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://aid-tree.com/inquiry-done/">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block body %}
+	<div class="block-content">
+		<p>送信完了</p>
+		<p><a href="{% url 'subsidy:tokyo23_top' %}">戻る</a></p>
+	</div>
+{% endblock body %}

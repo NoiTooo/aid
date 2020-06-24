@@ -1,0 +1,13 @@
+{% load static %}
+{% load humanize %}
+
+<div class="header">
+	<div class="header-logo">
+		<a href="{% url 'subsidy:tokyo23_top' %}"><img src="{% static 'subsidy/img/logo.png'%}" style="max-height:50px; width:150px;" /></a>
+	</div>
+	<div class="header-nav">
+		<a class="header-navi-link" href="{% url 'subsidy:about_service' %}">AID Treeとは</a>
+		<a class="header-navi-link" href="{% url 'subsidy:tokyo23_index' %}">支援金を探す</a>
+		<a class="header-navi-link" href="{% url 'subsidy:inquiry_create' %}">問い合わせ</a>
+	</div>
+</div>

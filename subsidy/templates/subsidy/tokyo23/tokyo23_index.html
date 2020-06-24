@@ -1,0 +1,105 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block siteInformation %}
+	<title>東京都23区の支援制度を探す | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://https://aid-tree.com/tokyo23-index">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/tokyo23_index.css' %}">
+{% endblock stylesheet %}
+
+{% block body %}
+{% include 'subsidy/base_module/header.html' %}
+
+<div class="container">
+	<div class="research-result">
+		<p class="research-result-text">検索結果：count件</p>
+	</div>
+	<div class="object-range">
+		<div class="research-box">
+			<div class="combination-search">
+				<p class="title">再検索</p>
+				<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
+					<label class="select-city">
+						<select name="city">
+							<option value="">地域</option>
+							<option value="世田谷区">世田谷区</option>
+							<option value="練馬区">練馬区</option>
+							<option value="太田区">太田区</option>
+							<option value="江戸川区">江戸川区</option>
+							<option value="足立区">足立区</option>
+							<option value="千代田区">千代田区</option>
+							<option value="杉並区">杉並区</option>
+							<option value="板橋区">板橋区</option>
+							<option value="江東区">江東区</option>
+							<option value="葛飾区">葛飾区</option>
+							<option value="品川区">品川区</option>
+							<option value="北区">北区</option>
+							<option value="新宿区">新宿区</option>
+							<option value="中野区">中野区</option>
+							<option value="豊島区">豊島区</option>
+							<option value="目黒区">目黒区</option>
+							<option value="墨田区">墨田区</option>
+							<option value="港区">港区</option>
+							<option value="渋谷区">渋谷区</option>
+							<option value="文京区">文京区</option>
+							<option value="荒川区">荒川区</option>
+							<option value="台東区">台東区</option>
+							<option value="中央区">中央区</option>
+						</select>
+					</label>
+					<label class="select-theme">
+						<select name="theme">
+							<option value="">テーマ</option>
+							<option value="住まい">住まい</option>
+							<option value="結婚">結婚</option>
+						</select>
+					</label>
+					<input class="button-combination" type="submit" value="検索">
+				</form>
+			</div>
+
+			<div class="freeword-search">
+				<p class="title">フリーワードで検索する</p>
+				<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
+					<input class="input-text" type="text" name="keyword" placeholder="キーワードを入力">
+					<button class="freeword-input" type="submit">検索</button>
+				</form>
+			</div>
+		</div>
+		<div class="object-box">
+			{% for object in object_list %}
+				<div class="object-list">		
+					<p class="name">{{ object.name }}</p>
+					<p class="city-tag">{{ object.prefecture }}　|　{{ object.city }}</p>
+					{% for theme in object.themes.all %}
+					<p class="theme-tag">{{ theme.theme }}</p>
+					{% endfor %}					
+					<p>{{ object.description }}</p>
+					<p>最大支給額：{{ object.maximum_support_amount|intcomma }}円</p>
+					<div class="detail-button">
+						<p><a class="button" href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></p>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+<!-- 前へ の部分 -->
+{% if page_obj.has_previous %}
+<a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+{% endif %}
+
+<!-- 1/3 の部分 -->
+{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+
+<!-- 次へ の部分 -->
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">次へ</a>
+{% endif %}
+</div>
+{% endblock body %}

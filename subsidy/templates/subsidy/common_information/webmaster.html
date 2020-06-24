@@ -1,0 +1,24 @@
+{% extends 'subsidy/tokyo23/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block siteInformation %}
+	<title>運営者情報 | AID Tree</title>
+	<meta name="description" content="説明文">
+	<link rel="canonical" href="https://aid-tree.com/operator-information/">
+{% endblock siteInformation %}
+
+{% block stylesheet %}
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
+{% endblock stylesheet %}
+
+{% block body %}
+{% include 'subsidy/base_module/header.html' %}
+
+{% endblock body %}

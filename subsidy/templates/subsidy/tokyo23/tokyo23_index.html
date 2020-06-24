@@ -18,9 +18,10 @@
 <div class="container">
 	{% if query %}
 	<div class="research-result">
-		<p class="research-result-text">「{{query}}」の検索結果</p>
+		<p class="research-result-text">「{{query}}」の検索結果：{{ object_list|length }}件</p>
 	</div>
 	{% else %}
+		<p class="research-result-text">検索結果：{{ object_list|length }}件</p>
 	{% endif %}
 	<div class="object-range">
 		<div class="research-box">

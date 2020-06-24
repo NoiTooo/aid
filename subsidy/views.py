@@ -108,6 +108,7 @@ class Tokyo23_Index(generic.ListView):
             queryset = queryset.filter(query)
         return queryset
 
+    #「」検索結果の為のクエリ取得
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['query'] = self.request.GET.get('keyword', '')

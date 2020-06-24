@@ -21,7 +21,7 @@ urlpatterns = [
     path('', include('subsidy.urls')),
     path('admin/', admin.site.urls),
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},  name='sitemap'),
-    path('register/', include('register.urls')),
+#    path('register/', include('register.urls')),
 ]
 
 if settings.DEBUG:

@@ -7,14 +7,14 @@
 /* base css */
 body{
 	background-image: url("../img/backgroundimg.jpg");
-	background-repeat: no-repeat;
+/*  background-repeat: no-repeat; */
     background-position : center top;
     color: white;
     font-family: 'iroha';
 }
 
 a{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .block-content{
@@ -35,17 +35,13 @@ a{
 	}
 
 .header-navi-link{
-    color: white;
-    margin-right: 20px;
-    padding-left: 10px;
-    border-left: 1px solid white;
+    color: #606560;
+    margin-right: 30px;
+    padding-left: 30px;
+    border-left: 1px solid #606560;
 }
 
 .copyright{
     font-size: 12px;
     text-align: center;
-}
-
-.copyright{
-    margin-top: 200px;
 }

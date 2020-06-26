@@ -6,7 +6,6 @@ from . import views
 app_name = 'subsidy'
 
 urlpatterns = [
-    path('', views.CountDown.as_view(), name='countdown'),
     # Common information
     path('about-service/', views.About_Service.as_view(), name='about_service'),
     path('webmaster/', views.Webmaster.as_view(), name='webmaster'),
@@ -16,7 +15,7 @@ urlpatterns = [
     path('inquiry/', views.Inquiry_Create.as_view(), name='inquiry_create'),
     path('inquiry-done/', views.Inquiry_Done.as_view(), name='inquiry_done'),
     # Tokyo23
-    path('tokyo23/', views.Tokyo23_Top.as_view(), name='tokyo23_top'),
+    path('', views.Tokyo23_Top.as_view(), name='tokyo23_top'),
     path('detail/<int:pk>', views.Detail.as_view(), name='detail'),
     path('tokyo23-index/', views.Tokyo23_Index.as_view(), name='tokyo23_index'),
     path('tokyo23-category/', views.Tokyo23_Category_Select.as_view(), name='tokyo23_category_select'),

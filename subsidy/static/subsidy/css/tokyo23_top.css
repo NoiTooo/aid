@@ -183,7 +183,6 @@ option:hover{
 .area-link-box:hover{
   background-color: #00b300;
   transition-delay:0.2s;
-  color: #ffffff;
 }
 
 .area-link{
@@ -191,6 +190,10 @@ option:hover{
   height: 60px;
   text-align: center;
   padding-top: 20px;
+}
+
+.area-link:hover{
+  color: #ffffff;
 }
 
 /* theme-search */
@@ -205,7 +208,7 @@ option:hover{
 
 .theme-box{
   display: inline-flex;
-  width: 470px;
+  width: 350px;
   height: 60px;
   box-shadow: 5px 5px 2px #666666;
   padding: 10px;
@@ -216,19 +219,15 @@ option:hover{
   margin: 0 50px;
 }
 
-.theme-box:hover{
-  background-color: #00b300;
-  transition-delay:0.2s;
-  color: #ffffff;
-}
 
 .theme-link{
   font-size: 30px;
   width: 200px;
   height: 60px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 70px;
+  color: grey;
 }
 
 /* freeword-search */
@@ -280,14 +279,14 @@ option:hover{
 
 /* sns-field */
 .sns-field{
-  text-align: center;
+  margin-left: 600px;
   margin-top: 120px;
 }
 
 .sns-link{
  	text-decoration: none;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 

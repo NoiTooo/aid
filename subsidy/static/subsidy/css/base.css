@@ -3,8 +3,41 @@
   font-family: 'iroha';
   src: url('../font/irohamaru-Medium.ttf') format('truetype');
 }
-
 /* base css */
+/* smp */
+@media screen and (max-width: 750px){
+body{
+	background-image: url("../img/smp_backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position : center top;
+    color: white;
+    font-family: 'iroha';
+}
+a{
+    text-decoration: none;
+    color: grey;
+}
+.block-content{
+    margin: auto;
+    width: cover;
+    overflow:hidden;
+}
+/*header */
+.header .header-nav .header-navi-link{
+    display: none;
+  }
+
+.copyright{
+    font-size: 12px;
+    text-align: center;
+}
+}
+
+
+/* pc */
+@media screen and (min-width: 751px){
+
 body{
 	background-image: url("../img/backgroundimg.jpg");
 /*  background-repeat: no-repeat; */
@@ -45,4 +78,6 @@ a{
 .copyright{
     font-size: 12px;
     text-align: center;
+}
+
 }

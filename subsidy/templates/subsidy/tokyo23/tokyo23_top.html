@@ -23,7 +23,7 @@
 </div>
 
 <div class="top-logo">
-	<img src="{% static 'subsidy/img/logo.png'%}" style="max-height:126x; width:414px;"/>
+	<img class="logoimg" src="{% static 'subsidy/img/logo.png'%}">
 </div>
 
 <div class="header-message">
@@ -33,46 +33,48 @@
 
 <div class="combination-search-block">
 	<p class="combination-title">あなたに合った検索をしてみましょう</p>
-	<form method="GET" action="{% url 'subsidy:tokyo23_category_select' %}">
+	<form method="GET" action="{% url 'subsidy:category_select' %}">
 		<div class="combination-search-">
 			<label class="select-city">
 				<select name="city">
 					<option value="">地域</option>
-					<option value="世田谷区">世田谷区</option>
-					<option value="練馬区">練馬区</option>
-					<option value="太田区">太田区</option>
-					<option value="江戸川区">江戸川区</option>
-					<option value="足立区">足立区</option>
 					<option value="千代田区">千代田区</option>
-					<option value="杉並区">杉並区</option>
-					<option value="板橋区">板橋区</option>
-					<option value="江東区">江東区</option>
-					<option value="葛飾区">葛飾区</option>
-					<option value="品川区">品川区</option>
-					<option value="北区">北区</option>
-					<option value="新宿区">新宿区</option>
-					<option value="中野区">中野区</option>
-					<option value="豊島区">豊島区</option>
-					<option value="目黒区">目黒区</option>
-					<option value="墨田区">墨田区</option>
-					<option value="港区">港区</option>
-					<option value="渋谷区">渋谷区</option>
-					<option value="文京区">文京区</option>
-					<option value="荒川区">荒川区</option>
-					<option value="台東区">台東区</option>
 					<option value="中央区">中央区</option>
+					<option value="港区">港区</option>
+					<option value="新宿区">新宿区</option>
+					<option value="文京区">文京区</option>
+					<option value="台東区">対等区</option>
+					<option value="墨田区">墨田区</option>
+					<option value="江東区">江東区</option>
+					<option value="品川区">品川区</option>
+					<option value="目黒区">目黒区</option>
+					<option value="太田区">太田区</option>
+					<option value="世田谷区">世田谷区</option>
+					<option value="渋谷区">渋谷区</option>
+					<option value="中野区">中野区</option>
+					<option value="杉並区">杉並区</option>
+					<option value="豊島区">豊島区</option>
+					<option value="北区">北区</option>
+					<option value="荒川区">荒川区</option>
+					<option value="板橋区">板橋区</option>
+					<option value="練馬区">練馬区</option>
+					<option value="足立区">足立区</option>
+					<option value="葛飾区">葛飾区</option>
+					<option value="江戸川区">江戸川区</option>
 				</select>
 			</label>
 			<div class="x">×</div>
 			<label class="select-theme">
 				<select name="theme">
 					<option value="">テーマ</option>
+					<option value="出産・子供">出産・子供</option>
+					<option value="冠婚葬祭">冠婚葬祭</option>
 					<option value="住まい">住まい</option>
-					<option value="結婚">結婚</option>
+					<option value="その他">その他</option>
 				</select>
 			</label>
 			<input class="combination-button" type="submit" value="検索">
-		</form>
+	</form>
 	</div>
 </div>
 
@@ -133,12 +135,12 @@
 
 	<p class="theme-search-title">テーマを選択</p>
 	<div class="theme-search">
-		<div class="theme-box"><a href="" class="theme-link">出産・子供   <img src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
-		<div class="theme-box"><a href="" class="theme-link">冠婚葬祭　  <img src="{% static 'subsidy/img/bird.png' %}" style="width: 42px; height: 42px;"></a></div>
+		<div class="theme-box"><a href="{% url 'subsidy:childbirth_childcare' %}" class="theme-link">出産・子供   <img class="themeimg" src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
+		<div class="theme-box"><a href="{% url 'subsidy:ceremonial_occasion' %}" class="theme-link">冠婚葬祭　  <img class="themeimg" src="{% static 'subsidy/img/bird.png' %}" style="width: 42px; height: 42px;"></a></div>
 	</div>
 	<div class="theme-search">
-		<div class="theme-box"><a href="" class="theme-link">住まい　<img src="{% static 'subsidy/img/house.png' %}" style="width: 60px; height: 42px;"></a></div>
-		<div class="theme-box"><a href="" class="theme-link">その他  　  <img src="{% static 'subsidy/img/tree.png' %}" style="width: 60px; height: 42px;"></a></div>
+		<div class="theme-box"><a href="{% url 'subsidy:housing' %}" class="theme-link">住まい　<img class="themeimg" src="{% static 'subsidy/img/house.png' %}" style="width: 60px; height: 42px;"></a></div>
+		<div class="theme-box"><a href="{% url 'subsidy:others' %}" class="theme-link">その他  　  <img class="themeimg" src="{% static 'subsidy/img/tree.png' %}" style="width: 60px; height: 42px;"></a></div>
 	</div>
 
 	<div class="freeword-search">

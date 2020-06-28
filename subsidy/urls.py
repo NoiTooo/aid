@@ -17,8 +17,10 @@ urlpatterns = [
     # Tokyo23
     path('', views.Tokyo23_Top.as_view(), name='tokyo23_top'),
     path('detail/<int:pk>', views.Detail.as_view(), name='detail'),
-    path('tokyo23-index/', views.Tokyo23_Index.as_view(), name='tokyo23_index'),
-    path('tokyo23-category/', views.Tokyo23_Category_Select.as_view(), name='tokyo23_category_select'),
-    path('tokyo23-marriage/', views.Tokyo23_marriage.as_view(), name='tokyo23_marriage'),
-    path('tokyo23-housing/', views.Tokyo23_Housing.as_view(), name='tokyo23_housing'),
+    path('tokyo23/index/', views.Tokyo23_Index.as_view(), name='tokyo23_index'),
+    path('tokyo23/category/', views.Tokyo23_Category_Select.as_view(), name='category_select'),
+    path('tokyo23/childbirth&childcare', views.Childbirth_Childcare.as_view(), name='childbirth_childcare'),
+    path('tokyo23/ceremonialoccasion', views.Ceremonial_Occasion.as_view(), name='ceremonial_occasion'),
+    path('tokyo23/housing/', views.Housing.as_view(), name='housing'),
+    path('tokyo23/others/', views.Others.as_view(), name='others'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

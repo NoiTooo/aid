@@ -15,8 +15,12 @@
 {% block body %}
 {% include 'subsidy/base_module/header.html' %}
 		<form action="" method="POST">{% csrf_token %}
-			{{form.as_p}}
-		<input type="submit" value="送信">
+			{{ form.name }}
+			{{ form.email }}
+			{{ form.phone }}
+			{{ form.title }}
+			{{ form.content }}
+			<input type="submit" value="送信">
 		</form>
 		<h3>個人情報の取り扱いについて</h3>
 		<p>●お問い合わせフォームご利用頂いた方の個人情報（以下、「個人情報」といいます）は、お問合せに対してのご返答を差し上げることを利用目的とし、 目的以外の用途では使用致しません。</p>

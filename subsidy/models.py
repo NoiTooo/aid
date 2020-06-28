@@ -59,7 +59,7 @@ class Subsidy(models.Model):
     support_amount_note = models.TextField(verbose_name='支給額補足', null=True, max_length=3000, blank=True)
     description = models.TextField(verbose_name='説明文', max_length=3000, null=True, blank=True)
     condition = models.TextField(verbose_name='条件', max_length=3000, null=True, blank=True)
-    referrer = models.CharField(verbose_name='参照元', null=True, max_length=30, blank=True)
+    referrer = models.CharField(verbose_name='参照元', max_length=30)
     official_page = models.URLField(verbose_name='公式ページ')
     is_published = models.BooleanField(verbose_name='公開')
     created_at = models.DateTimeField(verbose_name='登録日', auto_now_add=True)

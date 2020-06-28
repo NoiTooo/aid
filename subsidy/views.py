@@ -75,7 +75,7 @@ class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
-    paginate_by = 5
+    paginate_by = 1
 
     def get_queryset(self):
         today = date.today()
@@ -104,10 +104,11 @@ class Tokyo23_Index(generic.ListView):
             queryset = queryset.filter(query)
         return queryset
 
-    #「」検索結果の為のクエリ取得
+    #「」検索結果:「」件の取得
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['query'] = self.request.GET.get('keyword', '')
+        ctx['count'] = Subsidy.objects.all().count()
         return ctx
 
 

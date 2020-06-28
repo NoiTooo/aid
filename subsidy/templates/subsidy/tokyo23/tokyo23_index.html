@@ -4,7 +4,7 @@
 
 {% block siteInformation %}
 	<title>東京都23区の支援制度を探す | AID Tree</title>
-	<meta name="description" content="説明文">
+	<meta name="description" content="【あなたの街の、あなたに合った助成金・支援を探そう】補助金や助成金など支援制度一覧を確認できます。">
 	<link rel="canonical" href="https://https://aid-tree.com/tokyo23-index">
 {% endblock siteInformation %}
 
@@ -18,10 +18,10 @@
 <div class="container">
 	{% if query %}
 	<div class="research-result">
-		<p class="research-result-text">「{{query}}」の検索結果：{{ object_list|length }}件</p>
+		<p class="research-result-text">「{{query}}」の検索結果：{{count}}件</p>
 	</div>
 	{% else %}
-		<p class="research-result-text">検索結果：{{ object_list|length }}件</p>
+		<p class="research-result-text">検索結果：{{count}}件</p>
 	{% endif %}
 	<div class="object-range">
 		<div class="research-box">

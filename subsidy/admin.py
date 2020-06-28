@@ -17,7 +17,7 @@ class InquiryAdmin(admin.ModelAdmin):
 
 
 class SubsidyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'prefecture', 'city', 'is_published', 'end_at', 'referrer')
+    list_display = ('name', 'is_published', 'prefecture', 'city', 'end_at', 'updated_at', 'referrer')
     ordering = ('-end_at',)
     list_filter = ('is_published', 'prefecture', 'city')
     search_fields = ('name', 'prefecture', 'city')

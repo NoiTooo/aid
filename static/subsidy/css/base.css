@@ -5,6 +5,36 @@
 }
 /* base css */
 /* smp */
+@media screen and (max-width: 420px){
+body{
+	background-image: url("../img/smp_backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position : center top;
+    color: white;
+    font-family: 'iroha';
+}:
+a{
+    text-decoration: none;
+    color: grey;
+}
+.block-content{
+    margin: auto;
+    width: cover;
+    overflow:hidden;
+}
+/*header */
+.header .header-nav .header-navi-link{
+    display: none;
+  }
+
+.copyright{
+    font-size: 12px;
+    text-align: center;
+}
+}
+
+/* tablet */
 @media screen and (max-width: 750px){
 body{
 	background-image: url("../img/smp_backgroundimg.jpg");

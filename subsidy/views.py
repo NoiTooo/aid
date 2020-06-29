@@ -77,7 +77,7 @@ class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
-    paginate_by = 1
+    paginate_by = 5
 
     def get_queryset(self):
         today = date.today()

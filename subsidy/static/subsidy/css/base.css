@@ -1,16 +1,20 @@
+/* 
+smp: ~600px
+tab: ~850px
+*/
 
 /* font */
 @font-face {
   font-family: 'iroha';
     src: url('../font/irohamaru-Medium.ttf') format('truetype');
     }
+
 /* base css */
-/* smp */
-@media screen and (max-width: 420px){
+/* pc */
 body{
-    background-image: url("../img/smp_backgroundimg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url("../img/backgroundimg.jpg");
+
+    /*  background-repeat: no-repeat; */
     background-position : center top;
     color: white;
     font-family: 'iroha';
@@ -23,23 +27,35 @@ a{
 
 .block-content{
     margin: auto;
-    width: cover;
+    width:cover;
     overflow:hidden;
 }
 
 /*header */
-.header .header-nav .header-navi-link{
-    display: none;
+.header{
+    margin-top:20px;
+    height: 60px;
+ }
+
+.header-nav{
+    text-align: center;
+    float: right;
+}
+
+.header-navi-link{
+    color: #606560;
+    margin-right: 30px;
+    padding-left: 30px;
+    border-left: 1px solid #606560;
 }
 
 .copyright{
     font-size: 12px;
     text-align: center;
 }
-}
 
 /* tablet */
-@media screen and (max-width: 750px){
+@media screen and (max-width: 850px){
 body{
 	background-image: url("../img/smp_backgroundimg.jpg");
     background-repeat: no-repeat;
@@ -72,14 +88,12 @@ a{
 }
 }
 
-
-/* pc */
-@media screen and (min-width: 751px){
-
+/* smp */
+@media screen and (max-width: 600px){
 body{
-	background-image: url("../img/backgroundimg.jpg");
-
-    /*  background-repeat: no-repeat; */
+    background-image: url("../img/smp_backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position : center top;
     color: white;
     font-family: 'iroha';
@@ -92,26 +106,13 @@ a{
 
 .block-content{
     margin: auto;
-    width:1400px;
+    width: cover;
     overflow:hidden;
 }
 
 /*header */
-.header{
-    margin-top:20px;
-    height: 60px;
- }
-
-.header-nav{
-    text-align: center;
-    float: right;
-}
-
-.header-navi-link{
-    color: #606560;
-    margin-right: 30px;
-    padding-left: 30px;
-    border-left: 1px solid #606560;
+.header .header-nav .header-navi-link{
+    display: none;
 }
 
 .copyright{

@@ -131,7 +131,7 @@ option:hover{
 /* about service */
 .about{
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   margin: 50px auto;
 }
 
@@ -151,6 +151,11 @@ option:hover{
   font-size: 16px;
   margin: 50px auto;
 }
+
+/* new-item */
+.newitem{
+}
+
 
 /* category-search */
 .category-search{
@@ -304,6 +309,7 @@ option:hover{
 
 .header-message{
   font-size:30px;
+  font-weight: bold;
   text-align: center;
   margin: 40px auto auto auto;
   }
@@ -442,6 +448,11 @@ option:hover{
   text-align: center;
   font-size: 20px;
   margin: 50px auto;
+}
+
+/* new-item */
+.newitem{
+  display: none;
 }
 
 /* category-search */
@@ -629,7 +640,8 @@ option:hover{
 }
 
 .header-message{
-  font-size:20px;
+  font-weight: bold;
+  font-size:40px;
   text-align: center;
   margin: 80px auto auto 100px;
   }
@@ -660,13 +672,23 @@ option:hover{
 }
 
 /* select box */
-label{
+.select-city{
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
   width:340px;
   display:inline-block;
   position:relative;
+  margin-left:50px;
+}
+
+.select-theme{
+  box-shadow:0 3px 5px rgba(0,0,0,.2);
+  padding:15px;
+  background:white;
+  width:340px;
+  display:inline-block;
+  position:relative; top:-1px;
   margin-left:50px;
 }
 
@@ -678,7 +700,7 @@ select{
   -moz-appearance:none;
   appearance:none;
   cursor:pointer;
-  font-size:16px;
+  font-size:20px;
   color:#909090;
   border-radius:0;
   width:400px;
@@ -734,8 +756,9 @@ option:hover{
 }
 
 .combination-button{
-  height: 50px;
-  position: relative; left:50px;
+  height: 70px;
+  width: 260px;
+  position: relative; top:-10px; left:50px;
 }
 
 /* about service */
@@ -760,6 +783,11 @@ option:hover{
   text-align: center;
   font-size: 30px;
   margin: 50px auto;
+}
+
+/* new-item */
+.newitem{
+  display: none;
 }
 
 /* category-search */
@@ -867,6 +895,7 @@ option:hover{
 .input-text{
   position: relative; top:0; left:-20px;
   margin-top: 20px;
+  font-size: 20px;
   height: 70px;
   width: 700px;
   border: none;
@@ -902,7 +931,6 @@ option:hover{
 
 /* sns-field */
 .sns-field{
-  margin-left: 600px;
   margin-top: 120px;
 }
 

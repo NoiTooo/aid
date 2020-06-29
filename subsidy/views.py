@@ -60,9 +60,11 @@ class Inquiry_Done(generic.TemplateView):
 """
 
 
-class Tokyo23_Top(generic.TemplateView):
+class Tokyo23_Top(generic.ListView):
     """TOPページ"""
     template_name = 'subsidy/tokyo23/tokyo23_top.html'
+    queryset = Subsidy.objects.order_by('-created_at')[0:5]
+    context_object_name = 'object_list'
 
 
 class Detail(generic.DeleteView):

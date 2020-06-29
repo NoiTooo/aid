@@ -13,7 +13,11 @@ body{
     background-position : center top;
     color: white;
     font-family: 'iroha';
+<<<<<<< HEAD
 }:
+=======
+}
+>>>>>>> 40450bd1fe45276e0c59cd6657ccaf47e50809c1
 a{
     text-decoration: none;
     color: grey;

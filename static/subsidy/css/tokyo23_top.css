@@ -1,46 +1,49 @@
-<<<<<<< HEAD
-=======
-/* smp */
-@media screen and (max-width: 420px){
+/* 
+smp: ~600px
+tab: ~850px
+*/
+
+/* pc */
 .top-logo{
   text-align: center;
   margin: 40px auto;
 	}
 
 .logoimg{
-    max-height:64px;
-    width:208px;
+    max-height:126px;
+    width:414px;
 }
 
 .header-message{
-  font-size:20px;
   font-weight: bold;
+  font-size:40px;
   text-align: center;
-  margin: 40px auto auto auto;
-}
+  margin: 80px auto auto 100px;
+  }
 
 /* combination-search */
 .combination-search-block{
   text-align: center;
-  height: 380px;
+  height: 280px;
+  width: cover;
   background-color:rgba(255, 255, 255, 0.5);
   border-radius: 50px;
-  margin-top: 80px 20px auto 20px;
+  margin-top: 80px;
 }
 
 .combination-title{
   text-align: center;
-  padding: 20px 0;
+  padding: 45px 0;
   color: #606560;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .x{
-  font-size: 20px;
+  display: inline;
+  font-size: 40px;
   font-weight: bold;
   color: #606560;
-  text-align: center;
-  position: relative; top:30px;
+  position: relative; top: 10px; left:25px;
 }
 
 /* select box */
@@ -48,18 +51,21 @@
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
-  width:300px;
+  width:340px;
+  display:inline-block;
   position:relative;
+  margin-left:50px;
 }
 
 .select-theme{
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
-  width:300px;
-  position:relative; top:60px;
+  width:340px;
+  display:inline-block;
+  position:relative; top:-1px;
+  margin-left:50px;
 }
-
 
 select{
   border:none;
@@ -69,10 +75,10 @@ select{
   -moz-appearance:none;
   appearance:none;
   cursor:pointer;
-  font-size:16px;
+  font-size:20px;
   color:#909090;
   border-radius:0;
-  width:300px;
+  width:400px;
   z-index:2;
   background:transparent;
 }
@@ -125,20 +131,20 @@ option:hover{
 }
 
 .combination-button{
-  height: 50px;
-  width: 250px;
-  position: relative; top:120px;
+  height: 70px;
+  width: 260px;
+  position: relative; top:-10px; left:50px;
 }
 
 /* about service */
 .about{
   text-align: center;
-  font-size: 15px;
+  font-size: 30px;
   margin: 50px auto;
 }
 
 .about-title{
-  font-size: 30px;
+  font-size: 40px;
 }
 
 /* questionnaire */
@@ -150,76 +156,101 @@ option:hover{
 /* service-message */
 .service-message{
   text-align: center;
-  font-size: 16px;
+  font-size: 30px;
   margin: 50px auto;
 }
 
-<<<<<<< HEAD
-=======
-/* new-item */
-.newitem{
-}
-
-
->>>>>>> 40450bd1fe45276e0c59cd6657ccaf47e50809c1
 /* category-search */
 .category-search{
-  display: none;
+  margin: auto;
+  text-align: center;
+  height: 1150px;
+  width: 1400px;
+  background-color:rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  margin-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
 }
 
 /* area-search */
 .area-search-title{
-  display: none;
+  text-align: center;
+  font-size: 34px;
+  color: #606560;
 }
 
 .area-search{
-  display: none;
+  margin-top:40px auto;
 }
 
-<<<<<<< HEAD
 .area-search-none{
-=======
-.area-search-none{  
->>>>>>> 40450bd1fe45276e0c59cd6657ccaf47e50809c1
-  display: none;
- }
+  text-align: left; 
+  margin: 14px;
+}
 
 
 .area-link-box{
-  display: none;
+  display: inline-flex;
+  width: 200px;
+  height: 60px;
+  box-shadow: 5px 5px 2px #666666;
+  border-radius: 20px;
+  border: 1px solid;
+  background-color: white;
+  color: grey;
+  margin: 12.2px;
 }
 
 .area-link-box:hover{
-  display: none;
+  background-color: #00b300;
+  transition-delay:0.2s;
 }
 
 .area-link{
-  display: none;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .area-link:hover{
-    display: none;
+  color: #ffffff;
 }
 
 /* theme-search */
 .theme-search-title{
-  display: none;
+  font-size: 34px;
+  color: #606560;
 }
 
 .theme-search{
-  display: none;
+  margin-top:40px;
 }
 
 .theme-box{
-  display: none;
+  display: inline-flex;
+  width: 350px;
+  height: 60px;
+  box-shadow: 5px 5px 2px #666666;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  background-color: white;
+  color:grey;
+  margin: 0 50px;
 }
 
-.themeimg{
-  display: none;
-}
 
 .theme-link{
-  display: none;
+  font-size: 30px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 70px;
+  color: grey;
 }
 
 /* freeword-search */
@@ -236,8 +267,9 @@ option:hover{
 .input-text{
   position: relative; top:0; left:-20px;
   margin-top: 20px;
+  font-size: 20px;
   height: 70px;
-  width: 450px;
+  width: 700px;
   border: none;
 }
 
@@ -264,26 +296,28 @@ option:hover{
 
 /* internal-link */
 .internal-link{
-  text-decoration: none;
+ 	text-decoration: none;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 /* sns-field */
 .sns-field{
+  margin: auto;
   text-align: center;
+  margin-top: 120px;
 }
 
 .sns-link{
-  text-decoration: none;
+ 	text-decoration: none;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 
 /* fotter */
 .footer{
-    text-align: center;
+    text-align: right;
     margin: 50px 0 0 0;
     height: 120px;
     border-top: 2px dotted white;
@@ -300,12 +334,8 @@ option:hover{
   color:white;
 }
 
-
-
-
-}
-
-@media screen and (min-width: 421px) {
+/* tablet */
+@media screen and (max-width: 850px) {
 .top-logo{
   text-align: center;
   margin: 40px auto;
@@ -341,11 +371,11 @@ option:hover{
 }
 
 .x{
+  display: block;
+  text-align: center;
   font-size: 20px;
   font-weight: bold;
   color: #606560;
-  text-align: center;
-  position: relative; top:30px;
 }
 
 /* select box */
@@ -354,7 +384,7 @@ option:hover{
   padding:15px;
   background:white;
   width:375px;
-  position:relative;
+  position:relative; top:-10px;
 }
 
 .select-theme{
@@ -362,7 +392,7 @@ option:hover{
   padding:15px;
   background:white;
   width:375px;
-  position:relative; top:60px;
+  position:relative; top:30px;
 }
 
 
@@ -432,7 +462,7 @@ option:hover{
 .combination-button{
   height: 50px;
   width: 400px;
-  position: relative; top:100px;
+  position: relative; top:50px; left:20px;
 }
 
 /* about service */
@@ -459,21 +489,9 @@ option:hover{
   margin: 50px auto;
 }
 
-/* new-item */
-.newitem{
-  display: none;
-}
-
 /* category-search */
 .category-search{
-  text-align: center;
-  height: 1400px;
-  background-color:rgba(255, 255, 255, 0.5);
-  border-radius: 50px;
-  margin-top: 80px;
-  padding-top: 40px;
-  padding-bottom: 80px;
-
+  display: none;
 }
 
 /* area-search */
@@ -636,48 +654,44 @@ option:hover{
 }
 }
 
-/* pc */
-@media screen and (min-width: 751px) {
+/* smp */
+@media screen and (max-width: 600px){
 .top-logo{
   text-align: center;
-  margin: 40px auto;
+  margin: auto;
 	}
 
 .logoimg{
-    max-height:126px;
-    width:414px;
+    max-height:64px;
+    width:208px;
 }
 
 .header-message{
+  font-size:20px;
   font-weight: bold;
-  font-size:40px;
   text-align: center;
-  margin: 80px auto auto 100px;
-  }
+  margin: 40px auto auto auto;
+}
 
 /* combination-search */
 .combination-search-block{
   text-align: center;
-  height: 280px;
-  width: 1400px;
+  width: cover;
+  height: 360px;
   background-color:rgba(255, 255, 255, 0.5);
   border-radius: 50px;
-  margin-top: 80px;
+  margin: auto;
 }
 
 .combination-title{
   text-align: center;
-  padding: 45px 0;
+  padding-top: 20px;
   color: #606560;
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .x{
-  display: inline;
-  font-size: 40px;
-  font-weight: bold;
-  color: #606560;
-  position: relative; top: 10px; left:25px;
+  display: none;
 }
 
 /* select box */
@@ -685,21 +699,18 @@ option:hover{
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
-  width:340px;
-  display:inline-block;
-  position:relative;
-  margin-left:50px;
+  width:300px;
+  position:relative; left:-35px;
 }
 
 .select-theme{
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
-  width:340px;
-  display:inline-block;
-  position:relative; top:-1px;
-  margin-left:50px;
+  width:300px;
+  position:relative; top:10px; left:-35px;
 }
+
 
 select{
   border:none;
@@ -709,10 +720,10 @@ select{
   -moz-appearance:none;
   appearance:none;
   cursor:pointer;
-  font-size:20px;
+  font-size:18px;
   color:#909090;
   border-radius:0;
-  width:400px;
+  width:300px;
   z-index:2;
   background:transparent;
 }
@@ -765,20 +776,21 @@ option:hover{
 }
 
 .combination-button{
-  height: 70px;
-  width: 260px;
-  position: relative; top:-10px; left:50px;
+  -webkit-appearance: none;
+  height: 50px;
+  width: 250px;
+  position: relative; top: 30px; left:-10px;
 }
 
 /* about service */
 .about{
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
   margin: 50px auto;
 }
 
 .about-title{
-  font-size: 40px;
+  font-size: 30px;
 }
 
 /* questionnaire */
@@ -790,104 +802,64 @@ option:hover{
 /* service-message */
 .service-message{
   text-align: center;
-  font-size: 30px;
+  font-size: 16px;
   margin: 50px auto;
-}
-
-/* new-item */
-.newitem{
-  display: none;
 }
 
 /* category-search */
 .category-search{
-  text-align: center;
-  height: 1150px;
-  width: 1400px;
-  background-color:rgba(255, 255, 255, 0.5);
-  border-radius: 50px;
-  margin-top: 80px;
-  padding-top: 40px;
-  padding-bottom: 80px;
-
+  display: none;
 }
 
 /* area-search */
 .area-search-title{
-  font-size: 34px;
-  color: #606560;
+  display: none;
 }
 
 .area-search{
-  margin-top:40px auto;
+  display: none;
 }
 
 .area-search-none{
-  text-align: left; 
-  margin: 14px;
-}
+  display: none;
+ }
 
 
 .area-link-box{
-  display: inline-flex;
-  width: 200px;
-  height: 60px;
-  box-shadow: 5px 5px 2px #666666;
-  border-radius: 20px;
-  border: 1px solid;
-  background-color: white;
-  color: grey;
-  margin: 12.2px;
+  display: none;
 }
 
 .area-link-box:hover{
-  background-color: #00b300;
-  transition-delay:0.2s;
+  display: none;
 }
 
 .area-link{
-  width: 200px;
-  height: 60px;
-  text-align: center;
-  padding-top: 20px;
+  display: none;
 }
 
 .area-link:hover{
-  color: #ffffff;
+    display: none;
 }
 
 /* theme-search */
 .theme-search-title{
-  font-size: 34px;
-  color: #606560;
+  display: none;
 }
 
 .theme-search{
-  margin-top:40px;
+  display: none;
 }
 
 .theme-box{
-  display: inline-flex;
-  width: 350px;
-  height: 60px;
-  box-shadow: 5px 5px 2px #666666;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid;
-  background-color: white;
-  color:grey;
-  margin: 0 50px;
+  display: none;
 }
 
+.themeimg{
+  display: none;
+}
 
 .theme-link{
-  font-size: 30px;
-  width: 200px;
-  height: 60px;
-  text-align: center;
-  padding-top: 5px;
-  padding-left: 70px;
-  color: grey;
+  display: none;
 }
 
 /* freeword-search */
@@ -904,9 +876,8 @@ option:hover{
 .input-text{
   position: relative; top:0; left:-20px;
   margin-top: 20px;
-  font-size: 20px;
   height: 70px;
-  width: 700px;
+  width: 450px;
   border: none;
 }
 
@@ -933,26 +904,26 @@ option:hover{
 
 /* internal-link */
 .internal-link{
- 	text-decoration: none;
+  text-decoration: none;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 14px;
 }
 
 /* sns-field */
 .sns-field{
-  margin-top: 120px;
+  text-align: center;
 }
 
 .sns-link{
- 	text-decoration: none;
+  text-decoration: none;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
 /* fotter */
 .footer{
-    text-align: right;
+    text-align: center;
     margin: 50px 0 0 0;
     height: 120px;
     border-top: 2px dotted white;
@@ -969,4 +940,3 @@ option:hover{
   color:white;
 }
 }
->>>>>>> e99147be5ebbc676de304acaf80b8743a47694f9

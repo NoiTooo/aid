@@ -10,11 +10,19 @@
 {% endblock siteInformation %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/user_alert.css' %}">
 {% endblock stylesheet %}
 
 {% block body %}
-	<div class="block-content">
-		<p>ご協力ありがとうございました。</p>
-		<p><a href="{% url 'subsidy:tokyo23_top' %}">TOPページへ戻る</a></p>
-	</div>
+{% include 'subsidy/base_module/header.html' %}
+<div class="inquiry_done">
+	<p>送信完了しました。</p>
+	<p>ご投稿頂きありがとうございました。</p>
+</div>
+
+<div class="link-set">
+	<div class="done_button">
+		<a href="{% url 'subsidy:tokyo23_top' %}">TOPへ戻る　｜　</a><a href="{% url 'subsidy:tokyo23_index' %}">支援制度を探す</a>
+</div>
+
 {% endblock body %}

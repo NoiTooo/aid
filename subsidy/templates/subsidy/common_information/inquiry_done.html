@@ -10,11 +10,28 @@
 {% endblock siteInformation %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/inquiry.css' %}">
 {% endblock stylesheet %}
 
 {% block body %}
-	<div class="block-content">
-		<p>送信完了</p>
-		<p><a href="{% url 'subsidy:tokyo23_top' %}">戻る</a></p>
-	</div>
+{% include 'subsidy/base_module/header.html' %}
+<div class="inquiry_done">
+	<p>送信完了しました。</p>
+	<p>お問合せ頂きありがとうございました。</p>
+</div>
+
+<div class="link-set">
+	<div class="done_button">
+		<a href="{% url 'subsidy:tokyo23_top' %}">TOPへ戻る　｜　</a><a href="{% url 'subsidy:tokyo23_index' %}">支援制度を探す</a>
+</div>
+
+<div class="handling_of_pi">
+	<h3>個人情報の取り扱いについて</h3>
+	<p>●お問い合わせフォームご利用頂いた方の個人情報（以下、「個人情報」といいます）は、</p>
+	<p>お問合せに対してのご返答を差し上げることを利用目的とし、 目的以外の用途では使用致しません。</p>
+	<p>●個人情報を、ご利用になる方の同意無しに第三者に開示・提供することはありません。</p>
+	<p>（法令などにより求められた場合を除く）</p>
+	<p>●お問合せの返答にはお時間を頂く場合、またお問合せ内容によっては返信できない場合がございます。</p>
+	<p>予めご了承ください。</p>
+</div>
 {% endblock body %}

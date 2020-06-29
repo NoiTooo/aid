@@ -110,7 +110,16 @@ class Tokyo23_Index(generic.ListView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['query'] = self.request.GET.get('keyword', '')
-        ctx['count'] = Subsidy.objects.all().count()
+        keyword = self.request.GET.get('keyword', '')
+        ctx['count'] = Subsidy.objects.filter(
+            Q(name__icontains=keyword) |
+            Q(prefecture__icontains=keyword)|
+            Q(city__icontains=keyword)|
+            Q(support_amount_note__icontains=keyword) |
+            Q(description__icontains=keyword) |
+            Q(condition__icontains=keyword)|
+            Q(referrer__icontains=keyword) |
+            Q(themes__theme__icontains=keyword)).count()
         return ctx
 
 
@@ -138,7 +147,14 @@ class Tokyo23_Category_Select(generic.ListView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        ctx['count'] = Subsidy.objects.all().count()
+        city = self.request.GET.get('city')
+        theme = self.request.GET.get('theme')
+        if city=="" and theme=="":
+            ctx['count'] = Subsidy.objects.filter(prefecture='東京都23区').order_by('-updated_at').count()
+        elif city=="":
+            ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都23区').distinct().count()
+        elif theme=="":
+            ctx['count'] = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct().count()
         return ctx
 
 class Childbirth_Childcare(generic.ListView):

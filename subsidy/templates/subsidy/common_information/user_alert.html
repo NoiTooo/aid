@@ -10,13 +10,26 @@
 {% endblock siteInformation %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" type='text/css' href="{% static 'subsidy/css/user_alert.css' %}">
 {% endblock stylesheet %}
 
 {% block body %}
-	<div class="block-content">
-		<form action="" method="POST">{% csrf_token %}
-			{{form.as_p}}
-		<input type="submit" value="送信">
-		</form>
-	</div>
+{% include 'subsidy/base_module/header.html' %}
+<div class="navigarte">
+	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
+	<a href="{% url 'subsidy:user_alert'%}">問題を報告する ></a>
+</div>
+
+<div class="user_alert">
+	<h2>問題を報告する</h2>
+	<form action="" method="POST">{% csrf_token %}
+		<p class="user_alert_titile">問題</p>
+		<p　class="user_alert_forms">{{ form.problem_found }}</p>
+		<p class="user_alert_titile">該当URL</p>
+		<p　class="user_alert_forms">{{ form.applicable_url }}</p>
+		<p class="user_alert_titile">その他お気づきのことがあればご記載ください。</p>
+		<p　class="user_alert_forms">{{ form.other_note }}</p>
+		<input class="user_alert_button" type="submit" value="送信">
+	</form>
+</div>
 {% endblock body %}

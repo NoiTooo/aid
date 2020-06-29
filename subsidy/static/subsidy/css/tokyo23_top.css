@@ -162,6 +162,7 @@ option:hover{
 
 /* category-search */
 .category-search{
+  margin: auto;
   text-align: center;
   height: 1150px;
   width: 1400px;
@@ -175,6 +176,7 @@ option:hover{
 
 /* area-search */
 .area-search-title{
+  text-align: center;
   font-size: 34px;
   color: #606560;
 }
@@ -301,6 +303,8 @@ option:hover{
 
 /* sns-field */
 .sns-field{
+  margin: auto;
+  text-align: center;
   margin-top: 120px;
 }
 
@@ -772,6 +776,7 @@ option:hover{
 }
 
 .combination-button{
+  -webkit-appearance: none;
   height: 50px;
   width: 250px;
   position: relative; top: 30px; left:-10px;

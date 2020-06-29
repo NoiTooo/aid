@@ -1,4 +1,302 @@
-@media screen and (max-width: 750px) {
+/* smp */
+@media screen and (max-width: 420px){
+.top-logo{
+  text-align: center;
+  margin: 40px auto;
+	}
+
+.logoimg{
+    max-height:64px;
+    width:208px;
+}
+
+.header-message{
+  font-size:20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px auto auto auto;
+}
+
+/* combination-search */
+.combination-search-block{
+  text-align: center;
+  height: 380px;
+  background-color:rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  margin-top: 80px 20px auto 20px;
+}
+
+.combination-title{
+  text-align: center;
+  padding: 20px 0;
+  color: #606560;
+  font-size: 20px;
+}
+
+.x{
+  font-size: 20px;
+  font-weight: bold;
+  color: #606560;
+  text-align: center;
+  position: relative; top:30px;
+}
+
+/* select box */
+.select-city{
+  box-shadow:0 3px 5px rgba(0,0,0,.2);
+  padding:15px;
+  background:white;
+  width:300px;
+  position:relative;
+}
+
+.select-theme{
+  box-shadow:0 3px 5px rgba(0,0,0,.2);
+  padding:15px;
+  background:white;
+  width:300px;
+  position:relative; top:60px;
+}
+
+
+select{
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  cursor:pointer;
+  font-size:16px;
+  color:#909090;
+  border-radius:0;
+  width:300px;
+  z-index:2;
+  background:transparent;
+}
+
+label:after{
+  content:"\25bc";
+  font-size:16px;
+  color:white;
+  background:#00b300;
+  width:80px;
+  text-align:center;
+  line-height:3.2em;
+  top:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  pointer-events:none;
+}
+
+option{
+  border-bottom:1px solid #eaeaea;
+  border-left:3px solid white;
+  appearance:none;
+}
+
+option:hover{
+  background-color:white;
+  border-left:3px solid #f3a1a1;
+}
+
+/* button　*/
+.button, .combination-button {
+  border-radius: 5%;
+  font-size: 13pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 64px;
+  background: #00b300;
+  color: #ffffff;
+  line-height: 1em;
+  transition: .3s;
+  box-shadow: 5px 5px 4px #666666;
+  border: 2px solid #00b300;
+}
+
+.button, .combination-button:hover {
+  box-shadow: none;
+  color: #00b300;
+  background: #ffffff;
+}
+
+.combination-button{
+  height: 50px;
+  width: 250px;
+  position: relative; top:120px;
+}
+
+/* about service */
+.about{
+  text-align: center;
+  font-size: 15px;
+  margin: 50px auto;
+}
+
+.about-title{
+  font-size: 30px;
+}
+
+/* questionnaire */
+.questionnaire{
+  height: 420px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+/* service-message */
+.service-message{
+  text-align: center;
+  font-size: 16px;
+  margin: 50px auto;
+}
+
+/* new-item */
+.newitem{
+}
+
+
+/* category-search */
+.category-search{
+  display: none;
+}
+
+/* area-search */
+.area-search-title{
+  display: none;
+}
+
+.area-search{
+  display: none;
+}
+
+.area-search-none{  
+  display: none;
+ }
+
+
+.area-link-box{
+  display: none;
+}
+
+.area-link-box:hover{
+  display: none;
+}
+
+.area-link{
+  display: none;
+}
+
+.area-link:hover{
+    display: none;
+}
+
+/* theme-search */
+.theme-search-title{
+  display: none;
+}
+
+.theme-search{
+  display: none;
+}
+
+.theme-box{
+  display: none;
+}
+
+.themeimg{
+  display: none;
+}
+
+.theme-link{
+  display: none;
+}
+
+/* freeword-search */
+.freeword-search-title{
+  font-size: 34px;
+  color: #606560;
+}
+
+.freeword-search{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.input-text{
+  position: relative; top:0; left:-20px;
+  margin-top: 20px;
+  height: 70px;
+  width: 450px;
+  border: none;
+}
+
+.freeword-input{
+  position: relative; top:0px; left:20px;
+  border-radius: 5%;
+  font-size: 24pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 64px;
+  background: #00b300;
+  color: #ffffff;
+  line-height: 1em;
+  transition: .3s;
+  box-shadow: 5px 5px 4px #666666;
+  border: 2px solid #00b300;
+}
+
+.freeword-input:hover {
+  box-shadow: none;
+  color: #00b300;
+  background: #ffffff;
+}
+
+/* internal-link */
+.internal-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* sns-field */
+.sns-field{
+  text-align: center;
+}
+
+.sns-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+
+/* fotter */
+.footer{
+    text-align: center;
+    margin: 50px 0 0 0;
+    height: 120px;
+    border-top: 2px dotted white;
+}
+
+.footer-nav{
+    padding-top: 5px;
+    margin-right: 20px;
+    font-size: 14px;
+	}
+
+.footer-nav-link{
+  text-align: center;
+  color:white;
+}
+
+
+
+
+}
+
+@media screen and (min-width: 421px) {
 .top-logo{
   text-align: center;
   margin: 40px auto;
@@ -10,7 +308,8 @@
 }
 
 .header-message{
-  font-size:14px;
+  font-size:30px;
+  font-weight: bold;
   text-align: center;
   margin: 40px auto auto auto;
   }
@@ -149,6 +448,11 @@ option:hover{
   text-align: center;
   font-size: 20px;
   margin: 50px auto;
+}
+
+/* new-item */
+.newitem{
+  display: none;
 }
 
 /* category-search */
@@ -331,12 +635,13 @@ option:hover{
 	}
 
 .logoimg{
-    max-height:126x;
+    max-height:126px;
     width:414px;
 }
 
 .header-message{
-  font-size:20px;
+  font-weight: bold;
+  font-size:40px;
   text-align: center;
   margin: 80px auto auto 100px;
   }
@@ -367,13 +672,23 @@ option:hover{
 }
 
 /* select box */
-label{
+.select-city{
   box-shadow:0 3px 5px rgba(0,0,0,.2);
   padding:15px;
   background:white;
   width:340px;
   display:inline-block;
   position:relative;
+  margin-left:50px;
+}
+
+.select-theme{
+  box-shadow:0 3px 5px rgba(0,0,0,.2);
+  padding:15px;
+  background:white;
+  width:340px;
+  display:inline-block;
+  position:relative; top:-1px;
   margin-left:50px;
 }
 
@@ -385,7 +700,7 @@ select{
   -moz-appearance:none;
   appearance:none;
   cursor:pointer;
-  font-size:16px;
+  font-size:20px;
   color:#909090;
   border-radius:0;
   width:400px;
@@ -441,8 +756,9 @@ option:hover{
 }
 
 .combination-button{
-  height: 50px;
-  position: relative; left:50px;
+  height: 70px;
+  width: 260px;
+  position: relative; top:-10px; left:50px;
 }
 
 /* about service */
@@ -467,6 +783,11 @@ option:hover{
   text-align: center;
   font-size: 30px;
   margin: 50px auto;
+}
+
+/* new-item */
+.newitem{
+  display: none;
 }
 
 /* category-search */
@@ -574,6 +895,7 @@ option:hover{
 .input-text{
   position: relative; top:0; left:-20px;
   margin-top: 20px;
+  font-size: 20px;
   height: 70px;
   width: 700px;
   border: none;
@@ -609,7 +931,6 @@ option:hover{
 
 /* sns-field */
 .sns-field{
-  margin-left: 600px;
   margin-top: 120px;
 }
 

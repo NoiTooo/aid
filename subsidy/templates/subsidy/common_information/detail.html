@@ -14,45 +14,29 @@
 
 {% block body %}
 {% include 'subsidy/base_module/header.html' %}
+<div class="navigarte">
+	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
+	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果 ></a>
+	<a href="">{{ object.name }}</a>
+</div>
+
 <div class="detail-content">
-	<h2>「{{ object.name }}」</h2>
-	<table>
-		<tr>
-			<th>適用地域</th>
-			<td>{{ object.prefecture }}　{{ object.city}}</td>
-		</tr>
-		<tr>
-			<th>申請期間</th>
-			<td>{{ object.start_at|date:"Y年m月j日" }}　～　{{ object.end_at|date:"Y年m月j日" }}</td>
-		</tr>
-		<tr>
-			<th>制度内容</th>
-			<td>{{ object.description| linebreaksbr }}</td>
-		</tr>
-		<tr>
-			<th>最大支給額</th>
-			<td>{{ object.maximum_support_amount|intcomma }}円</td>
-		</tr>
-		<tr>
-			<th>支援額補足</th>
-			<td>{{ object.support_amount_note| linebreaksbr }}</td>
-		</tr>
-		<tr>
-			<th>支援条件</th>
-			<td>{{ object.condition| linebreaksbr }}</td>
-		</tr>
-		<tr>
-			<th>引用元</th>
-			<td>{{ object.referrer }}</td>
-		</tr>
-		<tr>
-			<th>公式ページ</th>
-			<td><a href="{{object.official_page}}">{{ object.official_page }}</a></td>
-		</tr>
-		<tr>
-			<th>最終更新日</th>
-			<td>{{ object.updated_at|date:"Y年m月j日" }}</td>
-		</tr>
-	</table>
+	<p class="object_title">「{{ object.name }}」</p>
+			<p class="columns">適用地域</p>
+			<p>{{ object.prefecture }}　{{ object.city}}</p>
+			<p class="columns">申請期間</p>
+			<p>{{ object.start_at|date:"Y年m月j日" }}　～　{{ object.end_at|date:"Y年m月j日" }}</p>
+			<p class="columns">制度内容</p>
+			<p>{{ object.description| linebreaksbr }}</p>
+			<p class="columns">最大支給額</p>
+			<p>{{ object.maximum_support_amount|intcomma }}円</p>
+			<p class="columns">支援額補足</p>
+			<p>{{ object.support_amount_note| linebreaksbr }}</p>
+			<p class="columns">支援条件</p>
+			<p>{{ object.condition| linebreaksbr }}</p>
+			<p class="columns">引用元</p>
+			<p>{{ object.referrer }}　<br><br><a href="{{object.official_page}}">公式ページ(外部リンク)</a></p>
+			<p class="columns">最終更新日</p>
+			<p>{{ object.updated_at|date:"Y年m月j日" }}</p>		
 </div>
 {% endblock body %}

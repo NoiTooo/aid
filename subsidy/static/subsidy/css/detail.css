@@ -1,3 +1,9 @@
+.navigarte{
+    font-size: 14px;
+    color: grey;
+    margin-top: 20px;
+}
+
 .detail-content{
     width: 60%;
     margin: 60px auto auto auto; 
@@ -8,33 +14,27 @@ a{
   color: aliceblue;
 }
 
-h2{
+.object_title{
     font-size: 30px;
 }
 
-table{
-  width: 100%;
-  border-collapse: collapse;
+.columns{
+  font-size: 24px;
+  border-bottom: dotted grey 1px;
+}
+/* smp */
+@media screen and (max-width: 600px){
+.detail-content{
+    margin: 60px auto auto auto; 
 }
 
-table td{
-    padding-left: 40px;
+.object_title{
+    font-size: 20px;
 }
 
-table tr{
-  border-bottom: solid 2px white;
+.columns{
+  font-size: 16px;
+  border-bottom: dotted grey 1px;
 }
 
-table tr:last-child{
-  border-bottom: none;
-}
-
-table th{
-  position: relative;
-  text-align: left;
-  width: 30%;
-  background-color: #00b300;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
 }

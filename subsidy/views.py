@@ -4,7 +4,6 @@ from functools import reduce
 from operator import and_
 
 from django.db.models import Q
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -152,11 +151,13 @@ class Tokyo23_Category_Select(generic.ListView):
         city = self.request.GET.get('city')
         theme = self.request.GET.get('theme')
         if city=="" and theme=="":
-            ctx['count'] = Subsidy.objects.filter(prefecture='東京都23区').order_by('-updated_at').count()
+            ctx['count'] = Subsidy.objects.all().order_by('-updated_at').count()
         elif city=="":
             ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都23区').distinct().count()
         elif theme=="":
             ctx['count'] = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct().count()
+        else:
+            ctx['count'] = Subsidy.objects.filter(prefecture='東京都23区', city=city, themes__theme=theme).order_by('-updated_at').count()
         return ctx
 
 class Childbirth_Childcare(generic.ListView):

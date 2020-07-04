@@ -25,7 +25,7 @@
 		<p class="research-result-text">「{{query}}」の検索結果：{{ count|intcomma }}件</p>
 	</div>
 	{% else %}
-	<p class="research-result-text">掲載件数：{{ count|intcomma }}件</p>
+	<p class="research-result-text">検索結果：{{ count|intcomma }}件</p>
 	{% endif %}
 </div>
 
@@ -86,33 +86,20 @@
 
 </div>
 
-
+{% include 'subsidy/base_module/paginations.html' %}
 	{% for object in object_list %}
-		<div class="object-list">		
+		<div class="object-list">
 			<p class="name">{{ object.name }}</p>
 			<p class="city-tag">{{ object.prefecture }}　|　{{ object.city }}</p>
 	{% for theme in object.themes.all %}
 			<p class="theme-tag">{{ theme.theme }}</p>
-	{% endfor %}					
+	{% endfor %}
 			<p>{{ object.description }}</p>
 			<p>最大支給額：{{ object.maximum_support_amount|intcomma }}円</p>
 			<p><a class="button" href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></p>
 		</div>
 	{% endfor %}
 
+{% include 'subsidy/base_module/paginations.html' %}
 
-
-<!-- 前へ の部分 -->
-{% if page_obj.has_previous %}
-<a href="?page={{ page_obj.previous_page_number }}">前へ</a>
-{% endif %}
-
-<!-- 1/3 の部分 -->
-{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
-
-<!-- 次へ の部分 -->
-{% if page_obj.has_next %}
-<a href="?page={{ page_obj.next_page_number }}">次へ</a>
-{% endif %}
-</div>
 {% endblock body %}

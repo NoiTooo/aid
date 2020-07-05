@@ -80,7 +80,7 @@ class Tokyo23_Index(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture="東京都23区").distinct()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture=1).distinct()
         #filter(end_at__gte=today)
         keyword = self.request.GET.get('keyword')
         if keyword:
@@ -135,15 +135,15 @@ class Tokyo23_Category_Select(generic.ListView):
         today = date.today()
         city = self.request.GET.get('city')
         theme = self.request.GET.get('theme')
-        queryset = Subsidy.objects.filter(city=city, themes__theme=theme).order_by('-updated_at').distinct()
+        queryset = Subsidy.objects.filter(prefecture=1, city=city, themes__theme=theme).order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
         """ city か theme どちらか、あるいはどちらも空の場合の処理 """
         if city=="" and theme=="":
-            queryset = Subsidy.objects.filter(prefecture='東京都23区').order_by('-updated_at').distinct()
+            queryset = Subsidy.objects.filter(prefecture=1).order_by('-updated_at').distinct()
         elif city=="":
-            queryset = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都23区').distinct()
+            queryset = Subsidy.objects.filter(themes__theme=theme, prefecture=1).distinct()
         elif theme=="":
-            queryset = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct()
+            queryset = Subsidy.objects.filter(city=city, prefecture=1).order_by('-updated_at').distinct()
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -153,11 +153,11 @@ class Tokyo23_Category_Select(generic.ListView):
         if city=="" and theme=="":
             ctx['count'] = Subsidy.objects.all().order_by('-updated_at').count()
         elif city=="":
-            ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都23区').distinct().count()
+            ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture=1).distinct().count()
         elif theme=="":
-            ctx['count'] = Subsidy.objects.filter(city=city, prefecture='東京都23区').order_by('-updated_at').distinct().count()
+            ctx['count'] = Subsidy.objects.filter(city=city, prefecture=1).order_by('-updated_at').distinct().count()
         else:
-            ctx['count'] = Subsidy.objects.filter(prefecture='東京都23区', city=city, themes__theme=theme).order_by('-updated_at').count()
+            ctx['count'] = Subsidy.objects.filter(prefecture=1, city=city, themes__theme=theme).order_by('-updated_at').count()
         return ctx
 
 class Childbirth_Childcare(generic.ListView):
@@ -170,7 +170,7 @@ class Childbirth_Childcare(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='出産・子供').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='出産・子供').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -184,7 +184,7 @@ class Ceremonial_Occasion(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='冠婚葬祭').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='冠婚葬祭').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -197,7 +197,7 @@ class Housing(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='住まい').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='住まい').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -210,5 +210,5 @@ class Others(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture='東京都23区', themes__theme='その他').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='その他').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)

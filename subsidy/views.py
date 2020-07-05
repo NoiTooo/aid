@@ -165,7 +165,7 @@ class Childbirth_Childcare(generic.ListView):
     template_name = 'subsidy/tokyo23/childbirth_childcare.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
-    paginate_by = 10
+    paginate_by = 5
 
 
     def get_queryset(self):
@@ -179,7 +179,7 @@ class Ceremonial_Occasion(generic.ListView):
     template_name = 'subsidy/tokyo23/ceremonial_occasion.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
-    paginate_by = 10
+    paginate_by = 5
 
 
     def get_queryset(self):
@@ -193,7 +193,7 @@ class Housing(generic.ListView):
     template_name = 'subsidy/tokyo23/housing.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
         today = date.today()
@@ -206,7 +206,7 @@ class Others(generic.ListView):
     template_name = 'subsidy/tokyo23/others.html'
     queryset = Subsidy.objects.all()
     context_object_name = 'object_list'
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
         today = date.today()

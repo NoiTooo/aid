@@ -59,7 +59,7 @@ class Subsidy(models.Model):
     city = models.CharField(verbose_name='市区町村', max_length=31)
     target = models.CharField(verbose_name='対象者', choices=TARGET_CODE, max_length=10)
     condition = models.TextField(verbose_name='支給条件', max_length=3000)
-    overview = models.CharField(verbose_name='制度の概要', max_length=100)
+    overview = models.TextField(verbose_name='制度の概要', null=True, blank=True, max_length=100)
     description = models.TextField(verbose_name='支援内容', max_length=3000)
     maximum_support_amount = models.CharField(verbose_name='上限金額', null=True, max_length=30, blank=True)
     support_amount_note = models.TextField(verbose_name='助成額', null=True, max_length=3000, blank=True)

@@ -63,7 +63,7 @@ class Subsidy(models.Model):
     description = models.TextField(verbose_name='支援内容', max_length=1000)
     maximum_support_amount = models.CharField(verbose_name='上限金額', null=True, max_length=30, blank=True)
     support_amount_note = models.TextField(verbose_name='助成額', null=True, max_length=3000, blank=True)
-    how_to_apply = models.TextField(verbose_name='利用・申請方法', max_length=300, null=True, blank=True)
+    how_to_apply = models.TextField(verbose_name='利用・申請方法', null=True, blank=True)
     start_at = models.DateTimeField(verbose_name='開始日', null=True, blank=True)
     end_at = models.DateTimeField(verbose_name='終了日', null=True, blank=True)
     referrer = models.CharField(verbose_name='お問合せ先', max_length=30)

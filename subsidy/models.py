@@ -54,16 +54,16 @@ class Theme(models.Model):
         verbose_name_plural = "02.テーマタグ"
 
 class Subsidy(models.Model):
-    name = models.CharField(verbose_name='制度名', max_length=30)
-    prefecture = models.CharField(verbose_name='都道府県', choices=PREFECTURE_CODE, max_length=6)
-    city = models.CharField(verbose_name='市区町村', max_length=13)
+    name = models.CharField(verbose_name='制度名', max_length=50)
+    prefecture = models.CharField(verbose_name='都道府県', choices=PREFECTURE_CODE, max_length=31)
+    city = models.CharField(verbose_name='市区町村', max_length=31)
     target = models.CharField(verbose_name='対象者', choices=TARGET_CODE, max_length=10)
     condition = models.TextField(verbose_name='支給条件', max_length=3000)
     overview = models.CharField(verbose_name='制度の概要', max_length=100)
-    description = models.TextField(verbose_name='支援内容', max_length=1000)
+    description = models.TextField(verbose_name='支援内容', max_length=3000)
     maximum_support_amount = models.CharField(verbose_name='上限金額', null=True, max_length=30, blank=True)
     support_amount_note = models.TextField(verbose_name='助成額', null=True, max_length=3000, blank=True)
-    how_to_apply = models.TextField(verbose_name='利用・申請方法', null=True, blank=True)
+    how_to_apply = models.TextField(verbose_name='利用・申請方法', max_length=3000, null=True, blank=True)
     start_at = models.DateTimeField(verbose_name='開始日', null=True, blank=True)
     end_at = models.DateTimeField(verbose_name='終了日', null=True, blank=True)
     referrer = models.CharField(verbose_name='お問合せ先', max_length=30)

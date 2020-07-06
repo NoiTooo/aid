@@ -9,7 +9,9 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = []
+    dependencies = [
+        ('auth', '0011_update_proxy_permissions'),
+    ]
 
     operations = [
         migrations.CreateModel(

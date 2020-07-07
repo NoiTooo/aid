@@ -14,28 +14,6 @@
 
 {% block body %}
 {% include 'subsidy/base_module/header.html' %}
-<<<<<<< HEAD
-
-<div class="navigate">
-	<p><a href="{% url 'subsidy:tokyo23_top' %}">トップページ</a>　＞　<a href="{% url 'subsidy:tokyo23_index' %}">支援制度を探す</a></p>
-</div>
-
-<div class="container">
-	{% if query %}
-	<div class="research-result">
-		<p class="research-result-text">「{{query}}」の検索結果：{{ count|intcomma }}件</p>
-	</div>
-	{% else %}
-	<p class="research-result-text">検索結果：{{ count|intcomma }}件</p>
-	{% endif %}
-</div>
-
-
-<div class="research-box">
-	<div class="combination-search">
-		<p class="title">再検索</p>
-			<form method="GET" action="{% url 'subsidy:category_select' %}">
-=======
 <div class="navigarte">
 	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
 	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果</a>
@@ -52,7 +30,6 @@
 		<p class="title-city">地域で探す</p>
 		<form method="GET" action="{% url 'subsidy:category_select' %}">
 			<div class="combination-search-block">
->>>>>>> origin/master
 				<label class="select-city">
 					<select name="city">
 						<option value="">地域</option>
@@ -81,64 +58,25 @@
 						<option value="江戸川区">江戸川区</option>
 					</select>
 				</label>
-<<<<<<< HEAD
-
-				<label class="select-theme">
-					<select name="theme">
-						<option value="">テーマ</option>
-						<option value="出産・子供">出産・子供</option>
-=======
 				<p class="title-theme">テーマで探す</p>
 				<label class="select-theme">
 					<select name="theme">
 						<option value="">テーマ</option>
 						<option value="出産・子供">妊娠・子育て</option>
->>>>>>> origin/master
 						<option value="冠婚葬祭">冠婚葬祭</option>
 						<option value="住まい">住まい</option>
 						<option value="その他">その他</option>
 					</select>
 				</label>
-<<<<<<< HEAD
-				<input class="button-combination" type="submit" value="検索">
-			</form>
-	</div>
-
-	<div class="freeword-search">
-		<p class="title">フリーワードで検索する</p>
-=======
 				<input class="combination-button" type="submit" value="検索">
 			</div>
 		</form>
 		<div class="freeword-search">
 			<p class="title-freeword">フリーワードで検索する</p>
->>>>>>> origin/master
 			<form method="GET" action="{% url 'subsidy:tokyo23_index' %}">
 				<input class="input-text" type="text" name="keyword" placeholder="キーワードを入力">
 				<button class="freeword-input" type="submit">検索</button>
 			</form>
-<<<<<<< HEAD
-	</div>
-
-</div>
-
-{% include 'subsidy/base_module/paginations.html' %}
-	{% for object in object_list %}
-		<div class="object-list">
-			<p class="name">{{ object.name }}</p>
-			<p class="city-tag">{{ object.prefecture }}　|　{{ object.city }}</p>
-	{% for theme in object.themes.all %}
-			<p class="theme-tag">{{ theme.theme }}</p>
-	{% endfor %}
-			<p>{{ object.description }}</p>
-			<p>最大支給額：{{ object.maximum_support_amount|intcomma }}円</p>
-			<p><a class="button" href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></p>
-		</div>
-	{% endfor %}
-
-{% include 'subsidy/base_module/paginations.html' %}
-
-=======
 		</div>
 	</div>
 
@@ -166,5 +104,4 @@
 
 	{% include 'subsidy/base_module/footer.html' %}
 </div>
->>>>>>> origin/master
 {% endblock body %}

@@ -28,11 +28,7 @@ tab: ~850px
   width: cover;
   background-color:rgba(255, 255, 255, 0.5);
   border-radius: 50px;
-<<<<<<< HEAD
-  margin-top: 80px;
-=======
   margin: 80px 50px 0 50px;
->>>>>>> origin/master
 }
 
 .combination-title{
@@ -318,29 +314,6 @@ option:hover{
   font-size: 30px;
 }
 
-<<<<<<< HEAD
-
-/* fotter */
-.footer{
-    text-align: right;
-    margin: 50px 0 0 0;
-    height: 120px;
-    border-top: 2px dotted white;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
-  text-align: center;
-  color:white;
-}
-
-=======
->>>>>>> origin/master
 /* tablet */
 @media screen and (max-width: 850px) {
 .top-logo{
@@ -639,29 +612,6 @@ option:hover{
   color: #ffffff;
   font-size: 20px;
 }
-<<<<<<< HEAD
-
-
-/* fotter */
-.footer{
-    text-align: center;
-    margin: 50px 0 0 0;
-    height: 120px;
-    border-top: 2px dotted white;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
-  text-align: center;
-  color:white;
-}
-=======
->>>>>>> origin/master
 }
 
 /* smp */
@@ -930,26 +880,4 @@ option:hover{
   font-size: 20px;
 }
 
-<<<<<<< HEAD
-
-/* fotter */
-.footer{
-    text-align: center;
-    margin: 50px 0 0 0;
-    height: 120px;
-    border-top: 2px dotted white;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
-  text-align: center;
-  color:white;
-}
-=======
->>>>>>> origin/master
 }

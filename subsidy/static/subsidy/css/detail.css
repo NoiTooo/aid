@@ -1,42 +1,4 @@
 .navigarte{
-<<<<<<< HEAD
-    font-size: 14px;
-    color: grey;
-    margin-top: 20px;
-}
-
-.detail-content{
-    width: 60%;
-    margin: 60px auto auto auto; 
-}
-
-a{
-  text-decoration: none;
-  color: aliceblue;
-}
-
-.object_title{
-    font-size: 30px;
-}
-
-.columns{
-  font-size: 24px;
-  border-bottom: dotted grey 1px;
-}
-/* smp */
-@media screen and (max-width: 600px){
-.detail-content{
-    margin: 60px auto auto auto; 
-}
-
-.object_title{
-    font-size: 20px;
-}
-
-.columns{
-  font-size: 16px;
-  border-bottom: dotted grey 1px;
-=======
     font-size: 16px;
     color: #606560;
     margin: 20px 0 0 50px;
@@ -149,7 +111,6 @@ a{
 .officialpage:hover{
   background-color: #00b300;
   color: #ffffff;
->>>>>>> origin/master
 }
 
 }

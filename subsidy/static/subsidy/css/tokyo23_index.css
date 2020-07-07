@@ -26,17 +26,17 @@
 }
 /* combination search box */
 .title-city{
-    color: gray;
+    color: #606560;
     text-align: left;
     width: 100px;
-    border-bottom: gray 4px double;
+    border-bottom: #606560 4px double;
 }
 
 .title-theme{
-    color: gray;
+    color: #606560;
     text-align: left;
     width: 100px;
-    border-bottom: gray 4px double;
+    border-bottom: #606560 4px double;
     position: relative; top: 40px;
 }
 
@@ -131,10 +131,10 @@ option:hover{
 
 /* freeword-search */
 .title-freeword{
-    color: gray;
+    color: #606560;
     text-align: left;
     width: 200px;
-    border-bottom: gray 4px double;
+    border-bottom: #606560 4px double;
     position: relative; top: 40px;
 }
 
@@ -182,7 +182,7 @@ option:hover{
     padding-bottom: 10px;
     padding-left: 20px;
     border-radius: 10px;
-    color: gray;
+    color: #606560;
 }
 
 .object-title{
@@ -204,7 +204,7 @@ option:hover{
 }
 
 .detail-link{
-    border: gray 1px solid;
+    border: #606560 1px solid;
     padding: 10px;
 }
 

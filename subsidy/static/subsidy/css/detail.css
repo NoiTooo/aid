@@ -1,14 +1,14 @@
 .navigarte{
     font-size: 16px;
-    color: grey;
+    color: #606560;
     margin: 20px 0 0 50px;
 }
 
 .detail-content{
-  color: gray;
+  color: #606560;
   display: inline-block;
   width: 750px;
-  margin: 40px 0 auto 150px;
+  margin: 40px 0 auto 50px;
   padding-left: 50px;
   padding-bottom: 50px;
   background-color:rgba(255, 255, 255, 0.5);
@@ -43,7 +43,7 @@
 }
 
 .object-item{
-  border-bottom: gray double 4px;
+  border-bottom: #606560 double 4px;
   padding-bottom: 10px;
   margin-top: 20px;
   width: 600px;
@@ -57,7 +57,7 @@
 }
 
 .officialpage{
-  border: solid gray 1px;
+  border: solid #606560 1px;
   padding: 10px;
   width: 300px;
   text-align: center;
@@ -73,7 +73,7 @@
 @media screen and (max-width: 600px){
 .navigarte{
     font-size: 16px;
-    color: grey;
+    color: #606560;
     margin: 20px 0 15px 5px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .officialpage{
-  border: solid gray 1px;
+  border: solid #606560 1px;
   padding: 10px;
   width: 290px;
   margin-left: 20px;

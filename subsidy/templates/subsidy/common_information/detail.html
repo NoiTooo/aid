@@ -18,6 +18,9 @@
 	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
 	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果 ></a>
 	<a href="">{{ object.name }}</a>
+	{% for theme in object.themes.all %}
+		  <p class="theme-tag">{{ theme.theme }}</p>
+	{% endfor %}
 </div>
 
 <div class="detail-content">

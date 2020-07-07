@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .models import Subsidy
+from .models import Subsidy, Theme
 from .forms import InquiryCreateForm, UserAlertForm
 
 
@@ -76,11 +76,12 @@ class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
     model = Subsidy
+    queryset = Subsidy.objects.all()
     paginate_by = 5
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture=1).distinct()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture='東京都').distinct()
         #filter(end_at__gte=today)
         keyword = self.request.GET.get('keyword')
         if keyword:
@@ -109,6 +110,7 @@ class Tokyo23_Index(generic.ListView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['query'] = self.request.GET.get('keyword', '')
+        ctx['keyword'] = self.request.GET.get('keyword', '')
         keyword = self.request.GET.get('keyword', '')
         ctx['count'] = Subsidy.objects.filter(
             Q(name__icontains=keyword) |
@@ -135,29 +137,35 @@ class Tokyo23_Category_Select(generic.ListView):
         today = date.today()
         city = self.request.GET.get('city')
         theme = self.request.GET.get('theme')
-        queryset = Subsidy.objects.filter(prefecture=1, city=city, themes__theme=theme).order_by('-updated_at').distinct()
+        queryset = Subsidy.objects.filter(prefecture='東京都', city=city, themes__theme=theme).order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
         """ city か theme どちらか、あるいはどちらも空の場合の処理 """
         if city=="" and theme=="":
-            queryset = Subsidy.objects.filter(prefecture=1).order_by('-updated_at').distinct()
+            queryset = Subsidy.objects.filter(prefecture='東京都').order_by('-updated_at').distinct()
         elif city=="":
-            queryset = Subsidy.objects.filter(themes__theme=theme, prefecture=1).distinct()
+            queryset = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都').distinct()
         elif theme=="":
-            queryset = Subsidy.objects.filter(city=city, prefecture=1).order_by('-updated_at').distinct()
+            queryset = Subsidy.objects.filter(city=city, prefecture='東京都').order_by('-updated_at').distinct()
         return queryset
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         city = self.request.GET.get('city')
         theme = self.request.GET.get('theme')
+        ctx['query'] = '地域：' + city + '　' + 'テーマ：' + theme
+        ctx['city'] = city
+        ctx['theme'] = theme
         if city=="" and theme=="":
             ctx['count'] = Subsidy.objects.all().order_by('-updated_at').count()
         elif city=="":
-            ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture=1).distinct().count()
+            ctx['count'] = Subsidy.objects.filter(themes__theme=theme, prefecture='東京都').distinct().count()
         elif theme=="":
-            ctx['count'] = Subsidy.objects.filter(city=city, prefecture=1).order_by('-updated_at').distinct().count()
+            ctx['count'] = Subsidy.objects.filter(city=city, prefecture='東京都').order_by('-updated_at').distinct().count()
         else:
-            ctx['count'] = Subsidy.objects.filter(prefecture=1, city=city, themes__theme=theme).order_by('-updated_at').count()
+            ctx['count'] = Subsidy.objects.filter(prefecture='東京都', city=city, themes__theme=theme).order_by('-updated_at').count()
+        page = self.request.GET.get('page')
+        ctx['page'] = int(page)
+        ctx['pagecount'] = int(page) + 10 
         return ctx
 
 class Childbirth_Childcare(generic.ListView):
@@ -170,7 +178,7 @@ class Childbirth_Childcare(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='出産・子供').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都', themes__theme='出産・子供').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -184,7 +192,7 @@ class Ceremonial_Occasion(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='冠婚葬祭').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都', themes__theme='冠婚葬祭').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -197,7 +205,7 @@ class Housing(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='住まい').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都', themes__theme='住まい').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)
 
 
@@ -210,5 +218,5 @@ class Others(generic.ListView):
 
     def get_queryset(self):
         today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=1, themes__theme='その他').order_by('-updated_at').distinct()
+        return Subsidy.objects.filter(is_published=True, prefecture='東京都', themes__theme='その他').order_by('-updated_at').distinct()
         #filter(end_at__gte=today)

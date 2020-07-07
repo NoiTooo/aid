@@ -165,11 +165,5 @@
 </div>
 
 
-<div class="footer">
-	<div class="footer-nav">
-		<p><a class="footer-nav-link" href="{% url 'subsidy:webmaster' %}">運営者情報</a></p>
-		<p><a class="footer-nav-link" href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
-		<p><a class="footer-nav-link" target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
-	</div>
-</div>
+{% include 'subsidy/base_module/footer.html' %}
 {% endblock body %}

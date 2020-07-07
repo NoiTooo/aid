@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .models import Subsidy
+from .models import Subsidy, Theme
 from .forms import InquiryCreateForm, UserAlertForm
 
 
@@ -75,12 +75,13 @@ class Detail(generic.DeleteView):
 class Tokyo23_Index(generic.ListView):
     """23区でフリーワード検索、全案件一覧"""
     template_name = 'subsidy/tokyo23/tokyo23_index.html'
-    model = Subsidy
+    queryset = Subsidy.objects.filter(is_published=True)
+    context_object_name = 'object_list'
     paginate_by = 10
 
     def get_queryset(self):
         today = date.today()
-        queryset = Subsidy.objects.order_by('-updated_at').filter(prefecture=1).distinct()
+        queryset = Subsidy.objects.order_by('-updated_at').filter(is_published=True, prefecture='東京都').distinct()
         #filter(end_at__gte=today)
         keyword = self.request.GET.get('keyword')
         if keyword:

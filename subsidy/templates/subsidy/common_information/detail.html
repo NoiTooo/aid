@@ -16,30 +16,45 @@
 {% include 'subsidy/base_module/header.html' %}
 <div class="navigarte">
 	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
-	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果 ></a>
-	<a href="">{{ object.name }}</a>
-	{% for theme in object.themes.all %}
-		  <p class="theme-tag">{{ theme.theme }}</p>
-	{% endfor %}
+	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果</a>
+	<a href="#"> > 制度詳細</a>
 </div>
 
 <div class="detail-content">
-	<p class="object_title">「{{ object.name }}」</p>
-			<p class="columns">適用地域</p>
-			<p>{{ object.prefecture }}　{{ object.city}}</p>
-			<p class="columns">申請期間</p>
-			<p>{{ object.start_at|date:"Y年m月j日" }}　～　{{ object.end_at|date:"Y年m月j日" }}</p>
-			<p class="columns">制度内容</p>
-			<p>{{ object.description| linebreaksbr }}</p>
-			<p class="columns">最大支給額</p>
-			<p>{{ object.maximum_support_amount|intcomma }}円</p>
-			<p class="columns">支援額補足</p>
-			<p>{{ object.support_amount_note| linebreaksbr }}</p>
-			<p class="columns">支援条件</p>
-			<p>{{ object.condition| linebreaksbr }}</p>
-			<p class="columns">引用元</p>
-			<p>{{ object.referrer }}　<br><br><a href="{{object.official_page}}">公式ページ(外部リンク)</a></p>
-			<p class="columns">最終更新日</p>
-			<p>{{ object.updated_at|date:"Y年m月j日" }}</p>		
+	<p class="object-title">{{ object.name }}</p>
+	{% for theme in object.themes.all %}
+	<a href="https://aid-tree.com/tokyo23/category?city=&theme={{ theme.theme }}"><p class="object-tag">{{ theme.theme }}</p></a>
+	{% endfor %}
+	<p class="object-item">地域</p>
+	<p class="object">{{ object.prefecture }}{{ object.city }}</p>
+	<p class="object-item">対象者</p>
+	<p class="object">{{ object.get_target_display }}</p>
+	<p class="object">{{ object.condition }}</p>
+	<p class="object-item">支援内容</p>
+	<p class="object">{{ object.description }}</p>
+	{% if object.overview != "" %}
+	<p class="object-item">概要</p>
+	<p class="object">{{ object.overview }}</p>
+	{% endif %}
+	{% if object.maximum_support_amount != None %}
+	<p class="object-item">最大支給金額</p>
+	<p class="object">{{ object.maximum_support_amount|intcomma }}円</p>
+	{% endif %}
+	{% if object.support_amount_note != "" %}
+	<p class="object-item">助成額</p>
+	<p class="object">{{ object.support_amount_note }}</p>
+	{% endif %}
+	{% if object.how_to_apply != "" %}
+	<p class="object-item">利用・申請方法</p>
+	<p class="object">{{ object.how_to_apply }}</p>
+	{% endif %}
+	<p class="object-item">情報元</p>
+	<p class="object">{{ object.referrer }}</p>
+	<a href="{{ object.official_page }}"><p class="officialpage">公式ページ(外部リンク)</p></a>	
+</div>
+<div class="right-columns">
+	<div class="ad-pc">
+		広告400px x 400px
+	</div>
 </div>
 {% endblock body %}

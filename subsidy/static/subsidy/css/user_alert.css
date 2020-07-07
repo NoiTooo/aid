@@ -4,6 +4,8 @@
     border-radius: 50px;
     padding: 30px;
     color: #606560;
+    margin: auto;
+    width: 50%;
 }
 
 h2{
@@ -54,9 +56,9 @@ textarea{
 }
 
 .navigarte{
-    margin: 30px auto 15px 30px;
     font-size: 14px;
-    color: white;
+    color: grey;
+    margin: 20px 0 0 50px;
 }
 
 a{
@@ -100,6 +102,8 @@ a{
     border-radius: 50px;
     padding: 30px;
     color: #606560;
+    margin: auto;
+    width: 300px;
 }
 
 h2{

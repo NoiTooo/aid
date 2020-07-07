@@ -1,40 +1,116 @@
 .navigarte{
-    font-size: 14px;
+    font-size: 16px;
     color: grey;
-    margin-top: 20px;
+    margin: 20px 0 0 50px;
 }
 
 .detail-content{
-    width: 60%;
-    margin: 60px auto auto auto; 
+  color: gray;
+  display: inline-block;
+  width: 750px;
+  margin: 40px 0 auto 150px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  background-color:rgba(255, 255, 255, 0.5);
 }
 
-a{
-  text-decoration: none;
-  color: aliceblue;
+.right-columns{
+  float: right;
+  margin: 40px 90px auto 0;
+  height: 800px;
+  width: 400px;
+  background-color:rgba(255, 255, 255, 0.5);
 }
 
-.object_title{
+.ad-pc{
+  border: solid 1px white;
+  height: 400px;
+  width: 400px;
+}
+
+.object-title{
     font-size: 30px;
 }
 
-.columns{
-  font-size: 24px;
-  border-bottom: dotted grey 1px;
+.object-tag{
+  padding: 10px;
+  background-color: #00b300;
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 40px;
+  width: 100px;
+  text-align: center;
 }
+
+.object-item{
+  border-bottom: gray double 4px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  width: 600px;
+}
+
+.object{
+  font-size: 16px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  width: 600px;
+}
+
+.officialpage{
+  border: solid gray 1px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  margin-left: 200px;
+}
+
+.officialpage:hover{
+  background-color: #00b300;
+  color: #ffffff;
+}
+
 /* smp */
 @media screen and (max-width: 600px){
-.detail-content{
-    margin: 60px auto auto auto; 
+.navigarte{
+    font-size: 16px;
+    color: grey;
+    margin: 20px 0 15px 5px;
 }
 
-.object_title{
-    font-size: 20px;
+  .detail-content{
+  margin: auto;
+  padding: 0;
 }
 
-.columns{
-  font-size: 16px;
-  border-bottom: dotted grey 1px;
+.right-columns, .ad-pc{
+  display: none;
+}
+
+.object-title{
+  width: 370px;
+}
+
+.object-item{
+  width: 370px;
+  padding: 10px;
+}
+
+.object{
+  width: 340px;
+  padding: 10px;
+
+}
+
+.officialpage{
+  border: solid gray 1px;
+  padding: 10px;
+  width: 290px;
+  margin-left: 20px;
+}
+
+.officialpage:hover{
+  background-color: #00b300;
+  color: #ffffff;
 }
 
 }

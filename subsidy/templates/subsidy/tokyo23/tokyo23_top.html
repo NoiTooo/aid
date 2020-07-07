@@ -67,7 +67,11 @@
 			<label class="select-theme">
 				<select name="theme">
 					<option value="">テーマ</option>
+<<<<<<< HEAD
 					<option value="出産・子供">出産・子供</option>
+=======
+					<option value="妊娠・子育て">妊娠・子育て</option>
+>>>>>>> origin/master
 					<option value="冠婚葬祭">冠婚葬祭</option>
 					<option value="住まい">住まい</option>
 					<option value="その他">その他</option>
@@ -134,7 +138,11 @@
 
 	<p class="theme-search-title">テーマを選択</p>
 	<div class="theme-search">
+<<<<<<< HEAD
 		<div class="theme-box"><a href="{% url 'subsidy:childbirth_childcare' %}" class="theme-link">出産・子供   <img class="themeimg" src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
+=======
+		<div class="theme-box"><a href="{% url 'subsidy:childbirth_childcare' %}" class="theme-link">妊娠・子育て   <img class="themeimg" src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
+>>>>>>> origin/master
 		<div class="theme-box"><a href="{% url 'subsidy:ceremonial_occasion' %}" class="theme-link">冠婚葬祭　  <img class="themeimg" src="{% static 'subsidy/img/bird.png' %}" style="width: 42px; height: 42px;"></a></div>
 	</div>
 	<div class="theme-search">
@@ -165,6 +173,7 @@
 </div>
 
 
+<<<<<<< HEAD
 <div class="footer">
 	<div class="footer-nav">
 		<p><a class="footer-nav-link" href="{% url 'subsidy:webmaster' %}">運営者情報</a></p>
@@ -172,4 +181,7 @@
 		<p><a class="footer-nav-link" target="_blank" href="{% url 'subsidy:user_alert' %}">問題を報告する</a></p>
 	</div>
 </div>
+=======
+{% include 'subsidy/base_module/footer.html' %}
+>>>>>>> origin/master
 {% endblock body %}

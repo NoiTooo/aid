@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+<div class="pagination">
+>>>>>>> origin/master
 <!-- 前へ の部分 -->
 {% if page_obj.has_previous %}
     {% if count %}
         {% if request.GET.keyword %}
+<<<<<<< HEAD
         <a href="?page={{ page_obj.previous_page_number }}&keyword={{ request.GET.keyword }}">前へ</a>
         {% elif request.GET.city and request.GET.theme %}
             <a href="?page={{ page_obj.previous_page_number }}&city={{ request.GET.city }}&theme={{ request.GET.theme }}">前へ</a>
@@ -11,12 +16,24 @@
             <a href="?page={{ page_obj.previous_page_number }}&city=&theme={{ request.GET.theme }}">前へ</a>
         {% else %}
             <a href="?page={{ page_obj.previous_page_number }}&city=&theme=">前へ</a>
+=======
+            <a class="pagination_block" href="?page={{ page_obj.previous_page_number }}&keyword={{ request.GET.keyword }}">前へ</a>
+        {% elif request.GET.city and request.GET.theme %}
+            <a class="pagination_block" href="?page={{ page_obj.previous_page_number }}&city={{ request.GET.city }}&theme={{ request.GET.theme }}">前へ</a>
+        {% elif request.GET.city %}
+            <a class="pagination_block" href="?page={{ page_obj.previous_page_number }}&city={{ request.GET.city }}&theme=">前へ</a>
+        {% elif request.GET.theme %}
+            <a class="pagination_block" href="?page={{ page_obj.previous_page_number }}&city=&theme={{ request.GET.theme }}">前へ</a>
+        {% else %}
+            <a class="pagination_block" href="?page={{ page_obj.previous_page_number }}&city=&theme=">前へ</a>
+>>>>>>> origin/master
         {% endif %}
     {% endif %}
 {% endif %}
 
 <!-- 数字の部分 -->
 {% for num in page_obj.paginator.page_range %}
+<<<<<<< HEAD
     {% if count %}
         {% if page_obj.number == num %}
             <span>{{ num }}</span>
@@ -34,12 +51,34 @@
             {% endif %}
         {% endif %}
     {% endif%}
+=======
+    {% if num <= page_obj.number|add:5 and num >= page_obj.number|add:-5 %}
+        {% if count %}
+            {% if page_obj.number == num %}
+                <span class="pagination_block_current">{{ num }}</span>
+            {% else %}
+                {% if request.GET.keyword %}
+                    <a class="pagination_block" href="?page={{ num }}&keyword={{ request.GET.keyword }}">{{ num }}</a>
+                {% elif request.GET.city and request.GET.theme %}
+                    <a class="pagination_block" href="?page={{ num }}&city={{ request.GET.city }}&theme={{ request.GET.theme }}">{{ num }}</a>
+                {% elif request.GET.city %}
+                    <a class="pagination_block" href="?page={{ num }}&city={{ request.GET.city }}&theme=">{{ num }}</a>
+                {% elif request.GET.theme %}
+                    <a class="pagination_block" href="?page={{ num }}&city=&theme={{ request.GET.theme }}">{{ num }}</a>
+                {% else %}
+                    <a class="pagination_block" href="?page={{ num }}&city=&theme=">{{ num }}</a>
+                {% endif %}
+            {% endif %}
+        {% endif%}
+    {% endif %}
+>>>>>>> origin/master
 {% endfor %}
 
 <!-- 次へ の部分 -->
 {% if page_obj.has_next %}
     {% if count %}
         {% if request.GET.keyword %}
+<<<<<<< HEAD
         <a href="?page={{ page_obj.next_page_number }}&keyword={{ request.GET.keyword }}">次へ</a>
         {% elif request.GET.city and request.GET.theme %}
             <a href="?page={{ page_obj.next_page_number }}&city={{ request.GET.city }}&theme={{ request.GET.theme }}">次へ</a>
@@ -52,3 +91,18 @@
         {% endif %}
     {% endif %}
 {% endif %}
+=======
+        <a class="pagination_block" href="?page={{ page_obj.next_page_number }}&keyword={{ request.GET.keyword }}">次へ</a>
+        {% elif request.GET.city and request.GET.theme %}
+            <a class="pagination_block" href="?page={{ page_obj.next_page_number }}&city={{ request.GET.city }}&theme={{ request.GET.theme }}">次へ</a>
+        {% elif request.GET.city %}
+            <a class="pagination_block" href="?page={{ page_obj.next_page_number }}&city={{ request.GET.city }}&theme=">次へ</a>
+        {% elif request.GET.theme %}
+            <a class="pagination_block" href="?page={{ page_obj.next_page_number }}&city=&theme={{ request.GET.theme }}">次へ</a>
+        {% else %}
+            <a class="pagination_block" href="?page={{ page_obj.next_page_number }}&city=&theme=">次へ</a>
+        {% endif %}
+    {% endif %}
+{% endif %}
+</div>
+>>>>>>> origin/master

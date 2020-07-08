@@ -199,7 +199,7 @@ option:hover{
   border-radius: 20px;
   border: 1px solid;
   background-color: white;
-  color: grey;
+  color: #606560;
   margin: 12.2px;
 }
 
@@ -238,7 +238,7 @@ option:hover{
   border-radius: 20px;
   border: 1px solid;
   background-color: white;
-  color:grey;
+  color:#606560;
   margin: 0 50px;
 }
 
@@ -250,7 +250,7 @@ option:hover{
   text-align: center;
   padding-top: 5px;
   padding-left: 70px;
-  color: grey;
+  color: #606560;
 }
 
 /* freeword-search */
@@ -498,7 +498,7 @@ option:hover{
   border-radius: 20px;
   border: 1px solid;
   background-color: white;
-  color: grey;
+  color: #606560;
   margin: 12.2px;
 }
 
@@ -537,7 +537,7 @@ option:hover{
   border-radius: 20px;
   border: 1px solid;
   background-color: white;
-  color:grey;
+  color:#606560;
   margin: 0 50px;
 }
 
@@ -550,7 +550,7 @@ option:hover{
   width: 200px;
   height: 40px;
   text-align: center;
-  color: grey;
+  color: #606560;
   padding-top: 15px;
   padding-left: 10px;
 }

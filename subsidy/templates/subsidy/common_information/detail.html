@@ -29,12 +29,12 @@
 	<p class="object">{{ object.prefecture }}{{ object.city }}</p>
 	<p class="object-item">対象者</p>
 	<p class="object">{{ object.get_target_display }}</p>
-	<p class="object">{{ object.condition }}</p>
+	<p class="object">{{ object.condition | linebreaksbr }}</p>
 	<p class="object-item">支援内容</p>
-	<p class="object">{{ object.description }}</p>
+	<p class="object">{{ object.description | linebreaksbr }}</p>
 	{% if object.overview != "" %}
 	<p class="object-item">概要</p>
-	<p class="object">{{ object.overview }}</p>
+	<p class="object">{{ object.overview | linebreaksbr }}</p>
 	{% endif %}
 	{% if object.maximum_support_amount != None %}
 	<p class="object-item">最大支給金額</p>
@@ -42,11 +42,11 @@
 	{% endif %}
 	{% if object.support_amount_note != "" %}
 	<p class="object-item">助成額</p>
-	<p class="object">{{ object.support_amount_note }}</p>
+	<p class="object">{{ object.support_amount_note | linebreaksbr }}</p>
 	{% endif %}
 	{% if object.how_to_apply != "" %}
 	<p class="object-item">利用・申請方法</p>
-	<p class="object">{{ object.how_to_apply }}</p>
+	<p class="object">{{ object.how_to_apply | linebreaksbr }}</p>
 	{% endif %}
 	<p class="object-item">情報元</p>
 	<p class="object">{{ object.referrer }}</p>

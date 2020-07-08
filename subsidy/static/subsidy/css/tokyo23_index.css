@@ -1,6 +1,6 @@
 .navigarte{
     font-size: 16px;
-    color: grey;
+    color: #606560;
     margin: 20px 0 0 50px;
 }
 
@@ -201,6 +201,15 @@ option:hover{
 
 .object-item{
     font-size: 14px;
+    padding-right: 20px;
+}
+
+.object-none{
+  height: 600px;
+  text-align: center;
+  color: #606560;
+  font-size: 30px;
+  margin-top: 200px;
 }
 
 .detail-link{
@@ -217,7 +226,7 @@ option:hover{
 @media screen and (max-width: 600px){
 .navigarte{
     font-size: 16px;
-    color: grey;
+    color: #606560;
     margin: 20px 0 15px 5px;
 }
 
@@ -236,6 +245,14 @@ option:hover{
 .object-list{
   padding: 5px;
   margin: 10px auto;
+}
+
+.object-none{
+  height: 200px;
+  text-align: center;
+  color: #606560;
+  font-size: 24px;
+  margin-top: 200px;
 }
 
 }

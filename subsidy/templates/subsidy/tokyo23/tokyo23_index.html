@@ -22,7 +22,12 @@
 		{% if not city and not theme %}<a href="#"></a>{% endif %}
 		{% if keyword %}<a href="#">>「{{ query }}」の検索結果</a>{% endif %}		
 	{% endif %}
+	{% if count %}
 	<p>検索結果：{{ count }}件のうち {{ pagecountstart }}件－{{ pagecountend }}件を表示</p>
+	{% else %}
+	<p>検索結果：{{ count }}件</p>
+	{% endif %}
+
 </div>
 
 <div class="container">
@@ -62,7 +67,7 @@
 				<label class="select-theme">
 					<select name="theme">
 						<option value="">テーマ</option>
-						<option value="出産・子供">妊娠・子育て</option>
+						<option value="妊娠・子育て">妊娠・子育て</option>
 						<option value="冠婚葬祭">冠婚葬祭</option>
 						<option value="住まい">住まい</option>
 						<option value="その他">その他</option>
@@ -81,20 +86,26 @@
 	</div>
 
 	<div class="center-columns">
-			{% for object in object_list %}
-			<div class="object-list">
-				<p class="object-title">{{ object.name }}</p>
-				{% for theme in object.themes.all %}
-				<p class="object-tag">{{ theme.theme }}</p>
-				{% endfor %}
-				<p class="object-item">▼地域<br>{{ object.prefecture }}{{ object.city }}</p>
-				<p class="object-item">▼支援内容：<br>{{ object.description }}</p>
-				{% if object.maximum_support_amount != None %}
-				<p class="object-item">▼最大支給金額<br>{{ object.maximum_support_amount|intcomma }}円</p>
-				{% endif %}
-				<p><a class="detail-link" href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></p>
-			</div>
+		{% if  count  == 0 %}
+		<div class="object-none">
+			<p>検索結果がありません</p>
+		</div>>
+		{% else %}
+		{% for object in object_list %}
+		<div class="object-list">
+			<p class="object-title">{{ object.name }}</p>
+			{% for theme in object.themes.all %}
+			<p class="object-tag">{{ theme.theme }}</p>
 			{% endfor %}
+			<p class="object-item">▼地域<br>{{ object.prefecture }}{{ object.city }}</p>
+			<p class="object-item">▼支援内容：<br>{{ object.description }}</p>
+			{% if object.maximum_support_amount != None %}
+			<p class="object-item">▼最大支給金額<br>{{ object.maximum_support_amount|intcomma }}円</p>
+			{% endif %}
+			<p><a class="detail-link" href="{% url 'subsidy:detail' object.pk %}">詳細を見る</a></p>
+		</div>
+		{% endfor %}
+		{% endif %}
 		{% include 'subsidy/base_module/paginations.html' %}
 	</div>
 

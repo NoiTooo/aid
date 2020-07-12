@@ -36,9 +36,7 @@ class StaticViewSitemap(Sitemap):
                 'subsidy:inquiry_done',
                 'subsidy:tokyo23_top',
                 'subsidy:tokyo23_index',
-                'subsidy:tokyo23_category_select',
-                'subsidy:tokyo23_marriage',
-                'subsidy:tokyo23_housing',
+                'subsidy:category_select',
                 ]
 
     def location(self, item):

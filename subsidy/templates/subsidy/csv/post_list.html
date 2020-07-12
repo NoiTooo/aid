@@ -1,0 +1,20 @@
+{% extends 'subsidy/csv/base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>pk</th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in object_list %}
+      <tr>
+        <td>{{ post.pk }}</td>
+        <td>{{ post.name }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

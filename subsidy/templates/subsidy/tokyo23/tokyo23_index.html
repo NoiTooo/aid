@@ -18,12 +18,16 @@
 	<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
 	<a href="{% url 'subsidy:tokyo23_index'%}">検索結果</a>
 	{% if query %}
-		{% if city and theme %}<a href="#">>「{{ query }}」の検索結果</a>{% endif %}
+		{% if city and theme %}<a href="#">「{{ query }}」の検索結果</a>{% endif %}
 		{% if not city and not theme %}<a href="#"></a>{% endif %}
-		{% if keyword %}<a href="#">>「{{ query }}」の検索結果</a>{% endif %}		
+		{% if keyword %}<a href="#">「{{ query }}」の検索結果</a>{% endif %}		
 	{% endif %}
 	{% if count %}
-	<p>検索結果：{{ count }}件のうち {{ pagecountstart }}件－{{ pagecountend }}件を表示</p>
+		{% if count >= pagecountend %}
+			<p>検索結果：{{ count }}件のうち {{ pagecountstart }}件－{{ pagecountend }}件を表示</p>
+		{% else %}
+			<p>検索結果：{{ count }}件のうち {{ pagecountstart }}件－{{ count }}件を表示</p>			
+		{% endif %}
 	{% else %}
 	<p>検索結果：{{ count }}件</p>
 	{% endif %}
@@ -89,7 +93,7 @@
 		{% if  count  == 0 %}
 		<div class="object-none">
 			<p>検索結果がありません</p>
-		</div>>
+		</div>
 		{% else %}
 		{% for object in object_list %}
 		<div class="object-list">

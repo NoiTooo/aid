@@ -53,8 +53,8 @@ class Theme(models.Model):
 
 class Subsidy(models.Model):
     name = models.CharField(verbose_name='制度名(ex.移住支援制度)', max_length=50)
-    prefecture = models.CharField(verbose_name='都道府県(ex.東京都)', max_length=10)
-    city = models.CharField(verbose_name='市区町村(ex.世田谷区)', max_length=31)
+    prefecture = models.CharField(verbose_name='都道府県(ex.東京都or全国)', max_length=10)
+    city = models.CharField(verbose_name='市区町村(ex.世田谷区)', max_length=31, null=True, blank=True,)
     target = models.CharField(verbose_name='対象者', choices=TARGET_CODE, max_length=10)
     condition = models.TextField(verbose_name='支給条件(1000字まで)', max_length=1000)
     overview = models.TextField(verbose_name='制度の概要(100字まで)', null=True, blank=True, max_length=100)

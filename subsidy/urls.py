@@ -14,6 +14,9 @@ urlpatterns = [
     path('user-alert-done/', views.User_Alert_Done.as_view(), name='user_alert_done'),
     path('inquiry/', views.Inquiry_Create.as_view(), name='inquiry_create'),
     path('inquiry-done/', views.Inquiry_Done.as_view(), name='inquiry_done'),
+    path('dbindex/', views.PostIndex.as_view(), name='db_index'),
+    path('import/', views.PostImport.as_view(), name='import'),
+    path('export/', views.post_export, name='export'),
     # Tokyo23
     path('', views.Tokyo23_Top.as_view(), name='tokyo23_top'),
     path('detail/<int:pk>', views.Detail.as_view(), name='detail'),

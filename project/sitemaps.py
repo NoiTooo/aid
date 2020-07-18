@@ -28,8 +28,7 @@ class StaticViewSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['subsidy:webmaster',
-                'subsidy:terms_of_service',
+        return ['subsidy:terms_of_service',
                 'subsidy:user_alert',
                 'subsidy:user_alert_done',
                 'subsidy:inquiry_create',

@@ -1,0 +1,23 @@
+.overview{
+    margin-top: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.title{
+    font-size: 36px;
+    border-bottom: solid 2px #ffffff;
+    width: 300px;
+    margin: auto;
+}
+
+/* about service */
+.about{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px auto;
+}
+
+.about-title{
+  font-size: 40px;
+}

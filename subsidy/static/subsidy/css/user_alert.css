@@ -41,22 +41,22 @@ textarea{
     text-align: center;
     cursor: pointer;
     padding: 12px 64px;
-    background: #00b300;
+    background: #254624;
     color: #ffffff;
     line-height: 1em;
     transition: .3s;
     box-shadow: 5px 5px 4px #666666;
-    border: 2px solid #00b300;
+    border: 2px solid #254624;
 }
 
 .inquiry_button:hover {
     box-shadow: none;
-    color: #00b300;
+    color: #254624;
     background: #ffffff;
 }
 
 .navigarte{
-    font-size: 14px;
+    font-size: 16px;
     color: #606560;
     margin: 20px 0 0 50px;
 }
@@ -138,18 +138,18 @@ textarea{
     text-align: center;
     cursor: pointer;
     padding: 12px 64px;
-    background: #00b300;
+    background: #254624;
     color: #ffffff;
     line-height: 1em;
     transition: .3s;
     box-shadow: 5px 5px 4px #666666;
-    border: 2px solid #00b300;
+    border: 2px solid #254624;
     width: 150px;
 }
 
 .user_alert_button:hover {
     box-shadow: none;
-    color: #00b300;
+    color: #254624;
     background: #ffffff;
 }
 

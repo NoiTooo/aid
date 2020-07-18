@@ -28,11 +28,6 @@ class About_Service(generic.TemplateView):
     template_name = 'subsidy/common_information/about_service.html'
 
 
-class Webmaster(generic.TemplateView):
-    """運営者情報"""
-    template_name = 'subsidy/common_information/webmaster.html'
-
-
 class Terms_of_Service(generic.TemplateView):
     """利用規約"""
     template_name = 'subsidy/common_information/terms_of_service.html'
@@ -137,7 +132,7 @@ class Tokyo23_Index(generic.ListView):
                        Q(themes__theme__icontains=q)
                        for q in q_list]
             )
-            queryset = queryset.filter(query)
+            queryset = queryset.filter(query, is_published=True, prefecture=tokyo)
         return queryset
 
     # 「」検索結果:「」件の取得
@@ -238,59 +233,3 @@ class Tokyo23_Category_Select(generic.ListView):
             ctx['pagecountstart'] = int(page) * 10 - 9
             ctx['pagecountend'] = int(page) * 10
         return ctx
-
-
-class Childbirth_Childcare(generic.ListView):
-    """テーマ「出産・子供」一覧"""
-    template_name = 'subsidy/tokyo23/childbirth_childcare.html'
-    queryset = Subsidy.objects.all()
-    context_object_name = 'object_list'
-    paginate_by = 10
-
-    def get_queryset(self):
-        today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=tokyo, themes__theme='出産・子供').order_by(
-            '-updated_at').distinct()
-        # filter(end_at__gte=today)
-
-
-class Ceremonial_Occasion(generic.ListView):
-    """テーマ「冠婚葬祭」一覧"""
-    template_name = 'subsidy/tokyo23/ceremonial_occasion.html'
-    queryset = Subsidy.objects.all()
-    context_object_name = 'object_list'
-    paginate_by = 5
-
-    def get_queryset(self):
-        today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=tokyo, themes__theme='冠婚葬祭').order_by(
-            '-updated_at').distinct()
-        # filter(end_at__gte=today)
-
-
-class Housing(generic.ListView):
-    """テーマ「住まい」一覧"""
-    template_name = 'subsidy/tokyo23/housing.html'
-    queryset = Subsidy.objects.all()
-    context_object_name = 'object_list'
-    paginate_by = 5
-
-    def get_queryset(self):
-        today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=tokyo, themes__theme='住まい').order_by(
-            '-updated_at').distinct()
-        # filter(end_at__gte=today)
-
-
-class Others(generic.ListView):
-    """テーマ「その他」一覧"""
-    template_name = 'subsidy/tokyo23/others.html'
-    queryset = Subsidy.objects.all()
-    context_object_name = 'object_list'
-    paginate_by = 5
-
-    def get_queryset(self):
-        today = date.today()
-        return Subsidy.objects.filter(is_published=True, prefecture=tokyo, themes__theme='その他').order_by(
-            '-updated_at').distinct()
-        # filter(end_at__gte=today)

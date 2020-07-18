@@ -134,11 +134,11 @@
 
 	<p class="theme-search-title">テーマを選択</p>
 	<div class="theme-search">
-		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=妊娠・子育て" class="theme-link">妊娠・子育て<img class="themeimg" src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
+		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=妊娠・子育て" class="theme-link-child">妊娠・子育て<img class="themeimg-baby" src="{% static 'subsidy/img/baby.png' %}" style="width: 30px; height: 49x;"></a></div>
 		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=冠婚葬祭" class="theme-link">冠婚葬祭　  <img class="themeimg" src="{% static 'subsidy/img/bird.png' %}" style="width: 42px; height: 42px;"></a></div>
 	</div>
 	<div class="theme-search">
-		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=住まい" class="theme-link">住まい　<img class="themeimg" src="{% static 'subsidy/img/house.png' %}" style="width: 60px; height: 42px;"></a></div>
+		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=住まい" class="theme-link">住まい　<img class="themeimg-house" src="{% static 'subsidy/img/house.png' %}" style="width: 60px; height: 42px;"></a></div>
 		<div class="theme-box"><a href="https://aid-tree.com/tokyo23/category/?city=&theme=その他" class="theme-link">その他  　  <img class="themeimg" src="{% static 'subsidy/img/tree.png' %}" style="width: 60px; height: 42px;"></a></div>
 	</div>
 
@@ -153,8 +153,8 @@
 
 <div class="about">
 	<h3 class="about-title">AID Tree</h3>
-	<p><a class="internal-link" href="{% url 'subsidy:tokyo23_top' %}">TOP</a></p>
-	<p><a class="internal-link" href="{% url 'subsidy:terms_of_service' %}">利用規約(免責事項)</a></p>
+	<p><a class="internal-link" href="{% url 'subsidy:tokyo23_top">TOP</a></p>
+    <p><a class="internal-link" href="{% url 'subsidy:terms_of_service' %}">利用規約(免責事項)</a></p>
 	<p><a class="internal-link" href="{% url 'subsidy:inquiry_create' %}">お問合せ</a></p>
 </div>
 
@@ -164,6 +164,4 @@
 	<p><a class="sns-link" href=""><img src="{% static 'subsidy/img/facebook.png' %}" style="width: 30px; height: 30px;">　Facebook</a></p>
 </div>
 
-
-{% include 'subsidy/base_module/footer.html' %}
 {% endblock body %}

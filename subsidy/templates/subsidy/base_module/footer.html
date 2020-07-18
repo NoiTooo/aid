@@ -1,7 +1,13 @@
-<div class="footer">
-    <div class="footer-nav">
-        <p><a class="footer-nav-link" href="{% url 'subsidy:webmaster' %}">運営者情報</a></p>
-        <p><a class="footer-nav-link" href="{% url 'subsidy:terms_of_service' %}">利用規約</a></p>
-        <p><a class="footer-nav-link" href="{% url 'subsidy:user_alert' %}" target="_blank" rel="noopener">問題を報告する</a></p>
-    </div>
+{% load static %}
+<div class="about">
+    <h3 class="about-title">AID Tree</h3>
+    <p><a class="internal-link" href="{% url 'subsidy:tokyo23_top">TOP</a></p>
+    <p><a class="internal-link" href="{% url 'subsidy:terms_of_service' %}">利用規約(免責事項)</a></p>
+    <p><a class="internal-link" href="{% url 'subsidy:inquiry_create' %}">お問合せ</a></p>
+</div>
+
+<div class="sns-field">
+    <p><a class="sns-link" href=""><img src="{% static 'subsidy/img/twitter.png' %}" style="width: 30px; height: 30px;">　Twitter</a></p>
+    <p><a class="sns-link" href=""><img src="{% static 'subsidy/img/instagram.png' %}" style="width: 30px; height: 30px;">　Instagram</a></p>
+    <p><a class="sns-link" href=""><img src="{% static 'subsidy/img/facebook.png' %}" style="width: 30px; height: 30px;">　Facebook</a></p>
 </div>

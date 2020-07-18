@@ -22,7 +22,7 @@ body{
 
 a{
     text-decoration: none;
-    color: grey;
+    color: #606560;
 }
 
 .block-content{
@@ -47,8 +47,39 @@ a{
     border-left: 1px solid #606560;
 }
 
+/* footer */
+.internal-link{
+ 	text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+/* about service */
+.about{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px auto;
+}
+
+.about-title{
+  font-size: 40px;
+}
+
+.sns-field{
+  margin: auto;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.sns-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+
 .copyright{
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -58,37 +89,18 @@ a{
 }
 
 .pagination_block{
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px;
     color: #606560;
     border: #606560 solid 0.5px;
 }
 
 .pagination_block_current{
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px;
     color: #ffffff;
     border: #606560 solid 0.5px;
-    background-color: #00b300;
-}
-
-/* fotter */
-.footer{
-    text-align: right;
-    margin: 50px 50px 0 50px;
-    height: 120px;
-    border-top: 2px dotted white;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
-  text-align: center;
-  color:white;
+    background-color: #254624;
 }
 
 /* tablet */
@@ -104,7 +116,7 @@ body{
 
 a{
     text-decoration: none;
-    color: grey;
+    color: #606560;
 }
 
 .block-content{
@@ -119,29 +131,40 @@ a{
     display: none;
 }
 
-.copyright{
-    font-size: 12px;
-    text-align: center;
+/* footer */
+.internal-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
 }
 
-/* fotter */
-.footer{
-    text-align: center;
-    margin: 50px 0 0 0;
-    height: 120px;
-    border-top: 2px dotted white;
-}
-
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
+/* about service */
+.about{
   text-align: center;
-  color:white;
+  font-size: 20px;
+  margin: 50px auto;
 }
+
+.about-title{
+  font-size: 30px;
+}
+
+/* sns-field */
+.sns-field{
+  text-align: center;
+}
+
+.sns-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.copyright{
+    font-size: 16px;
+    text-align: center;
+}
+
 }
 
 /* smp */
@@ -157,7 +180,7 @@ body{
 
 a{
     text-decoration: none;
-    color: grey;
+    color: #606560;
 }
 
 .block-content{
@@ -171,26 +194,27 @@ a{
     display: none;
 }
 
-.copyright{
-    font-size: 12px;
-    text-align: center;
-}
-/* fotter */
-.footer{
-    text-align: center;
-    margin: 50px 0 0 0;
-    height: 120px;
-    border-top: 2px dotted white;
+/* footer */
+.internal-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
 }
 
-.footer-nav{
-    padding-top: 5px;
-    margin-right: 20px;
-    font-size: 14px;
-	}
-
-.footer-nav-link{
+/* sns-field */
+.sns-field{
   text-align: center;
-  color:white;
+}
+
+.sns-link{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+
+.copyright{
+    font-size: 16px;
+    text-align: center;
 }
 }

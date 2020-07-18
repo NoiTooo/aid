@@ -34,11 +34,11 @@
 
 .object-tag{
   padding: 10px;
-  background-color: #00b300;
+  background-color: #254624;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 40px;
-  width: 100px;
+  width: 120px;
   text-align: center;
 }
 
@@ -61,11 +61,11 @@
   padding: 10px;
   width: 300px;
   text-align: center;
-  margin-left: 200px;
+  margin-left: 170px;
 }
 
 .officialpage:hover{
-  background-color: #00b300;
+  background-color: #254624;
   color: #ffffff;
 }
 
@@ -104,11 +104,12 @@
 .officialpage{
   border: solid #606560 1px;
   padding: 10px;
-  width: 150px;
+  width: 200px;
+  margin-left: 70px;
 }
 
 .officialpage:hover{
-  background-color: #00b300;
+  background-color: #254624;
   color: #ffffff;
 }
 

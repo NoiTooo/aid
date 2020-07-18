@@ -78,7 +78,7 @@ label:after{
   content:"\25bc";
   font-size:16px;
   color:white;
-  background:#00b300;
+  background:#254624;
   width: 60px;
   text-align:center;
   line-height:3.2em;
@@ -106,20 +106,20 @@ option:hover{
   font-size: 14pt;
   text-align: center;
   cursor: pointer;
-  padding: 12px 64px;
-  background: #00b300;
+  padding: 16px 64px;
+  background: #254624;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #00b300;
+  border: 2px solid #254624;
   height: 50px;
   width: 280px;
 }
 
 .button:hover, .combination-button:hover {
   box-shadow: none;
-  color: #00b300;
+  color: #254624;
   background: #ffffff;
 }
 
@@ -157,20 +157,20 @@ option:hover{
   font-size: 14pt;
   text-align: center;
   cursor: pointer;
-  padding: 12px 64px;
-  background: #00b300;
+  padding: 16px 64px;
+  background: #254624;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #00b300;
+  border: 2px solid #254624;
   width: 280px;
   height: 50px;
 }
 
 .freeword-input:hover {
   box-shadow: none;
-  color: #00b300;
+  color: #254624;
   background: #ffffff;
 }
 
@@ -191,16 +191,16 @@ option:hover{
 
 .object-tag{
     padding: 10px;
-    background-color: #00b300;
+    background-color: #254624;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 16px;
     border-radius: 40px;
-    width: 100px;
+    width: 120px;
     text-align: center;
 }
 
 .object-item{
-    font-size: 14px;
+    font-size: 16px;
     padding-right: 20px;
 }
 
@@ -218,7 +218,7 @@ option:hover{
 }
 
 .detail-link:hover{
-    background-color: #00b300;
+    background-color: #254624;
     color: #ffffff;
 }
 

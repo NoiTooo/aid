@@ -7,6 +7,7 @@
 	<title>お問合せフォーム | AID Tree</title>
 	<meta name="description" content="説明文">
 	<link rel="canonical" href="https://aid-tree.com/inquiry/">
+	<meta name=”robots” content=”noindex” />
 {% endblock siteInformation %}
 
 {% block stylesheet %}
@@ -17,7 +18,7 @@
 {% include 'subsidy/base_module/header.html' %}
 	<div class="navigarte">
 		<a href="{% url 'subsidy:tokyo23_top'%}">TOP ></a>
-		<a href="{% url 'subsidy:inquiry_create'%}">問合せフォーム</a>
+		<a href="{% url 'subsidy:inquiry_create'%}">お問合せフォーム</a>
 	</div>
 
 	<div class="inquiry">

@@ -78,7 +78,7 @@ label:after{
   content:"\25bc";
   font-size:16px;
   color:white;
-  background:#254624;
+  background:#00b300;
   width: 60px;
   text-align:center;
   line-height:3.2em;
@@ -107,19 +107,19 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 16px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
   height: 50px;
   width: 280px;
 }
 
 .button:hover, .combination-button:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -158,19 +158,19 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 16px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
   width: 280px;
   height: 50px;
 }
 
 .freeword-input:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -191,7 +191,7 @@ option:hover{
 
 .object-tag{
     padding: 10px;
-    background-color: #254624;
+    background-color: #00b300;
     color: #ffffff;
     font-size: 16px;
     border-radius: 40px;
@@ -218,7 +218,7 @@ option:hover{
 }
 
 .detail-link:hover{
-    background-color: #254624;
+    background-color: #00b300;
     color: #ffffff;
 }
 

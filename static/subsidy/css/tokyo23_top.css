@@ -87,7 +87,7 @@ label:after{
   content:"\25bc";
   font-size:16px;
   color:white;
-  background:#254624;
+  background:#00b300;
   width:80px;
   text-align:center;
   line-height:3.2em;
@@ -116,17 +116,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .button, .combination-button:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -194,7 +194,7 @@ option:hover{
 }
 
 .area-link-box:hover{
-  background-color: #254624;
+  background-color: #00b300;
   transition-delay:0.2s;
 }
 
@@ -289,17 +289,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .freeword-input:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -385,7 +385,7 @@ label:after{
   content:"\25bc";
   font-size:16px;
   color:white;
-  background:#254624;
+  background:#00b300;
   width:80px;
   text-align:center;
   line-height:3.2em;
@@ -414,17 +414,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .button, .combination-button:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -481,7 +481,7 @@ option:hover{
 }
 
 .area-link-box:hover{
-  background-color: #254624;
+  background-color: #00b300;
   transition-delay:0.2s;
 }
 
@@ -559,17 +559,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .freeword-input:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -653,7 +653,7 @@ label:after{
   content:"\25bc";
   font-size:16px;
   color:white;
-  background:#254624;
+  background:#00b300;
   width:80px;
   text-align:center;
   line-height:3.2em;
@@ -682,17 +682,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .button, .combination-button:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 
@@ -798,17 +798,17 @@ option:hover{
   text-align: center;
   cursor: pointer;
   padding: 12px 64px;
-  background: #254624;
+  background: #00b300;
   color: #ffffff;
   line-height: 1em;
   transition: .3s;
   box-shadow: 5px 5px 4px #666666;
-  border: 2px solid #254624;
+  border: 2px solid #00b300;
 }
 
 .freeword-input:hover {
   box-shadow: none;
-  color: #254624;
+  color: #00b300;
   background: #ffffff;
 }
 

@@ -28,25 +28,35 @@
 	<p class="object-item">地域</p>
 	<p class="object">{{ object.prefecture }}{{ object.city }}</p>
 	<p class="object-item">対象者</p>
-	<p class="object">{{ object.get_target_display }}</p>
 	<p class="object">{{ object.condition | linebreaksbr }}</p>
+	{% if object.condition_img %}
+	<p><img src="{{ object.condition_img.url }}" style="max-width: 500px;"></p>
+	{% endif %}
 	<p class="object-item">支援内容</p>
 	<p class="object">{{ object.description | linebreaksbr }}</p>
-	{% if object.overview != "" %}
-	<p class="object-item">概要</p>
-	<p class="object">{{ object.overview | linebreaksbr }}</p>
-	{% endif %}
-	{% if object.maximum_support_amount != None %}
-	<p class="object-item">最大支給金額</p>
-	<p class="object">{{ object.maximum_support_amount|intcomma }}円</p>
+	{% if object.description_img %}
+	<p><img src="{{ object.description_img.url }}" style="max-width: 500px;"></p>
 	{% endif %}
 	{% if object.support_amount_note != "" %}
 	<p class="object-item">助成額</p>
 	<p class="object">{{ object.support_amount_note | linebreaksbr }}</p>
 	{% endif %}
+	{% if object.support_img %}
+	<p><img src="{{ object.support_img.url }}" style="max-width: 500px;"></p>
+	{% endif %}
+	{% if object.supplies != "" %}
+	<p class="object-item">利用・申請方法</p>
+	<p class="object">{{ object.supplies | linebreaksbr }}</p>
+	{% endif %}
+	{% if object.supplies_img %}
+	<p><img src="{{ object.supplies_img.url }}" style="max-width: 500px;"></p>
+	{% endif %}
 	{% if object.how_to_apply != "" %}
 	<p class="object-item">利用・申請方法</p>
 	<p class="object">{{ object.how_to_apply | linebreaksbr }}</p>
+	{% endif %}
+	{% if object.how_to_apply_img %}
+	<p><img src="{{ object.how_to_apply_img.url }}" style="max-width: 500px;"></p>
 	{% endif %}
 	<p class="object-item">情報元</p>
 	<p class="object">{{ object.referrer }}</p>

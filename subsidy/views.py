@@ -150,16 +150,8 @@ class Tokyo23_Index(generic.ListView):
             Q(description__icontains=keyword) |
             Q(condition__icontains=keyword) |
             Q(referrer__icontains=keyword) |
-            Q(themes__theme__icontains=keyword)).count()
-        ctx['count'] = Subsidy.objects.filter(
-            Q(name__icontains=keyword) |
-            Q(prefecture__icontains=keyword) |
-            Q(city__icontains=keyword) |
-            Q(support_amount_note__icontains=keyword) |
-            Q(description__icontains=keyword) |
-            Q(condition__icontains=keyword) |
-            Q(referrer__icontains=keyword) |
-            Q(themes__theme__icontains=keyword)).count()
+            Q(themes__theme__icontains=keyword)).filter(is_published=True).count()
+        ctx['count'] = count
         # for Pagination
         page = self.request.GET.get('page')
         ctx['page'] = page

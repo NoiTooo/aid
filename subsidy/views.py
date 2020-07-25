@@ -109,9 +109,7 @@ class Tokyo23_Index(generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        today = date.today()
         queryset = Subsidy.objects.order_by('-updated_at').filter(is_published=True, prefecture=tokyo).distinct()
-        # filter(end_at__gte=today)
         keyword = self.request.GET.get('keyword')
         if keyword:
             exclusion = set([' ', '　'])

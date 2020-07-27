@@ -600,7 +600,7 @@ option:hover{
   text-align: center;
   width: cover;
   height: 360px;
-  background-color:rgba(255, 255, 255, 0.5);
+  background-color:rgba(255, 255, 255);
   border-radius: 50px;
   margin: auto;
 }

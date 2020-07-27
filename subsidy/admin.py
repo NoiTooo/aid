@@ -18,7 +18,7 @@ class InquiryAdmin(admin.ModelAdmin):
 
 class SubsidyAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_published', 'prefecture', 'city', 'official_page', 'end_at', 'updated_at')
-    ordering = ('-end_at',)
+    ordering = ('-updated_at',)
     list_filter = ('is_published', 'prefecture', 'city')
     search_fields = ('name', 'prefecture', 'city')
     filter_horizontal = ['themes']
